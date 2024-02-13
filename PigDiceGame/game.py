@@ -6,5 +6,6 @@ import random
 
 
 class Game:
-    def __init__(self) -> None:
-        pass
+    def __init__(self, player, dice):
+        self.currentPlayer = player
+        self.die = dice
