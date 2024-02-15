@@ -203,4 +203,5 @@ The makefile contains more targets, for example these.
 
 * `make pyreverse` to generate class and package diagrams from the code base.
 * `make doc` to generate documentation from the code.
-@marcusgostasson
+
+@ marcusgostasson
