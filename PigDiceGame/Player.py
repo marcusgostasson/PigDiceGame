@@ -1,6 +1,3 @@
-import dice
-
-
 class player:
     def __init__(self, name):
         self.name = name
@@ -14,7 +11,7 @@ class player:
         return self.total_score
 
     def set_total_score(self, value):
-        self.total_score += value
+        self.total_score = value
 
     def get_tossed_amount(self):
         return self.tossed_amount

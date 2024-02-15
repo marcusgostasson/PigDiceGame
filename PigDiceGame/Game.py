@@ -3,7 +3,8 @@
 
 
 import Player
-import Computer 
+import Computer
+import Dice
 
 
 class Game:
@@ -18,40 +19,57 @@ class Game:
 
     def startGame(self):
         self.display()
-        choice = int(input("Choice: "))
-        if (choice == 1):
-            player1 = input("What is your name? ")
-            player2 = input("What is your name? ")
-            playing = True
-            while (playing):
-                playing = self.playerAgainstPlayer(player1)
-                playing = self.playerAgainstPlayer(player2)
+        while (True):
+            try:
+                choice = int(input("Choice: "))
+            except ValueError:
+                print("Invalid input")
+                continue
+                
+            if (choice == 1):
+                player1Name = input("What is player1's name? ")
+                player1 = Player.player(player1Name)
+                player2Name = input("What is player2's name? ")
+                player2 = Player.player(player2Name)
+                playing = True
+                while (playing):
+                    playing = self.playerAgainstPlayer(player1)
+                    if (playing is True):
+                        playing = self.playerAgainstPlayer(player2)
+            else:
+                print("Invalid input")
 
-    def playerAgainstPlayer(self, currentPlayer, dice):
-        if isinstance(currentPlayer, Player()):
-            score = currentPlayer.get_total_score()  # Getting score from the player
-            gameIsBeingPlayed = True
-            while (gameIsBeingPlayed):
-                choice = input(currentPlayer.getName() + " do you want to toss or stay? ")
-                choice = choice.lower().strip()
+    def playerAgainstPlayer(self, currentPlayer):
+        dice = Dice.Dice()
+        score = currentPlayer.get_total_score()  # Getting score from the player
+        gameIsBeingPlayed = True
+        while (gameIsBeingPlayed):
+            print(currentPlayer.getName() + " you currently have " + str(score) + " point(s)")
+            choice = input(currentPlayer.getName() + " do you want to toss or stay? ")
+            choice = choice.lower().strip()
 
-                if (choice == "toss"):
-                    dieValue = currentPlayer.throwdice(dice)
-                    if (dieValue != 1):
-                        score += dieValue
-                        gameIsBeingPlayed = self.checkIfWinner(currentPlayer)
-                        continue
-                    else:
-                        gameIsBeingPlayed = False
-
-                elif (choice == "stay"):
-                    gameIsBeingPlayed = False
-                    currentPlayer.set_total_score(score)
-
+            if (choice == "toss"):
+                dieValue = currentPlayer.throwdice(dice)
+                print(currentPlayer.getName() + " got a " + str(dieValue))
+                if (dieValue != 1):
+                    score += dieValue
+                    gameIsBeingPlayed = self.checkIfWinner(score)
+                    continue
                 else:
-                    print("Invalid option!")  # Can make this print in red
+                    print("Oh you got a " + str(dieValue) + " better luck next time\n")
+                    gameIsBeingPlayed = False
+                    return True
 
-            return False
+            elif (choice == "stay"):
+                currentPlayer.set_total_score(score)
+                currentPoints = currentPlayer.get_total_score()
+                print(currentPlayer.getName() + " stayed and now have " + str(currentPoints) + " point(s)\n")
+                gameIsBeingPlayed = False
+                return True
+
+            else:
+                print("Invalid option!")  # Can make this print in red
+        return False
 
     def playerAgainstComputer(self, computer, dice):
         computer = Computer()
@@ -61,8 +79,9 @@ class Game:
             print("Computers turn, stay or toss? ")
             choice = options.get(tossAmount)
 
-    def checkIfWinner(self, player):
-        playerPoints = player.getPoints()
-        if (playerPoints > 100):
-            print("You won!")  # can make this green
+    def checkIfWinner(self, score):
+        if (score >= 100):
+            print("You got over 100 and won!")  # can make this green
             return False
+        else:
+            return True
