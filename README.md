@@ -1,4 +1,4 @@
-🐷 Pig (dice game)
+Pig (dice game) 🐷
 ==========================
 
 "Pig" är ett enkelt men underhållande tärningsspel som är perfekt för att passera tiden med vänner eller familj. Spelet kräver endast två tärningar och en önskan att ha kul. För att spela, kastar varje spelare tärningarna i tur och ordning och summerar poängen. Målet är att nå 100 poäng för att vinna, men det finns en hake - om du kastar en etta förlorar du alla poäng du samlade in på den rundan! Det är den spännande balansen mellan att chansa och undvika risken som gör "Pig" till en riktig favorit bland både unga och gamla. Så samla ihop dina vänner, ta fram tärningarna och se vem som kan bli den mästare på att undvika grisens otur!
@@ -37,7 +37,7 @@ Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
 
 
 
-![4518857_python_icon](https://github.com/Brantin10/Assignment2/assets/143846336/b6ed61b6-aca0-46b4-a62f-b97b334ecf75Python virtual environment
+Python virtual environment <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p>
 --------------------------
 
 Install a Python virtual environment and activate it.
@@ -78,7 +78,7 @@ Read more on [Python PIP](https://pypi.org/project/pip/).
 
 
 
-Run the code
+Run the code 🏃
 --------------------------
 
 The example program can be started like this.
