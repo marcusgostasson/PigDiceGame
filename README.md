@@ -15,7 +15,7 @@ Get going
 This is how you can work with the development environment of this Python project.
 
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" /> <img>'s `30` and `30`.Check python version
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" height="36" width"36" Check python version
 --------------------------
 
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
