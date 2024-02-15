@@ -59,7 +59,7 @@ Read more on [Python venv](https://docs.python.org/3/library/venv.html).
 
 
 
-Install the dependencies
+Install the dependencies 💾
 --------------------------
 
 Install the PIP packages that are dependencies to the project and/or the development environment. The dependencies are documented in the `requirements.txt`.
@@ -92,7 +92,7 @@ All code is stored below the directory `guess/`.
 
 
 
-Run the validators
+Run the validators 🏃
 --------------------------
 
 You can run the static code validators like this. They check the sourcecode and exclude the testcode.
@@ -130,7 +130,7 @@ Read more on [black](https://pypi.org/project/black/).
 
 
 
-Run the unittests
+Run the unittests 🏃
 --------------------------
 
 You can run the unittests like this. The testfiles are stored in the `test/` directory.
@@ -159,7 +159,7 @@ Read more on:
 
 
 
-Run parts of the testsuite
+Run parts of the testsuite 🏃
 --------------------------
 
 You can also run parts of the testsuite, for examples files or methods in files.
@@ -180,7 +180,7 @@ python -m unittest test.test_game.TestGameClass.test_init_default_object
 
 
 
-Remove generated files
+Remove generated files 🗑️
 --------------------------
 
 You can remove all generated files by this.
