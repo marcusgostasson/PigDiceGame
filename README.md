@@ -14,8 +14,7 @@ Get going
 
 This is how you can work with the development environment of this Python project.
 
-
-[<img align="left" alt="Visual Studio Code" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"" style="padding-right:10px;" />][webdevplaylist] Check python version 
+Check python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p> 
 --------------------------
 
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
