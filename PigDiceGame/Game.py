@@ -29,14 +29,14 @@ class Game:
 
     def playerAgainstPlayer(self, currentPlayer, dice):
         if isinstance(currentPlayer, Player()):
-            score = currentPlayer.getAmount()  # Getting score from the player
+            score = currentPlayer.get_total_score()  # Getting score from the player
             gameIsBeingPlayed = True
             while (gameIsBeingPlayed):
                 choice = input(currentPlayer.getName() + " do you want to toss or stay? ")
                 choice = choice.lower().strip()
 
                 if (choice == "toss"):
-                    dieValue = currentPlayer.tossDice(dice)
+                    dieValue = currentPlayer.throwdice(dice)
                     if (dieValue != 1):
                         score += dieValue
                         gameIsBeingPlayed = self.checkIfWinner(currentPlayer)
@@ -46,7 +46,7 @@ class Game:
 
                 elif (choice == "stay"):
                     gameIsBeingPlayed = False
-                    currentPlayer.setTotalPoints(score)
+                    currentPlayer.set_total_score(score)
 
                 else:
                     print("Invalid option!")  # Can make this print in red

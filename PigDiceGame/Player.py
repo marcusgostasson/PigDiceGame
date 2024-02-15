@@ -7,6 +7,9 @@ class player:
         self.total_score = 0
         self.tossed_amount = 0
 
+    def getName(self):
+        return self.name
+
     def get_total_score(self):
         return self.total_score
 
