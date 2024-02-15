@@ -15,7 +15,8 @@ Get going
 This is how you can work with the development environment of this Python project.
 
 
-https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-1024.png
+![4518857_python_icon](https://github.com/Brantin10/Assignment2/assets/143846336/b6ed61b6-aca0-46b4-a62f-b97b334ecf75)
+
 --------------------------
 
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
