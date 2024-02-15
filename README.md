@@ -115,7 +115,7 @@ Read more on:
 
 
 
-Codestyle with black
+Codestyle with black ⚫
 --------------------------
 
 You can unify the codestyle using black. Running black will change your source code to have a codestyle according to black codestyle.
