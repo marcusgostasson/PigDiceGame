@@ -37,7 +37,7 @@ Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
 
 
 
-Python virtual environment
+![4518857_python_icon](https://github.com/Brantin10/Assignment2/assets/143846336/b6ed61b6-aca0-46b4-a62f-b97b334ecf75) Python virtual environment
 --------------------------
 
 Install a Python virtual environment and activate it.
