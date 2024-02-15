@@ -1,11 +1,13 @@
 🐷 Pig (dice game)
 ==========================
 
+"Pig" är ett enkelt men underhållande tärningsspel som är perfekt för att passera tiden med vänner eller familj. Spelet kräver endast två tärningar och en önskan att ha kul. För att spela, kastar varje spelare tärningarna i tur och ordning och summerar poängen. Målet är att nå 100 poäng för att vinna, men det finns en hake - om du kastar en etta förlorar du alla poäng du samlade in på den rundan! Det är den spännande balansen mellan att chansa och undvika risken som gör "Pig" till en riktig favorit bland både unga och gamla. Så samla ihop dina vänner, ta fram tärningarna och se vem som kan bli den mästare på att undvika grisens otur!
+
 [![Pipeline status](https://gitlab.com/mikael-roos/python-template/badges/main/pipeline.svg)](https://gitlab.com/mikael-roos/python-template/-/pipelines)
 [![Documentation Status](https://readthedocs.org/projects/a-python-project-template-codestyle-and-linters-included/badge/?version=latest)](https://a-python-project-template-codestyle-and-linters-included.readthedocs.io/en/latest/?badge=latest)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-"Pig" är ett enkelt men underhållande tärningsspel som är perfekt för att passera tiden med vänner eller familj. Spelet kräver endast två tärningar och en önskan att ha kul. För att spela, kastar varje spelare tärningarna i tur och ordning och summerar poängen. Målet är att nå 100 poäng för att vinna, men det finns en hake - om du kastar en etta förlorar du alla poäng du samlade in på den rundan! Det är den spännande balansen mellan att chansa och undvika risken som gör "Pig" till en riktig favorit bland både unga och gamla. Så samla ihop dina vänner, ta fram tärningarna och se vem som kan bli den mästare på att undvika grisens otur!
+
 
 Get going
 --------------------------
