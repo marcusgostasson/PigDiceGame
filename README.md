@@ -1,4 +1,4 @@
-Python development project template
+🐷 Pig (dice game)
 ==========================
 
 [![Pipeline status](https://gitlab.com/mikael-roos/python-template/badges/main/pipeline.svg)](https://gitlab.com/mikael-roos/python-template/-/pipelines)
