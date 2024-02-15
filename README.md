@@ -1,13 +1,11 @@
-Python development project template
+🐷 Pig (dice game)
 ==========================
+
+"Pig" är ett enkelt men underhållande tärningsspel som är perfekt för att passera tiden med vänner eller familj. Spelet kräver endast två tärningar och en önskan att ha kul. För att spela, kastar varje spelare tärningarna i tur och ordning och summerar poängen. Målet är att nå 100 poäng för att vinna, men det finns en hake - om du kastar en etta förlorar du alla poäng du samlade in på den rundan! Det är den spännande balansen mellan att chansa och undvika risken som gör "Pig" till en riktig favorit bland både unga och gamla. Så samla ihop dina vänner, ta fram tärningarna och se vem som kan bli den mästare på att undvika grisens otur!
 
 [![Pipeline status](https://gitlab.com/mikael-roos/python-template/badges/main/pipeline.svg)](https://gitlab.com/mikael-roos/python-template/-/pipelines)
 [![Documentation Status](https://readthedocs.org/projects/a-python-project-template-codestyle-and-linters-included/badge/?version=latest)](https://a-python-project-template-codestyle-and-linters-included.readthedocs.io/en/latest/?badge=latest)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-
-A template for a Python development project.
-
-[[_TOC_]]
 
 
 
@@ -17,8 +15,7 @@ Get going
 This is how you can work with the development environment of this Python project.
 
 
-
-Check version of Python
+<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p> Check python version
 --------------------------
 
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
@@ -40,7 +37,7 @@ Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
 
 
 
-Python virtual environment
+![4518857_python_icon](https://github.com/Brantin10/Assignment2/assets/143846336/b6ed61b6-aca0-46b4-a62f-b97b334ecf75) Python virtual environment
 --------------------------
 
 Install a Python virtual environment and activate it.
@@ -205,3 +202,5 @@ The makefile contains more targets, for example these.
 
 * `make pyreverse` to generate class and package diagrams from the code base.
 * `make doc` to generate documentation from the code.
+
+
