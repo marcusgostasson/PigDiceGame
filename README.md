@@ -15,6 +15,7 @@ Get going
 This is how you can work with the development environment of this Python project.
 
 
+![python-icon](https://github.com/Brantin10/Assignment2/assets/143846336/2d2ab7f1-7337-4ec4-a41e-8ef591cff2b4)
 Check version of Python
 --------------------------
 
