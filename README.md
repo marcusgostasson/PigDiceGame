@@ -15,7 +15,7 @@ Get going
 This is how you can work with the development environment of this Python project.
 
 
-![4518857_python_icon](https://github.com/Brantin10/Assignment2/assets/143846336/b6ed61b6-aca0-46b4-a62f-b97b334ecf75) Check python version
+<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p> Check python version
 --------------------------
 
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
