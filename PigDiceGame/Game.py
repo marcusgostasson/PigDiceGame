@@ -5,6 +5,7 @@
 import Player
 import Computer
 import Dice
+import random
 
 
 class Game:
@@ -82,12 +83,36 @@ The first player to score 100 or more points wins\n""")
         return False
 
     def playerAgainstComputer(self, computer, dice):
-        computer = Computer()
+        dice = Dice.Dice()
+        score = computer.get_total_score()  # Getting score from the computer
+        gameIsBeingPlayed = True
         options = {1: "toss", 2: "stay"}
-        tossAmount = computer.diffuculty()
-        while (0 < tossAmount):
-            print("Computers turn, stay or toss? ")
-            choice = options.get(tossAmount)
+        while (gameIsBeingPlayed):
+            print(computer.getName() + " you currently have " + str(score) + " point(s)")
+            pick = random.randint(1, 2)
+            choice = options.get(pick)
+            if (choice == "toss"):
+                dieValue = computer.throwdice(dice)
+                print(computer.getName() + " got a " + str(dieValue))
+                if (dieValue != 1):
+                    score += dieValue
+                    gameIsBeingPlayed = self.checkIfWinner(score)
+                    continue
+                else:
+                    print("Oh you got a " + str(dieValue) + " better luck next time\n")
+                    gameIsBeingPlayed = False
+                    return True
+
+            elif (choice == "stay"):
+                computer.set_total_score(score)
+                currentPoints = computer.get_total_score()
+                print(computer.getName() + " stayed and now have " + str(currentPoints) + " point(s)\n")
+                gameIsBeingPlayed = False
+                return True
+
+            else:
+                print("Invalid option!")  # Can make this print in red
+        return False
 
     def checkIfWinner(self, score):
         if (score >= 100):
