@@ -18,14 +18,15 @@ class Game:
         print("Press 3 if you want to see the rules for the game")
 
     def startGame(self):
-        self.display()
         while (True):
+            self.display()
+
             try:
                 choice = int(input("Choice: "))
             except ValueError:
                 print("Invalid input")
                 continue
-                
+
             if (choice == 1):
                 player1Name = input("What is player1's name? ")
                 player1 = Player.player(player1Name)
@@ -36,6 +37,15 @@ class Game:
                     playing = self.playerAgainstPlayer(player1)
                     if (playing is True):
                         playing = self.playerAgainstPlayer(player2)
+
+            elif (choice == 3):
+                print("""\nEach turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
+
+If the player rolls a 1, they score nothing and it becomes the next player's turn.
+If the player rolls any other number, it is added to their turn total and the player's turn continues.
+If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
+The first player to score 100 or more points wins\n""")
+
             else:
                 print("Invalid input")
 
