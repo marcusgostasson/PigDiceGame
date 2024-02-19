@@ -24,5 +24,3 @@ class Player():
         dice_random_number = dice.get_random_number()
         self.set_tossed_amount()
         return dice_random_number
-
-# Detta är en kommentar
