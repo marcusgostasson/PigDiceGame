@@ -25,6 +25,5 @@ class Test_Game(unittest.TestCase):
         exp = the_game.low_number <= res <= the_game.high_number
         self.assertTrue(exp)
 
-
 if __name__ == "__main__":
     unittest.main()
