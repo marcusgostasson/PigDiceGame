@@ -4,7 +4,7 @@
 """Unit testing."""
 
 import unittest
-from PigDiceGame import game
+from PigDiceGame import Game, Player, Dice, Computer, Histogram, HighScore
 
 
 class TestGameClass(unittest.TestCase):
@@ -12,7 +12,7 @@ class TestGameClass(unittest.TestCase):
 
     def test_init_default_object(self):
         """Instantiate an object and check its properties."""
-        res = game.Game()
+        res = Game.Game()
         exp = game.Game
         self.assertIsInstance(res, exp)
 
@@ -25,6 +25,13 @@ class TestGameClass(unittest.TestCase):
         exp = the_game.low_number <= res <= the_game.high_number
         self.assertTrue(exp)
 
+    def test_throwdice(self):
+        """Test if we get a random number between 1-6."""
+        player = Player.Player()
+
+        res = player.throwdice()
+        exp = 1 <= res <= 6
+        self.assertTrue(res, exp)
 
 if __name__ == "__main__":
     unittest.main()

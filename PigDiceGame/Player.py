@@ -1,7 +1,7 @@
 import dice
 
 
-class player:
+class Player():
     def __init__(self, name):
         self.name = name
         self.total_score = 0
@@ -20,6 +20,7 @@ class player:
         self.tossed_amount += 1
 
     def throwdice(self, dice):
+        """ Throw the dice and add to tossed amount """
         dice_random_number = dice.get_random_number()
         self.set_tossed_amount()
         return dice_random_number
