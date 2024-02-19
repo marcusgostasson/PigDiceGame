@@ -1,4 +1,7 @@
-class player:
+import Dice
+
+
+class Player():
     def __init__(self, name):
         self.name = name
         self.total_score = 0
@@ -19,9 +22,8 @@ class player:
     def set_tossed_amount(self):
         self.tossed_amount += 1
 
-    def throwdice(self, dice):
+    def throwdice(self, Dice):
+        """ Throw the dice and add to tossed amount """
         dice_random_number = dice.get_random_number()
         self.set_tossed_amount()
         return dice_random_number
-
-# Detta är en kommentar

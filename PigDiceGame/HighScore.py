@@ -12,9 +12,9 @@ class Highscore:
         
         self.highscores[player_name] = counter
         
-    def apply_score(self, name, score):
+    def apply_score(self, player_name, score):
         
-        self.highscores[name] = score
+        self.highscores[player_name] = score
         
     def seperate_highscores(self):
         exsisting_highscores = {}
@@ -23,7 +23,7 @@ class Highscore:
                 for line in file:
                     if line.strip():
                         name, score = line.split(':')
-                        exsisting_highscores.setdefault(name.strip(),[]).append(int(score.strip()))
+                        exsisting_highscores.setdefault(name.strip(), []).append(int(score.strip()))
         except FileNotFoundError:
             print("File error")
         

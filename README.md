@@ -1,4 +1,4 @@
-🐷 Pig (dice game)
+Pig (dice game)  🐷
 ==========================
 
 "Pig" är ett enkelt men underhållande tärningsspel som är perfekt för att passera tiden med vänner eller familj. Spelet kräver endast två tärningar och en önskan att ha kul. För att spela, kastar varje spelare tärningarna i tur och ordning och summerar poängen. Målet är att nå 100 poäng för att vinna, men det finns en hake - om du kastar en etta förlorar du alla poäng du samlade in på den rundan! Det är den spännande balansen mellan att chansa och undvika risken som gör "Pig" till en riktig favorit bland både unga och gamla. Så samla ihop dina vänner, ta fram tärningarna och se vem som kan bli den mästare på att undvika grisens otur!
@@ -14,8 +14,7 @@ Get going
 
 This is how you can work with the development environment of this Python project.
 
-
-<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p> Check python version
+Check python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p> 
 --------------------------
 
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
@@ -37,7 +36,7 @@ Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
 
 
 
-![4518857_python_icon](https://github.com/Brantin10/Assignment2/assets/143846336/b6ed61b6-aca0-46b4-a62f-b97b334ecf75) Python virtual environment
+Python virtual environment <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p>
 --------------------------
 
 Install a Python virtual environment and activate it.
@@ -59,7 +58,7 @@ Read more on [Python venv](https://docs.python.org/3/library/venv.html).
 
 
 
-Install the dependencies
+Install the dependencies   💾
 --------------------------
 
 Install the PIP packages that are dependencies to the project and/or the development environment. The dependencies are documented in the `requirements.txt`.
@@ -78,7 +77,7 @@ Read more on [Python PIP](https://pypi.org/project/pip/).
 
 
 
-Run the code
+Run the code   🏃
 --------------------------
 
 The example program can be started like this.
@@ -92,7 +91,7 @@ All code is stored below the directory `guess/`.
 
 
 
-Run the validators
+Run the validators   🏃
 --------------------------
 
 You can run the static code validators like this. They check the sourcecode and exclude the testcode.
@@ -115,7 +114,7 @@ Read more on:
 
 
 
-Codestyle with black
+Codestyle with black ⚫
 --------------------------
 
 You can unify the codestyle using black. Running black will change your source code to have a codestyle according to black codestyle.
@@ -130,7 +129,7 @@ Read more on [black](https://pypi.org/project/black/).
 
 
 
-Run the unittests
+Run the unittests   🏃
 --------------------------
 
 You can run the unittests like this. The testfiles are stored in the `test/` directory.
@@ -159,7 +158,7 @@ Read more on:
 
 
 
-Run parts of the testsuite
+Run parts of the testsuite   🏃
 --------------------------
 
 You can also run parts of the testsuite, for examples files or methods in files.
@@ -180,7 +179,7 @@ python -m unittest test.test_game.TestGameClass.test_init_default_object
 
 
 
-Remove generated files
+Remove generated files   🗑️
 --------------------------
 
 You can remove all generated files by this.

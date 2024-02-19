@@ -25,6 +25,13 @@ class Test_Game(unittest.TestCase):
         exp = the_game.low_number <= res <= the_game.high_number
         self.assertTrue(exp)
 
+    def test_throwdice(self):
+        """Test if we get a random number between 1-6."""
+        player = Player.Player()
+
+        res = player.throwdice()
+        exp = 1 <= res <= 6
+        self.assertTrue(res, exp)
 
 if __name__ == "__main__":
     unittest.main()
