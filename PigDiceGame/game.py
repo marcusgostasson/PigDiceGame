@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 
-import player
-import computer
-import dice
+from . import player
+from . import computer
+from . import dice
 import random
 # Did we put a licence when we created the repository?
 
@@ -133,7 +133,7 @@ The first player to score 100 or more points wins\n""")
         return False
 
     def checkIfWinner(self, score):
-        if (score >= 20):
+        if (score >= 100):
             print("You got over 100 and won!")  # can make this green
             return False
         else:
