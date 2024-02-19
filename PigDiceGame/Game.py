@@ -6,6 +6,7 @@ import Player
 import Computer
 import Dice
 import random
+# Did we put a licence when we created the repository?
 
 
 class Game:
@@ -98,13 +99,16 @@ The first player to score 100 or more points wins\n""")
 
     def computerPlaying(self, computer):
         dice = Dice.Dice()
+        difficulty = computer.getDifficulty()
         score = computer.get_total_score()  # Getting score from the computer
         gameIsBeingPlayed = True
-        options = {1: "toss", 2: "stay"}
+        options = ["toss", "stay"]
+        tossCounter = 0 # something with the first toss is 100% toss then i change weight based on how many toss
         while (gameIsBeingPlayed):
             print(computer.getName() + " you currently have " + str(score) + " point(s)")
-            pick = random.randint(1, 2)
-            choice = options.get(pick)
+            pick = random.choices(options, weights=difficulty) # Problem can be with logic to stay at 20 because now the logic is weight based
+
+            choice = pick
             if (choice == "toss"):
                 dieValue = computer.throwdice(dice)
                 print(computer.getName() + " got a " + str(dieValue))

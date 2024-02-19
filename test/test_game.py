@@ -4,21 +4,21 @@
 """Unit testing."""
 
 import unittest
-from PigDiceGame import game
+from PigDiceGame import Game
 
 
-class TestGameClass(unittest.TestCase):
+class Test_Game(unittest.TestCase):
     """Test the class."""
 
     def test_init_default_object(self):
         """Instantiate an object and check its properties."""
-        res = game.Game()
-        exp = game.Game
+        res = Game.Game()
+        exp = Game.Game
         self.assertIsInstance(res, exp)
 
     def test_start_the_game(self):
         """Roll a dice and check value is in bounds."""
-        the_game = game.Game()
+        the_game = Game.Game()
         the_game.start()
 
         res = the_game.the_number
