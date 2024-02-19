@@ -1,4 +1,4 @@
-import Dice
+import dice
 
 
 class Player():
@@ -22,7 +22,7 @@ class Player():
     def set_tossed_amount(self):
         self.tossed_amount += 1
 
-    def throwdice(self, Dice):
+    def throwdice(self, dice):
         """ Throw the dice and add to tossed amount """
         dice_random_number = dice.get_random_number()
         self.set_tossed_amount()
