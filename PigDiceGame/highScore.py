@@ -2,18 +2,23 @@ class Highscore:
     def __init__(self):
         self.highscores = {}
         
+        try:
+            open('highscore_list.txt', 'x').close()
+        except FileExistsError:
+            pass
+          
     def round_over(self, player_name, counter):
-        
-        if not isinstance(player_name, str):
+         
+     if not isinstance(player_name, str):
             raise ValueError("Player name must be a string(abc)")
-        
+
         if counter <0:
             raise ValueError("Error counting score")
-        
+    
         self.highscores[player_name] = counter
         
     def apply_score(self, player_name, score):
-        
+      
         self.highscores[player_name] = score
         
     def seperate_highscores(self):
