@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 
-import Player
-import Computer
-import Dice
+import player
+import computer
+import dice
 import random
 # Did we put a licence when we created the repository?
 
@@ -31,9 +31,9 @@ class Game:
 
             if (choice == 1):
                 player1Name = input("What is player1's name? ")
-                player1 = Player.player(player1Name)
+                player1 = player.Player(player1Name)
                 player2Name = input("What is player2's name? ")
-                player2 = Player.player(player2Name)
+                player2 = player.Player(player2Name)
                 playing = True
                 while (playing):
                     playing = self.playerPlaying(player1)
@@ -41,16 +41,16 @@ class Game:
                         playing = self.playerPlaying(player2)
             elif (choice == 2):
                 playerName = input("What is your name? ")
-                player = Player.player(playerName)
-                choice = int(input("""What difficulty do you want?
+                player1 = player.Player(playerName)
+                difficulty = int(input("""What difficulty do you want?
 1. Playing against a new born baby
 2. Playing against my uncle that is pretty good with numbers
 3. Playing against Pelle, if you know you know
 4. Completly random no logic"""))
-                computer = Computer.computer(choice)
+                computer = computer.Computer(difficulty)
                 playing = True
                 while (playing):
-                    playing = self.playerPlaying(player)
+                    playing = self.playerPlaying(player1)
                     if (playing is True):
                         playing = self.computerPlaying(computer)
 
@@ -66,7 +66,7 @@ The first player to score 100 or more points wins\n""")
                 print("Invalid input")
 
     def playerPlaying(self, currentPlayer):
-        dice = Dice.Dice()
+        die = dice.Dice()
         score = currentPlayer.get_total_score()  # Getting score from the player
         gameIsBeingPlayed = True
         while (gameIsBeingPlayed):
@@ -75,7 +75,7 @@ The first player to score 100 or more points wins\n""")
             choice = choice.lower().strip()
 
             if (choice == "toss"):
-                dieValue = currentPlayer.throwdice(dice)
+                dieValue = currentPlayer.throwdice(die)
                 print(currentPlayer.getName() + " got a " + str(dieValue))
                 if (dieValue != 1):
                     score += dieValue
@@ -98,7 +98,7 @@ The first player to score 100 or more points wins\n""")
         return False
 
     def computerPlaying(self, computer):
-        dice = Dice.Dice()
+        die = dice.Dice()
         difficulty = computer.getDifficulty()
         score = computer.get_total_score()  # Getting score from the computer
         gameIsBeingPlayed = True
@@ -110,7 +110,7 @@ The first player to score 100 or more points wins\n""")
 
             choice = pick
             if (choice == "toss"):
-                dieValue = computer.throwdice(dice)
+                dieValue = computer.throwdice(die)
                 print(computer.getName() + " got a " + str(dieValue))
                 if (dieValue != 1):
                     score += dieValue
@@ -133,7 +133,7 @@ The first player to score 100 or more points wins\n""")
         return False
 
     def checkIfWinner(self, score):
-        if (score >= 100):
+        if (score >= 20):
             print("You got over 100 and won!")  # can make this green
             return False
         else:

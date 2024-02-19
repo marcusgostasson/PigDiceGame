@@ -15,14 +15,14 @@ You have 5 guesses. Then you loose.
 """
 
 #import shell
-import Game
+import game
 
 
 def main():
     """Execute the main program."""
     #print(__doc__)
     #shell.Shell().cmdloop()
-    Game.Game().startGame()
+    game.Game().startGame()
 
 
 if __name__ == "__main__":

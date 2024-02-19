@@ -7,7 +7,7 @@ import unittest
 from PigDiceGame import Game
 
 
-class Test_Game(unittest.TestCase):
+class Test_game:
     """Test the class."""
 
     def test_init_default_object(self):
@@ -25,5 +25,5 @@ class Test_Game(unittest.TestCase):
         exp = the_game.low_number <= res <= the_game.high_number
         self.assertTrue(exp)
 
-if __name__ == "__main__":
-    unittest.main()
+
+Test_game()
