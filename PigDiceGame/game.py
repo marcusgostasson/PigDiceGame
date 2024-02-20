@@ -27,7 +27,7 @@ Press 4 if you want to quit""")
         except ValueError:
             return None
 
-    def startGame(self):
+    def start_game(self):
         while (True):
             self.display()
 
@@ -42,12 +42,12 @@ Press 4 if you want to quit""")
                 self.players[player2Name] = player2.get_total_score()
                 playing = True
                 while (playing):
-                    playing = self.playerPlaying(player1)
+                    playing = self.player_playing(player1)
                     if (playing is False and player1.get_total_score() < 100):
                         print(player1.get_name() + " surrendered and " + player2.get_name() + " won")
                     elif (playing is True):
-                        playing = self.playerPlaying(player2)
-                        if (playing is False and player1.get_total_score() < 100):
+                        playing = self.player_playing(player2)
+                        if (playing is False and player2.get_total_score() < 100):
                             print(player2.get_name() + " surrendered and " + player1.get_name() + " won")
             elif (choice == 2):
                 playerName = input("What is your name? ")
@@ -60,9 +60,9 @@ Press 4 if you want to quit""")
                 computer = computer.Computer(difficulty)
                 playing = True
                 while (playing):
-                    playing = self.playerPlaying(player1)
+                    playing = self.player_playing(player1)
                     if (playing is True):
-                        playing = self.computerPlaying(computer)
+                        playing = self.computer_playing(computer)
 
             elif (choice == 3):
                 print("""\nEach turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
@@ -78,7 +78,7 @@ The first player to score 100 or more points wins\n""")
             else:
                 print("Invalid input")
 
-    def playerPlaying(self, currentPlayer):
+    def player_playing(self, currentPlayer):
         die = dice.Dice()
         score = currentPlayer.get_total_score()  # Getting score from the player
         gameIsBeingPlayed = True
@@ -91,7 +91,7 @@ The first player to score 100 or more points wins\n""")
                 print(currentPlayer.get_name() + " got a " + str(dieValue))
                 if (dieValue != 1):
                     score += dieValue
-                    gameIsBeingPlayed = self.checkIfWinner(score)
+                    gameIsBeingPlayed = self.check_if_winner(score, currentPlayer)
                     continue
                 else:
                     print("Oh you got a " + str(dieValue) + " better luck next time\n")
@@ -124,7 +124,7 @@ The first player to score 100 or more points wins\n""")
                 print("Invalid option!")  # Can make this print in red
         return False
 
-    def computerPlaying(self, computer):
+    def computer_playing(self, computer):
         die = dice.Dice()
         difficulty = computer.getDifficulty()
         score = computer.get_total_score()  # Getting score from the computer
@@ -141,7 +141,7 @@ The first player to score 100 or more points wins\n""")
                 print(computer.get_name() + " got a " + str(dieValue))
                 if (dieValue != 1):
                     score += dieValue
-                    gameIsBeingPlayed = self.checkIfWinner(score)
+                    gameIsBeingPlayed = self.check_if_winner(score)
                     continue
                 else:
                     print("Oh you got a " + str(dieValue) + " better luck next time\n")
@@ -159,9 +159,10 @@ The first player to score 100 or more points wins\n""")
                 print("Invalid option!")  # Can make this print in red
         return False
 
-    def checkIfWinner(self, score):
+    def check_if_winner(self, score, currentplayer):
         if (score >= 100):
-            print("You got over 100 and won!")  # can make this green
+            print("You won in " + str(currentplayer.get_tossed_amount()) + " throws!")  # can make this green
+            currentplayer.set_total_score(score)
             return False
         else:
             return True
