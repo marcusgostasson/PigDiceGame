@@ -1,7 +1,30 @@
 Pig (Dice game)  🐷
 ==========================
 
-"Pig" är ett enkelt men underhållande tärningsspel som är perfekt för att passera tiden med vänner eller familj. Spelet kräver endast två tärningar och en önskan att ha kul. För att spela, kastar varje spelare tärningarna i tur och ordning och summerar poängen. Målet är att nå 100 poäng för att vinna, men det finns en hake - om du kastar en etta förlorar du alla poäng du samlade in på den rundan! Det är den spännande balansen mellan att chansa och undvika risken som gör "Pig" till en riktig favorit bland både unga och gamla. Så samla ihop dina vänner, ta fram tärningarna och se vem som kan bli den mästare på att undvika grisens otur!
+Pig, även känt som Gris, är ett roligt och enkelt tärningsspel som är perfekt för att spela med familj och vänner. Spelet kräver bara två tärningar och en stark aptit för risktagande! Här är en grundläggande beskrivning av hur det fungerar:
+
+**Spelare:** Två personer mot varandra.
+
+**Målet:** Att nå först till 100 poäng.
+
+**Regler:**
+
+1. Spelaren kastar de två tärningarna.
+2. Om spelaren får en etta på någon av tärningarna förlorar de alla poäng som samlats in under rundan och det blir nästa spelares tur.
+3. Om spelaren inte får en etta, adderas summan av de två tärningarna till deras poäng för rundan.
+4. Spelaren kan välja att antingen kasta tärningarna igen för att öka sin poäng för rundan, eller stanna och lägga till poängen till sin totala poäng för spelet.
+5. Om spelaren bestämmer sig för att stanna, övergår kontrollen till nästa spelare.
+6. Första spelaren som når den förutbestämda poängsumman vinner spelet.
+
+**Strategi:**
+
+- Risken att fortsätta kasta tärningarna ökar chansen att få en etta och förlora alla poäng för rundan.
+- Det är viktigt att avväga risken och belöningen när man bestämmer sig för att fortsätta eller stanna.
+- En vanlig strategi är att samla poäng långsamt genom att stanna vid varje säker summa för att undvika att förlora allt i en enda tur.
+
+Pig är ett underhållande spel som kombinerar tur med strategi och är perfekt för alla åldrar!
+
+Lycka till ! 🎲🎲😃
 
 [![Pipeline status](https://gitlab.com/mikael-roos/python-template/badges/main/pipeline.svg)](https://gitlab.com/mikael-roos/python-template/-/pipelines)
 [![Documentation Status](https://readthedocs.org/projects/a-python-project-template-codestyle-and-linters-included/badge/?version=latest)](https://a-python-project-template-codestyle-and-linters-included.readthedocs.io/en/latest/?badge=latest)
