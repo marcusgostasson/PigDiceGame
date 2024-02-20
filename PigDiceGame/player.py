@@ -1,3 +1,6 @@
+"""Player Class"""
+
+
 class Player:
     """Class to represent a player"""
 
