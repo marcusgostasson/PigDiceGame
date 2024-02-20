@@ -1,8 +1,12 @@
+"""Computer intelligence"""
+
 import random
 
 
 class Computer:
+    """Class for computer"""
     def __init__(self):
+        """Constructor for computer's sum"""
         self.sum = 0
 
     def hard_difficulty(self):
