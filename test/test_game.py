@@ -20,9 +20,9 @@ class Test_game(unittest.TestCase):
         res = game.Game()
         self.assertIsInstance(res, game.Game)
 
-    def test_check_Winner(self):
+    def test_check_winner(self):
         g = game.Game()
-        exp = g.checkIfWinner(100)
+        exp = g.check_if_winner(100)
         res = False
         self.assertEqual(exp, res)
 
