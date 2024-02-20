@@ -14,20 +14,23 @@ class Game:
         pass
 
     def display(self):
-        print("Hello and welcome to Pig Dice Game\n")
-        print("Press 1 if you want to play with a friend")
-        print("Press 2 if you want to play vs the computer")
-        print("Press 3 if you want to see the rules for the game")
+        print("""Hello and welcome to Pig Dice Game
+Press 1 if you want to play with a friend
+Press 2 if you want to play vs the computer
+Press 3 if you want to see the rules for the game""")
+
+    def get_choice_from_user(self, prompting):
+        try:
+            choice = input(prompting)
+            return int(choice)
+        except ValueError:
+            return None
 
     def startGame(self):
         while (True):
             self.display()
 
-            try:
-                choice = int(input("Choice: "))
-            except ValueError:
-                print("Invalid input")
-                continue
+            choice = self.get_choice_from_user("Choice: ")
 
             if (choice == 1):
                 player1Name = input("What is player1's name? ")
