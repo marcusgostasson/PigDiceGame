@@ -7,15 +7,15 @@ class Highscore:
         except FileExistsError:
             pass
           
-    def round_over(self, player_name, counter):
+    def round_over(self, player_name, score):
          
      if not isinstance(player_name, str):
             raise ValueError("Player name must be a string(abc)")
 
-        if counter <0:
+        if score <0:
             raise ValueError("Error counting score")
     
-        self.highscores[player_name] = counter
+        self.highscores[player_name] = score
         
     def apply_score(self, player_name, score):
       
@@ -43,12 +43,5 @@ class Highscore:
                 for score in scores:
                     file.write(f"{name} : {score}\n")
                     
-                    
-
-highscore = Highscore()
-
-highscore.round_over()
-
-highscore.seperate_highscores()
         
         

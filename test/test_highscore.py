@@ -1,5 +1,6 @@
 import unittest
 import os
+
 from PigDiceGame import highScore
 
 
@@ -7,11 +8,11 @@ class test_highScore(unittest.TestCase):
     """Initiate highscore"""
     
     def setUp(self):
-        self.highscores = highScore()
+        self.highscores = Highscore()
         self.test_file_path = "test_highscore_list.txt"
         
     def test_file_reset(self):
-        if os.path.exist(self.test_file_path):
+        if os.path.exists(self.test_file_path):
             os.remove(self.test_file_path)
             
     def test_content_written_to_file(self):
