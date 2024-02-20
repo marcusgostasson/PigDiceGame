@@ -1,28 +1,28 @@
 Pig (Dice game)  🐷
 ==========================
 
-Pig, även känt som Gris, är ett roligt och enkelt tärningsspel som är perfekt för att spela med familj och vänner. Spelet kräver bara två tärningar och en stark aptit för risktagande! Här är en grundläggande beskrivning av hur det fungerar:
+Pig, is a fun and simple dice game perfect for playing with family and friends. The game requires only two dice and a strong appetite for risk-taking! Here is a basic description of how it works:
 
-**Spelare:** Två personer mot varandra.
+**Player:** Two people against each other.
 
-**Målet:** Att nå först till 100 poäng.
+**The goal:** To reach 100 points first.
 
-**Regler:**
+**Rules:**
 
-1. Spelaren kastar de två tärningarna.
-2. Om spelaren får en etta på någon av tärningarna förlorar de alla poäng som samlats in under rundan och det blir nästa spelares tur.
-3. Om spelaren inte får en etta, adderas summan av de två tärningarna till deras poäng för rundan.
-4. Spelaren kan välja att antingen kasta tärningarna igen för att öka sin poäng för rundan, eller stanna och lägga till poängen till sin totala poäng för spelet.
-5. Om spelaren bestämmer sig för att stanna, övergår kontrollen till nästa spelare.
-6. Första spelaren som nå 100 vinner spelet.
+1. The player rolls the two dice.
+2. If the player rolls a one on any of the dice, they lose all points collected during the round and it is the next player's turn.
+3. If the player does not roll a one, the sum of the two dice is added to their score for the round.
+4. The player can choose to either roll the dice again to increase their score for the round, or stay and add the score to their total score for the game.
+5. If the player decides to stay, control passes to the next player.
+6. First player to reach 100 points wins the game.
 
-**Strategi:**
+**Strategy:**
 
-- Risken att fortsätta kasta tärningarna ökar chansen att få en etta och förlora alla poäng för rundan.
-- Det är viktigt att avväga risken och belöningen när man bestämmer sig för att fortsätta eller stanna.
-- En vanlig strategi är att samla poäng långsamt genom att stanna vid varje säker summa för att undvika att förlora allt i en enda tur.
+- The risk of continuing to roll the dice increases the chance of getting a one and losing all points for the round.
+- It is important to weigh the risk and reward when deciding to continue or stay.
+- A common strategy is to accumulate points slowly by stopping at each safe sum to avoid losing everything in a single turn.
 
-Lycka till nu kör vi! 🎲🎲😃
+Good luck let´s go! 🎲🎲😃
 
 [![Pipeline status](https://gitlab.com/mikael-roos/python-template/badges/main/pipeline.svg)](https://gitlab.com/mikael-roos/python-template/-/pipelines)
 [![Documentation Status](https://readthedocs.org/projects/a-python-project-template-codestyle-and-linters-included/badge/?version=latest)](https://a-python-project-template-codestyle-and-linters-included.readthedocs.io/en/latest/?badge=latest)
