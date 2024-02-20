@@ -1,7 +1,10 @@
 """Testclass for Player"""
 import unittest
+import sys
+import os
 from PigDiceGame.player import Player
 from PigDiceGame.dice import Dice
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
 class TestPlayer(unittest.TestCase):
