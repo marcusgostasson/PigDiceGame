@@ -1,3 +1,5 @@
+"""Players testing."""
+
 import unittest
 from PigDiceGame import Player
 
@@ -25,6 +27,7 @@ class test_Player(unittest.TestCase):
         res = player.throwdice()
         exp = 1 <= res <= 6
         self.assertTrue(res, exp)
-        
+
+
 if __name__ == "__main__":
     unittest.main()
