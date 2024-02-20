@@ -11,13 +11,14 @@ import random
 
 class Game:
     def __init__(self):
-        pass
+        self.players = {}
 
     def display(self):
         print("""Hello and welcome to Pig Dice Game
 Press 1 if you want to play with a friend
 Press 2 if you want to play vs the computer
-Press 3 if you want to see the rules for the game""")
+Press 3 if you want to see the rules for the game
+Press 4 if you want to quit""")
 
     def get_choice_from_user(self, prompting):
         try:
@@ -35,13 +36,19 @@ Press 3 if you want to see the rules for the game""")
             if (choice == 1):
                 player1Name = input("What is player1's name? ")
                 player1 = player.Player(player1Name)
+                self.players[player1Name] = player1.get_total_score()
                 player2Name = input("What is player2's name? ")
                 player2 = player.Player(player2Name)
+                self.players[player2Name] = player2.get_total_score()
                 playing = True
                 while (playing):
                     playing = self.playerPlaying(player1)
-                    if (playing is True):
+                    if (playing is False and player1.get_total_score() < 100):
+                        print(player1.get_name() + " surrendered and " + player2.get_name() + " won")
+                    elif (playing is True):
                         playing = self.playerPlaying(player2)
+                        if (playing is False and player1.get_total_score() < 100):
+                            print(player2.get_name() + " surrendered and " + player1.get_name() + " won")
             elif (choice == 2):
                 playerName = input("What is your name? ")
                 player1 = player.Player(playerName)
@@ -65,6 +72,9 @@ If the player rolls any other number, it is added to their turn total and the pl
 If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
 The first player to score 100 or more points wins\n""")
 
+            elif (choice == 4):
+                break
+
             else:
                 print("Invalid input")
 
@@ -73,13 +83,12 @@ The first player to score 100 or more points wins\n""")
         score = currentPlayer.get_total_score()  # Getting score from the player
         gameIsBeingPlayed = True
         while (gameIsBeingPlayed):
-            print(currentPlayer.getName() + " you currently have " + str(score) + " point(s)")
-            choice = input(currentPlayer.getName() + " do you want to toss or stay? ")
-            choice = choice.lower().strip()
+            print(currentPlayer.get_name() + " you currently have " + str(score) + " point(s)")
+            choice = self.get_choice_from_user(currentPlayer.get_name() + " what do you want to do?:\nPress 1 to toss\nPress 2 to stay\nPress 3 to change name\nPress 4 to surrender\nChoice: ")
 
-            if (choice == "toss"):
-                dieValue = currentPlayer.throwdice(die)
-                print(currentPlayer.getName() + " got a " + str(dieValue))
+            if (choice == 1):
+                dieValue = currentPlayer.throw_dice(die)
+                print(currentPlayer.get_name() + " got a " + str(dieValue))
                 if (dieValue != 1):
                     score += dieValue
                     gameIsBeingPlayed = self.checkIfWinner(score)
@@ -89,12 +98,27 @@ The first player to score 100 or more points wins\n""")
                     gameIsBeingPlayed = False
                     return True
 
-            elif (choice == "stay"):
+            elif (choice == 2):
                 currentPlayer.set_total_score(score)
+                self.players[currentPlayer.get_name()] = currentPlayer.get_total_score()
                 currentPoints = currentPlayer.get_total_score()
-                print(currentPlayer.getName() + " stayed and now have " + str(currentPoints) + " point(s)\n")
+                print(currentPlayer.get_name() + " stayed and now have " + str(currentPoints) + " point(s)\n")
                 gameIsBeingPlayed = False
                 return True
+
+            elif (choice == 3):
+                old_name = currentPlayer.get_name()
+                new_name = input("What name do you want instead? ")
+                currentPlayer.set_name(new_name)
+
+                new_key = new_name
+                value = self.players.pop(old_name)
+                self.players[new_key] = value
+
+                print("Your new name is now " + currentPlayer.get_name())
+
+            elif (choice == 4):
+                return False
 
             else:
                 print("Invalid option!")  # Can make this print in red
@@ -108,13 +132,13 @@ The first player to score 100 or more points wins\n""")
         options = ["toss", "stay"]
         tossCounter = 0 # something with the first toss is 100% toss then i change weight based on how many toss
         while (gameIsBeingPlayed):
-            print(computer.getName() + " you currently have " + str(score) + " point(s)")
+            print(computer.get_name() + " you currently have " + str(score) + " point(s)")
             pick = random.choices(options, weights=difficulty) # Problem can be with logic to stay at 20 because now the logic is weight based
 
             choice = pick
             if (choice == "toss"):
-                dieValue = computer.throwdice(die)
-                print(computer.getName() + " got a " + str(dieValue))
+                dieValue = computer.throw_dice(die)
+                print(computer.get_name() + " got a " + str(dieValue))
                 if (dieValue != 1):
                     score += dieValue
                     gameIsBeingPlayed = self.checkIfWinner(score)
@@ -127,7 +151,7 @@ The first player to score 100 or more points wins\n""")
             elif (choice == "stay"):
                 computer.set_total_score(score)
                 currentPoints = computer.get_total_score()
-                print(computer.getName() + " stayed and now have " + str(currentPoints) + " point(s)\n")
+                print(computer.get_name() + " stayed and now have " + str(currentPoints) + " point(s)\n")
                 gameIsBeingPlayed = False
                 return True
 
@@ -141,3 +165,9 @@ The first player to score 100 or more points wins\n""")
             return False
         else:
             return True
+
+    def get_player_score(self, player_name):
+        if (player_name in self.players):
+            return self.players[player_name]
+        else:
+            return None

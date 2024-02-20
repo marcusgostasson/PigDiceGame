@@ -1,8 +1,3 @@
-"""Player class"""
-
-import dice
-
-
 class Player:
     """Class to represent a player"""
 
@@ -14,6 +9,10 @@ class Player:
     def get_name(self):
         """Getter for player's name"""
         return self.name
+
+    def set_name(self, name):
+        """Setter to set a new name for the player"""
+        self.name = name
 
     def get_total_score(self):
         """Getter for player's total score"""
