@@ -9,7 +9,7 @@ import os
 import io
 from unittest.mock import patch
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from PigDiceGame import game
+from PigDiceGame import game, player
 
 
 class Test_game(unittest.TestCase):
@@ -22,11 +22,12 @@ class Test_game(unittest.TestCase):
 
     def test_check_winner(self):
         g = game.Game()
-        exp = g.check_if_winner(100)
+        p = player.Player("Bob")
+        exp = g.check_if_winner(100, p)
         res = False
         self.assertEqual(exp, res)
 
-        exp = g.checkIfWinner(50)
+        exp = g.check_if_winner(50, p)
         res = True
         self.assertEqual(exp, res)
 
@@ -44,7 +45,7 @@ class Test_game(unittest.TestCase):
     def test_start_game_with_choice_one_then_stay(self, mock_input, mock_choices):
         """Tests to start the game and let player1 roll then stay to see that the score is updated"""
         g = game.Game()
-        g.startGame()
+        g.start_game()
 
         player_score_before_toss = g.get_player_score("Bob")
         self.assertGreater(player_score_before_toss, 0)
