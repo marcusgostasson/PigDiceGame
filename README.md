@@ -27,7 +27,7 @@ Good luck, let´s go! 🎲🎲😃
 [![Pipeline status](https://gitlab.com/mikael-roos/python-template/badges/main/pipeline.svg)](https://gitlab.com/mikael-roos/python-template/-/pipelines)
 [![Documentation Status](https://readthedocs.org/projects/a-python-project-template-codestyle-and-linters-included/badge/?version=latest)](https://a-python-project-template-codestyle-and-linters-included.readthedocs.io/en/latest/?badge=latest)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Brantin10/Assignment2/total?color=orange)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Brantin10/https%3A%2F%2Fgithub.com%2FBrantin10%2FAssignment2%2Fblob%2Fmain%2FREADME.md/total?color=orange)
 
 
 
