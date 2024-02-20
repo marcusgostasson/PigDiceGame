@@ -14,7 +14,7 @@ Pig, även känt som Gris, är ett roligt och enkelt tärningsspel som är perfe
 3. Om spelaren inte får en etta, adderas summan av de två tärningarna till deras poäng för rundan.
 4. Spelaren kan välja att antingen kasta tärningarna igen för att öka sin poäng för rundan, eller stanna och lägga till poängen till sin totala poäng för spelet.
 5. Om spelaren bestämmer sig för att stanna, övergår kontrollen till nästa spelare.
-6. Första spelaren som når den förutbestämda poängsumman vinner spelet.
+6. Första spelaren som nå 100 vinner spelet.
 
 **Strategi:**
 
@@ -22,9 +22,7 @@ Pig, även känt som Gris, är ett roligt och enkelt tärningsspel som är perfe
 - Det är viktigt att avväga risken och belöningen när man bestämmer sig för att fortsätta eller stanna.
 - En vanlig strategi är att samla poäng långsamt genom att stanna vid varje säker summa för att undvika att förlora allt i en enda tur.
 
-Pig är ett underhållande spel som kombinerar tur med strategi och är perfekt för alla åldrar!
-
-Lycka till ! 🎲🎲😃
+Lycka till nu kör vi! 🎲🎲😃
 
 [![Pipeline status](https://gitlab.com/mikael-roos/python-template/badges/main/pipeline.svg)](https://gitlab.com/mikael-roos/python-template/-/pipelines)
 [![Documentation Status](https://readthedocs.org/projects/a-python-project-template-codestyle-and-linters-included/badge/?version=latest)](https://a-python-project-template-codestyle-and-linters-included.readthedocs.io/en/latest/?badge=latest)
