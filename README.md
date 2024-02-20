@@ -1,4 +1,4 @@
-Pig (dice game)  🐷
+Pig (Dice game)  🐷
 ==========================
 
 "Pig" är ett enkelt men underhållande tärningsspel som är perfekt för att passera tiden med vänner eller familj. Spelet kräver endast två tärningar och en önskan att ha kul. För att spela, kastar varje spelare tärningarna i tur och ordning och summerar poängen. Målet är att nå 100 poäng för att vinna, men det finns en hake - om du kastar en etta förlorar du alla poäng du samlade in på den rundan! Det är den spännande balansen mellan att chansa och undvika risken som gör "Pig" till en riktig favorit bland både unga och gamla. Så samla ihop dina vänner, ta fram tärningarna och se vem som kan bli den mästare på att undvika grisens otur!
@@ -7,12 +7,6 @@ Pig (dice game)  🐷
 [![Documentation Status](https://readthedocs.org/projects/a-python-project-template-codestyle-and-linters-included/badge/?version=latest)](https://a-python-project-template-codestyle-and-linters-included.readthedocs.io/en/latest/?badge=latest)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-
-
-Get going
---------------------------
-
-This is how you can work with the development environment of this Python project.
 
 Check python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p> 
 --------------------------
@@ -84,10 +78,10 @@ The example program can be started like this.
 
 ```
 # Execute the main program
-python guess/main.py
+python PigDiceGame/main.py
 ```
 
-All code is stored below the directory `guess/`.
+All code is stored below the directory `PigDiceGame/`.
 
 
 
@@ -105,7 +99,7 @@ make pylint
 make lint
 ```
 
-You might need to update the Makefile if you change the name of the source directory currently named `guess/`.
+You might need to update the Makefile if you change the name of the source directory currently named `PigDiceGame/`.
 
 Read more on:
 
