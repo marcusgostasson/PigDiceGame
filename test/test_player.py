@@ -1,33 +1,35 @@
-"""Players testing."""
-
+"""Testclass for Player"""
 import unittest
-from PigDiceGame import Player
+from PigDiceGame.player import Player
+from PigDiceGame.dice import Dice
 
 
-class test_Player(unittest.TestCase):
-    """Test the class."""
+class TestPlayer(unittest.TestCase):
+    """Test the Player class."""
 
     def test_init_default_object(self):
         """Instantiate an object and check its properties."""
-        name = "bob"
+        name = "Bob"
 
-        res = Player.Player(name)
-        exp = Player.Player
+        res = Player(name)
+        exp = Player
         self.assertIsInstance(res, exp)
 
-        playername = res.getName()
-        self.assertEqual(playername, "bob")
+        playername = res.get_name()
+        self.assertEqual(playername, "Bob")
 
-    def test_throwdice(self):
-        """Test if we get a random number between 1-6."""
+    def test_throw_dice_success(self):
+        """
+        Test if throw_dice returns a valid random
+        number and increments tossed amount.
+        """
+        player = Player("Alice")
+        dice = Dice()
 
-        name = "bob"
-        player = Player.Player(name)
-
-        res = player.throwdice()
+        res = player.throw_dice(dice)
         exp = 1 <= res <= 6
         self.assertTrue(res, exp)
-
+        self.assertEqual(player.get_tossed_amount(), 1)
 
 if __name__ == "__main__":
     unittest.main()
