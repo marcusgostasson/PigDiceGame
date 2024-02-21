@@ -24,7 +24,7 @@ Pig, is a fun and simple dice game perfect for playing with family and friends. 
 
 Good luck, let´s go! 🎲🎲😃
 
-![Static Badge](https://img.shields.io/badge/GitHub-github-blue?style=for-the-badge&logo=GitHub)
+https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
 
 
 Check python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p> 
