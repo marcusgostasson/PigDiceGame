@@ -24,7 +24,6 @@ Pig, is a fun and simple dice game perfect for playing with family and friends. 
 
 Good luck, let´s go! 🎲🎲😃
 
-https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
 
 
 Check python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p> 
@@ -61,7 +60,7 @@ make venv
 # Activate on Windows
 . .venv/Scripts/activate
 
-# Activate on Linx/Mac
+# Activate on https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white
 . .venv/bin/activate
 ```
 
