@@ -60,7 +60,7 @@ make venv
 # Activate on Windows
 . .venv/Scripts/activate
 
-# Activate on https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white
+# Activate on Linux / Mac
 . .venv/bin/activate
 ```
 
