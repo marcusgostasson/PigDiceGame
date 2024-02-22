@@ -5,7 +5,7 @@ class Player:
     """Class to represent a player."""
 
     def __init__(self, name):
-        """Constructor for player."""
+        """Initialize player attributes."""
         self.name = name
         self.total_score = 0
         self.tossed_amount = 0
