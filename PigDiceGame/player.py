@@ -13,10 +13,6 @@ class Player:
         """Getter for player's name"""
         return self.name
 
-    def set_name(self, name):
-        """Setter to set a new name for the player"""
-        self.name = name
-
     def get_total_score(self):
         """Getter for player's total score"""
         return self.total_score
@@ -24,6 +20,10 @@ class Player:
     def get_tossed_amount(self):
         """Getter for the number of times the player tossed the dice"""
         return self.tossed_amount
+
+    def set_name(self, name):
+        """Setter to set a new name for the player"""
+        self.name = name
 
     def set_total_score(self, value):
         """Setter for player's total score"""

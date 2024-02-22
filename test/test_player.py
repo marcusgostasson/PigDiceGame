@@ -8,25 +8,76 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
 class TestPlayer(unittest.TestCase):
-    """Test the Player class."""
+    """Test for the Player class."""
 
     def test_init_default_object(self):
-        """Instantiate an object and check its properties."""
+        """Instantiate an object"""
         name = "Bob"
 
         res = Player(name)
         exp = Player
         self.assertIsInstance(res, exp)
 
-        playername = res.get_name()
-        self.assertEqual(playername, "Bob")
+    def test_get_name(self):
+        """ Test to see if i get a name correctly."""
+        player = Player("Alice")
 
-    def test_throw_dice_success(self):
+        res = player.get_name
+        exp = "Alice"
+        self.assertEqual(res, exp)
+
+    def test_get_total_score(self):
+        """Test to see if i get the total score correctly."""
+        player = Player("Anna")
+
+        res = player.get_total_score
+        exp = 0
+        self.assertEqual(res, exp)
+
+    def test_get_tossed_amount(self):
+        """Test to see if i get the tossed amount correctly."""
+        player = Player("Klara")
+
+        res = player.get_tossed_amount
+        exp = 0
+        self.assertEqual(res, exp)
+
+    def test_set_name(self):
+        """Test to see if the name is set correctly."""
+        player = Player("Nils")
+
+        player.set_name("Olof")
+
+        res = player.get_name()
+        exp = "Olof"
+        self.assertEqual(res, exp)
+
+    def test_set_total_score(self):
+        """Test to see if i can set the total_score."""
+        player = Player("Mohammed")
+
+        player.set_total_score(100)
+
+        res = player.get_total_score()
+        exp = 100
+        self.assertEqual(res, exp)
+
+    def test_set_tossed_amount(self):
+        """Test to see if i set the tossed_amount."""
+        player = Player("Lars")
+
+        player.set_tossed_amount(10)
+
+        res = player.get_tossed_amount()
+        exp = 10
+        self.assertEqual(res, exp)
+
+    def test_throw_dice(self):
         """
         Test if throw_dice returns a valid random
         number and increments tossed amount.
         """
-        player = Player("Alice")
+        player = Player("Peter")
         dice = Dice()
 
         res = player.throw_dice(dice)
