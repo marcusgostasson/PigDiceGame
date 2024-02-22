@@ -22,7 +22,7 @@ Pig, is a fun and simple dice game perfect for playing with family and friends. 
 - It is important to weigh the risk and reward when deciding to continue or stay.
 - A common strategy is to accumulate points slowly by stopping at each safe sum to avoid losing everything in a single turn.
 
-Good luck, let´s go! 🎲🎲😃
+Good luck, let´s play! 🎲🎲😃
 
 
 Check python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p> 
