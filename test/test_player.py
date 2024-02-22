@@ -1,4 +1,4 @@
-"""Testclass for Player"""
+"""Testclass for Player."""
 import unittest
 import sys
 import os
@@ -11,7 +11,7 @@ class TestPlayer(unittest.TestCase):
     """Test for the Player class."""
 
     def test_init_default_object(self):
-        """Instantiate an object"""
+        """Instantiate an object."""
         name = "Bob"
 
         res = Player(name)
@@ -19,7 +19,7 @@ class TestPlayer(unittest.TestCase):
         self.assertIsInstance(res, exp)
 
     def test_get_name(self):
-        """ Test to see if i get a name correctly."""
+        """Test to see if i get a name correctly."""
         player = Player("Alice")
 
         res = player.get_name
@@ -63,10 +63,9 @@ class TestPlayer(unittest.TestCase):
         self.assertEqual(res, exp)
 
     def test_throw_dice(self):
-        """
-        Test if throw_dice returns a valid random
-        number and increments tossed amount.
-        """
+        """Test if throw_dice returns a valid random
+        number and increments tossed amount."""
+
         player = Player("Peter")
         dice = Dice()
 
