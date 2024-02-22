@@ -63,15 +63,16 @@ class TestPlayer(unittest.TestCase):
         self.assertEqual(res, exp)
 
     def test_throw_dice(self):
-        """Test if throw_dice returns a valid random
-        number and increments tossed amount."""
-
+        """
+        Test if throw_dice returns a valid random.
+        number and increments tossed amount.
+        """
         player = Player("Peter")
         dice = Dice()
 
         res = player.throw_dice(dice)
         exp = 1 <= res <= 6
-        self.assertTrue(res, exp)
+        self.assertTrue(exp)
         self.assertEqual(player.get_tossed_amount(), 1)
 
 
