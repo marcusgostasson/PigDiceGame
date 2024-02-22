@@ -64,8 +64,9 @@ class TestPlayer(unittest.TestCase):
 
     def test_throw_dice(self):
         """
-        Test if throw_dice returns a valid random.
-        number and increments tossed amount.
+        Test if throw_dice returns a valid randomnumber.
+        
+        & increments tossed amount.
         """
         player = Player("Peter")
         dice = Dice()
