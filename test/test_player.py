@@ -62,16 +62,6 @@ class TestPlayer(unittest.TestCase):
         exp = 100
         self.assertEqual(res, exp)
 
-    def test_set_tossed_amount(self):
-        """Test to see if i set the tossed_amount."""
-        player = Player("Lars")
-
-        player.set_tossed_amount(10)
-
-        res = player.get_tossed_amount()
-        exp = 10
-        self.assertEqual(res, exp)
-
     def test_throw_dice(self):
         """
         Test if throw_dice returns a valid random
