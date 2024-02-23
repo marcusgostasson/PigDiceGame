@@ -21,6 +21,9 @@ class Highscore:
       
         self.highscores[player_name] = score
         
+    def get_highscore(self):
+        return self.highscores
+        
     def seperate_highscores(self):
         exsisting_highscores = {}
         try:
