@@ -34,12 +34,8 @@ Press 4 if you want to quit""")
             choice = self.get_choice_from_user("Choice: ")
 
             if (choice == 1):
-                player1Name = input("What is player1's name? ")
-                player1 = player.Player(player1Name)
-                self.players[player1Name] = player1.get_total_score()
-                player2Name = input("What is player2's name? ")
-                player2 = player.Player(player2Name)
-                self.players[player2Name] = player2.get_total_score()
+                player1 = self.setup_player()
+                player2 = self.setup_player()
                 playing = True
                 while (playing):
                     playing = self.player_playing(player1)
@@ -65,12 +61,7 @@ Press 4 if you want to quit""")
                         playing = self.computer_playing(computer)
 
             elif (choice == 3):
-                print("""\nEach turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
-
-If the player rolls a 1, they score nothing and it becomes the next player's turn.
-If the player rolls any other number, it is added to their turn total and the player's turn continues.
-If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
-The first player to score 100 or more points wins\n""")
+                self.game_rules()
 
             elif (choice == 4):
                 break
@@ -108,14 +99,12 @@ The first player to score 100 or more points wins\n""")
 
             elif (choice == 3):
                 old_name = currentPlayer.get_name()
-                new_name = input("What name do you want instead? ")
-                currentPlayer.set_name(new_name)
-
-                new_key = new_name
                 value = self.players.pop(old_name)
+                new_name = self.change_name(currentPlayer)
+                new_key = new_name
                 self.players[new_key] = value
 
-                print("Your new name is now " + currentPlayer.get_name())
+                print("Your new name is now " + new_name)
 
             elif (choice == 4):
                 return False
@@ -172,3 +161,24 @@ The first player to score 100 or more points wins\n""")
             return self.players[player_name]
         else:
             return None
+
+    def change_name(self, current_player):
+        new_name = input("Input new name: ")
+        current_player.set_name(new_name)
+
+        return new_name
+
+    def setup_player(self):
+        player_name = input("What is your name? ")
+        new_player = player.Player(player_name)
+        self.players[player_name] = new_player.get_total_score()
+
+        return new_player
+
+    def game_rules(self):
+        print("""\nEach turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
+
+If the player rolls a 1, they score nothing and it becomes the next player's turn.
+If the player rolls any other number, it is added to their turn total and the player's turn continues.
+If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
+The first player to score 100 or more points wins\n""")

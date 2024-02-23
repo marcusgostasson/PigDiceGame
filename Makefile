@@ -94,6 +94,11 @@ coverage:
 	coverage html
 	coverage report -m
 
+coverage_game:
+	@$(call MESSAGE, Running coverage for test_game.py)
+	coverage run -m unittest test.test_game
+	coverage report -m
+	
 test: lint coverage
 
 
