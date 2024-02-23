@@ -1,14 +1,14 @@
 import unittest
 import os
 
-from PigDiceGame import highScore
+from PigDiceGame import highscore
 
 
 class test_highScore(unittest.TestCase):
     """Initiate highscore"""
     
     def setUp(self):
-        self.highscores = Highscore()
+        self.highscores = highscore()
         self.test_file_path = "test_highscore_list.txt"
         
     def test_file_reset(self):
