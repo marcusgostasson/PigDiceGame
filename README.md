@@ -24,8 +24,9 @@ Pig, is a fun and simple dice game perfect for playing with family and friends. 
 
 Good luck, let´s play! 🎲🎲😃
 
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Brantin10/Assignment2/total?style=for-the-badge&logo=docusign&logoColor=%232C4AA8&color=%232C4AA8)
-![GitHub License](https://img.shields.io/github/license/Brantin10/Assignment2?style=for-the-badge)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Brantin10/Assignment2/total?style=for-the-badge&logo=docusign&logoColor=%2340AEF0&color=%2340AEF0)
+![GitHub License](https://img.shields.io/github/license/Brantin10/Assignment2?style=for-the-badge&logo=Hence)
+
 ![GitHub Release](https://img.shields.io/github/v/release/Brantin10/Assignment2?include_prereleases&sort=date&display_name=tag&style=for-the-badge)
 
 
