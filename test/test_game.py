@@ -37,12 +37,12 @@ class Test_game(unittest.TestCase):
         res = True
         self.assertEqual(exp, res)
 
-    @patch("builtins.input", side_effect=["invalid", "1"])
+    @patch("builtins.input", side_effect=["hej", "1"])
     def test_get_choice_from_user(self, mock_input):
-        """Tests if choice from user works for an invalid input an a 1"""
+        """Tests if choice from user works for an invalid input and valid for 1"""
         g = game.Game()
-        choice = g.get_choice_from_user("Choice: ")
-        self.assertIsNone(choice)
+        with self.assertRaises(ValueError):
+            g.get_choice_from_user("Choice: ")
 
         choice = g.get_choice_from_user("Choice: ")
         self.assertEqual(choice, 1)

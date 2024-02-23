@@ -11,6 +11,7 @@ import random
 
 class Game:
     def __init__(self):
+        self.playing = True
         self.players = {}
 
     def display(self):
@@ -21,53 +22,64 @@ Press 3 if you want to see the rules for the game
 Press 4 if you want to quit""")
 
     def get_choice_from_user(self, prompting):
-        try:
-            choice = input(prompting)
-            return int(choice)
-        except ValueError:
-            return None
-
-    def start_game(self):
         while (True):
-            self.display()
+            try:
+                choice = int(input(prompting))
+                if choice in [1, 2, 3, 4]:
+                    return choice
+                else:
+                    print("Invalid choice. Enter a number between 1 and 4")
+            except ValueError:
+                raise ValueError("Invalid input. That is not a number")
 
-            choice = self.get_choice_from_user("Choice: ")
+    def player_vs_player(self):
+        player1 = self.setup_player()
+        player2 = self.setup_player()
+        playing = True
+        while (playing):
+            playing = self.player_playing(player1)
+            if (playing is False and player1.get_total_score() < 100):
+                print(player1.get_name() + " surrendered and " + player2.get_name() + " won")
+            elif (playing is True):
+                playing = self.player_playing(player2)
+                if (playing is False and player2.get_total_score() < 100):
+                    print(player2.get_name() + " surrendered and " + player1.get_name() + " won")
 
-            if (choice == 1):
-                player1 = self.setup_player()
-                player2 = self.setup_player()
-                playing = True
-                while (playing):
-                    playing = self.player_playing(player1)
-                    if (playing is False and player1.get_total_score() < 100):
-                        print(player1.get_name() + " surrendered and " + player2.get_name() + " won")
-                    elif (playing is True):
-                        playing = self.player_playing(player2)
-                        if (playing is False and player2.get_total_score() < 100):
-                            print(player2.get_name() + " surrendered and " + player1.get_name() + " won")
-            elif (choice == 2):
-                player_name = input("What is your name? ")
-                player1 = player.Player(player_name)
-                difficulty = self.get_choice_from_user("""What difficulty do you want?
+    def player_vs_computer(self):
+        player_name = input("What is your name? ")
+        player1 = player.Player(player_name)
+        difficulty = self.get_choice_from_user("""What difficulty do you want?
 1. Playing against a new born baby
 2. Playing against my uncle that is pretty good with numbers
 3. Playing against Pelle, if you know you know
 4. Completly random no logic""")
-                computer = computer.Computer(difficulty)
-                playing = True
-                while (playing):
-                    playing = self.player_playing(player1)
-                    if (playing is True):
-                        playing = self.computer_playing(computer)
+        computer = computer.Computer(difficulty)
+        playing = True
+        while (playing):
+            playing = self.player_playing(player1)
+            if (playing is True):
+                playing = self.computer_playing(computer)
 
-            elif (choice == 3):
-                self.game_rules()
+    def quit(self):
+        print("Quit out of the game")
+        self.playing = False
 
-            elif (choice == 4):
-                break
+    def handle_choice(self, choice):
+        if (choice == 1):
+            self.player_vs_player()
+        elif (choice == 2):
+            self.player_vs_computer()
+        elif (choice == 3):
+            self.game_rules()
+        else:
+            self.quit()
 
-            else:
-                print("Invalid input")
+    def start_game(self):
+        while (self.playing):
+            self.display()
+
+            choice = self.get_choice_from_user("Choice: ")
+            self.handle_choice(choice)
 
     def player_playing(self, current_player):
         die = dice.Dice()
