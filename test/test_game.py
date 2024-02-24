@@ -17,12 +17,16 @@ class Test_game(unittest.TestCase):
 
     def test_init_default_object(self):
         """Instantiate an object and check its properties."""
-        res = game.Game()
-        self.assertIsInstance(res, game.Game)
+        g = game.Game()
+        self.assertIsInstance(g, game.Game)
 
-        players = res.players
+        players = g.players
         exp = {}
         self.assertEqual(players, exp)
+
+        exp = g.playing
+        res = True
+        self.assertEqual(exp, res)
 
     def test_check_winner(self):
         """Checks if the player wins if he has 100 points and 
