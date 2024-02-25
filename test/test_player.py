@@ -22,7 +22,7 @@ class TestPlayer(unittest.TestCase):
         """Test to see if i get a name correctly."""
         player = Player("Alice")
 
-        res = player.get_name
+        res = player.get_name()
         exp = "Alice"
         self.assertEqual(res, exp)
 
@@ -30,7 +30,7 @@ class TestPlayer(unittest.TestCase):
         """Test to see if i get the total score correctly."""
         player = Player("Anna")
 
-        res = player.get_total_score
+        res = player.get_total_score()
         exp = 0
         self.assertEqual(res, exp)
 
