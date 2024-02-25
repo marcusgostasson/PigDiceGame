@@ -48,7 +48,7 @@ Press 4 if you want to quit""")
             elif playing is True:
                 playing = self.player_playing(player2)
                 if (playing is False and player2.get_total_score() < 100):
-                    print(player2.get_name() + " surrendered and " + player1.get_name() + " won")
+                    print(RED + player2.get_name() + " surrendered" + END + " and " + GREEN + player1.get_name() + " won" + END)
 
     def player_vs_computer(self):
         """The logic when the user picks play vs the computer."""
@@ -189,6 +189,7 @@ Press 4 if you want to quit""")
         if score >= 100:
             print("You won in " + str(current_player.get_tossed_amount()) + " throws!")  # can make this green
             current_player.set_total_score(score)
+            self.players[current_player.get_name()] = current_player.get_total_score()
             return False
         else:
             return True
