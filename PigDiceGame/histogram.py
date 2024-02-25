@@ -11,7 +11,7 @@ class Histogram:
         self.highscore = highscore
 
     def plot_chart(self):
-        """Plotting the high score tabel."""
+        """Plot the high score table."""
         plt.bar(self.name.get_name, self.highscore.get_highscore, color='blue')
         plt.title('Highscores')
         plt.xlabel('Namn')

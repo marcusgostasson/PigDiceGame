@@ -39,7 +39,9 @@ class Player:
         try:
             dice_random_number = dice.get_random_number()
             self.set_tossed_amount()
+            if dice_random_number > 6:
+                raise ValueError("Number is greater than 6")
             return dice_random_number
-        except Exception as e:
+        except ValueError as e:
             print(f"Error while throwing dice: {e}")
             return None
