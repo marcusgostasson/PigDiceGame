@@ -38,7 +38,7 @@ class TestPlayer(unittest.TestCase):
         """Test to see if i get the tossed amount correctly."""
         player = Player("Klara")
 
-        res = player.get_tossed_amount
+        res = player.get_tossed_amount()
         exp = 0
         self.assertEqual(res, exp)
 
