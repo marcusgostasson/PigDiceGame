@@ -36,12 +36,6 @@ class Player:
 
     def throw_dice(self, dice):
         """Throw the dice and increment tossed amount."""
-        try:
-            dice_random_number = dice.get_random_number()
-            self.set_tossed_amount()
-            if dice_random_number > 6:
-                raise ValueError("Number is greater than 6")
-            return dice_random_number
-        except ValueError as e:
-            print(f"Error while throwing dice: {e}")
-            return None
+        dice_random_number = dice.get_random_number()
+        self.set_tossed_amount()
+        return dice_random_number

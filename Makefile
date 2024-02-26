@@ -95,8 +95,9 @@ coverage:
 	coverage report -m
 
 coverage_game:
-	@$(call MESSAGE, Running coverage for test_game.py)
+	@$(call MESSAGE, Running coverage for test_game.py, test_player.py)
 	coverage run -m unittest test.test_game
+	coverage run -m unittest test.test_player
 	coverage report -m
 	
 test: lint coverage
