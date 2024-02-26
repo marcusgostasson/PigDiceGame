@@ -153,16 +153,13 @@ Press 4 if you want to quit""")
         die = dice.Dice()
         score = computer.get_total_score()  # Getting score from the computer
         game_is_being_played = True
-        options = ["toss", "stay"]
         toss_counter = 0 # something with the first toss is 100% toss then i change weight based on how many toss
         while game_is_being_played:
             print(computer.get_name() + " you currently have " + str(score) + " point(s)")
 
-            decision = computer.make_choice(toss_counter, score)
-            pick = random.choices(options, weights=decision) # Problem can be with logic to stay at 20 because now the logic is weight based
+            decision = computer.difficulty_choice(toss_counter, score)
 
-            choice = pick
-            if choice == "toss":
+            if decision == "toss":
                 die_value = computer.throw_dice(die)
                 print(computer.get_name() + " got a " + str(die_value))
                 if die_value != 1:
@@ -174,9 +171,8 @@ Press 4 if you want to quit""")
                     game_is_being_played = False
                     return True
 
-            elif choice == "stay":
+            elif decision == "stay":
                 computer.set_total_score(score)
-                current_points = computer.get_total_score()
                 print(computer.get_name() + " stayed and now have " + str(current_points) + " point(s)\n")
                 game_is_being_played = False
                 return True
