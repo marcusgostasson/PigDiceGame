@@ -1,6 +1,7 @@
 from . import player
 from . import computer
 from . import dice
+from . import highscore
 import random
 # Did we put a licence when we created the repository?
 RED = '\033[91m'
@@ -60,13 +61,17 @@ Press 4 if you want to quit""")
 1. Playing against a new born baby
 2. Playing against my uncle that is pretty good with numbers
 3. Playing against Pelle, if you know you know
-4. Completly random no logic""")
+4. Completly random no logic\nChoice: """)
         intelligence = computer.Computer(difficulty)
         playing = True
         while playing:
             playing = self.player_playing(player1)
-            if playing is True:
+            if (playing is False and player1.get_total_score() < 100):
+                print(RED + player1.get_name() + " surrendered" + END + " and " + GREEN + "Computer won" + END)
+            elif playing is True:
                 playing = self.computer_playing(intelligence)
+                if (playing is False and computer.get_total_score() < 100):
+                    print(RED + "Computer surrendered" + END + " and " + GREEN + player1.get_name() + " won" + END)
 
     def quit(self):
         """Stops the program"""
@@ -155,13 +160,13 @@ Press 4 if you want to quit""")
         game_is_being_played = True
         toss_counter = 0 # something with the first toss is 100% toss then i change weight based on how many toss
         while game_is_being_played:
-            print(computer.get_name() + " you currently have " + str(score) + " point(s)")
+            print("Computer currently have " + str(score) + " point(s)")
 
             decision = computer.difficulty_choice(toss_counter, score)
 
             if decision == "toss":
                 die_value = computer.throw_dice(die)
-                print(computer.get_name() + " got a " + str(die_value))
+                print("Computer got a " + str(die_value))
                 if die_value != 1:
                     score += die_value
                     game_is_being_played = self.check_if_winner(score)
@@ -173,7 +178,8 @@ Press 4 if you want to quit""")
 
             elif decision == "stay":
                 computer.set_total_score(score)
-                print(computer.get_name() + " stayed and now have " + str(current_points) + " point(s)\n")
+                current_points = computer.get_total_score()
+                print("Computer stayed and now have " + str(current_points) + " point(s)\n")
                 game_is_being_played = False
                 return True
 
@@ -183,11 +189,14 @@ Press 4 if you want to quit""")
 
     def check_if_winner(self, score, current_player):
         """Checks if the current toss is enough to win."""
+        
+        post_winner = highscore.Highscore()
 
         if score >= 100:
             print("You won in " + str(current_player.get_tossed_amount()) + " throws!")  # can make this green
             current_player.set_total_score(score)
             self.players[current_player.get_name()] = current_player.get_total_score()
+            post_winner.add_winner(current_player.get_name())
             return False
         else:
             return True
