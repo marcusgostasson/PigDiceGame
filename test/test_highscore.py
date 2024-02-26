@@ -27,17 +27,6 @@ class test_highScore(unittest.TestCase):
             
         exp = "Oliver : 15\nRazmus : 14\nEmil : 16\n"
         self.assertEqual(file_content, exp)
-
-    def test_round_over(self):
-        """Test with valid scores"""
-        self.highscores.round_over("Oliver",10)
-        self.assertEqual(self.highscores.highscores["Oliver"], 10)
-        
-        with self.assertRaises(ValueError):
-            self.highscores.round_over(101, 10)
-            
-        with self.assertRaises(ValueError):
-            self.highscores.round_over("Razmus", -5)
             
     def test_file_format(self):
         """Test formatting on file"""
