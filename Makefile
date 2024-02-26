@@ -97,6 +97,8 @@ coverage:
 coverage_game:
 	@$(call MESSAGE, Running coverage for test_game.py, test_player.py)
 	coverage run -m unittest test.test_game
+	coverage report -m
+
 	coverage run -m unittest test.test_player
 	coverage report -m
 	
