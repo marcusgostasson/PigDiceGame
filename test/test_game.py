@@ -186,7 +186,7 @@ The first player to score 100 or more points wins\n"""
             g.player_playing(p)
             mock_print.assert_any_call(game.RED + "That's not an option" + game.END)
 
-    @patch("builtins.input", side_effect=["raz", "1"])
+    @patch("builtins.input", side_effect=["raz", "1", "4"])
     def test_player_vs_computer(self, mock_input):
         """Testing the player vs computer function."""
 
