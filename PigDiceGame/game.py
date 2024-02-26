@@ -156,13 +156,14 @@ Press 4 if you want to quit""")
         """The logic for when the computer is playing."""
 
         die = dice.Dice()
-        score = computer.get_total_score()  # Getting score from the computer
+        score = computer.get_total_score()
+        score_this_round = 0
         game_is_being_played = True
-        toss_counter = 0 # something with the first toss is 100% toss then i change weight based on how many toss
+        toss_counter = 0
         while game_is_being_played:
             print("Computer currently have " + str(score) + " point(s)")
 
-            decision = computer.difficulty_choice(toss_counter, score)
+            decision = computer.difficulty_choice(toss_counter, score_this_round)
             choice = decision[0]
             if choice == "toss":
                 toss_counter += 1
@@ -171,6 +172,7 @@ Press 4 if you want to quit""")
                 if die_value != 1:
                     score += die_value
                     game_is_being_played = self.check_if_winner(score, computer)
+                    score_this_round += die_value
                     continue
                 else:
                     print("Oh you got a " + str(die_value) + " better luck next time\n")
