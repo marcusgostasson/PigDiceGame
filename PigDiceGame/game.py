@@ -163,20 +163,21 @@ Press 4 if you want to quit""")
             print("Computer currently have " + str(score) + " point(s)")
 
             decision = computer.difficulty_choice(toss_counter, score)
-
-            if decision == "toss":
+            choice = decision[0]
+            if choice == "toss":
+                toss_counter += 1
                 die_value = computer.throw_dice(die)
                 print("Computer got a " + str(die_value))
                 if die_value != 1:
                     score += die_value
-                    game_is_being_played = self.check_if_winner(score)
+                    game_is_being_played = self.check_if_winner(score, computer)
                     continue
                 else:
                     print("Oh you got a " + str(die_value) + " better luck next time\n")
                     game_is_being_played = False
                     return True
 
-            elif decision == "stay":
+            elif choice == "stay":
                 computer.set_total_score(score)
                 current_points = computer.get_total_score()
                 print("Computer stayed and now have " + str(current_points) + " point(s)\n")
@@ -189,17 +190,26 @@ Press 4 if you want to quit""")
 
     def check_if_winner(self, score, current_player):
         """Checks if the current toss is enough to win."""
-        
-        post_winner = highscore.Highscore()
 
-        if score >= 100:
-            print("You won in " + str(current_player.get_tossed_amount()) + " throws!")  # can make this green
-            current_player.set_total_score(score)
-            self.players[current_player.get_name()] = current_player.get_total_score()
-            post_winner.add_winner(current_player.get_name())
-            return False
+        post_winner = highscore.Highscore()
+        if isinstance(current_player, player.Player):
+            if score >= 100:
+                print("You won in " + str(current_player.get_tossed_amount()) + " throws!")  # can make this green
+                current_player.set_total_score(score)
+                self.players[current_player.get_name()] = current_player.get_total_score()
+                post_winner.add_winner(current_player.get_name())
+                return False
+            else:
+                return True
         else:
-            return True
+            if score >= 100:
+                print("You won in " + str(current_player.get_tossed_amount()) + " throws!")  # can make this green
+                current_player.set_total_score(score)
+                self.players[current_player.get_name()] = current_player.get_total_score()
+                post_winner.add_winner(current_player.get_name())
+                return False
+            else:
+                return True
 
     def get_player_score(self, player_name):
         """To get the players score, this is used for easier testing if the score got updated."""
