@@ -55,17 +55,18 @@ Press 4 if you want to quit""")
 
         player_name = input("What is your name? ")
         player1 = player.Player(player_name)
+        self.players[player1.get_name()] = player1.get_total_score()
         difficulty = self.get_choice_from_user("""What difficulty do you want?
 1. Playing against a new born baby
 2. Playing against my uncle that is pretty good with numbers
 3. Playing against Pelle, if you know you know
 4. Completly random no logic""")
-        computer = computer.Computer(difficulty)
+        intelligence = computer.Computer(difficulty)
         playing = True
         while playing:
             playing = self.player_playing(player1)
             if playing is True:
-                playing = self.computer_playing(computer)
+                playing = self.computer_playing(intelligence)
 
     def quit(self):
         """Stops the program"""
@@ -150,14 +151,15 @@ Press 4 if you want to quit""")
         """The logic for when the computer is playing."""
 
         die = dice.Dice()
-        difficulty = computer.get_difficulty()
         score = computer.get_total_score()  # Getting score from the computer
         game_is_being_played = True
         options = ["toss", "stay"]
         toss_counter = 0 # something with the first toss is 100% toss then i change weight based on how many toss
         while game_is_being_played:
             print(computer.get_name() + " you currently have " + str(score) + " point(s)")
-            pick = random.choices(options, weights=difficulty) # Problem can be with logic to stay at 20 because now the logic is weight based
+
+            decision = computer.make_choice(toss_counter, score)
+            pick = random.choices(options, weights=decision) # Problem can be with logic to stay at 20 because now the logic is weight based
 
             choice = pick
             if choice == "toss":

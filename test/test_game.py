@@ -179,12 +179,20 @@ The first player to score 100 or more points wins\n"""
 
     @patch("builtins.input", side_effect=["5", "4"])
     def test_player_playing_invalid_input(self, mock_input):
-        """Testsing the player_playing when invalid input 5 in this case"""
+        """Testsing the player_playing when invalid input 5 in this case."""
         g = game.Game()
         p = player.Player("bob")
         with patch("builtins.print") as mock_print:
             g.player_playing(p)
             mock_print.assert_any_call(game.RED + "That's not an option" + game.END)
+
+    @patch("builtins.input", side_effect=["raz", "1"])
+    def test_player_vs_computer(self, mock_input):
+        """Testing the player vs computer function."""
+
+        g = game.Game()
+        g.player_vs_computer()
+        self.assertIn("raz", g.players)
 
 
 if __name__ == "__main__":
