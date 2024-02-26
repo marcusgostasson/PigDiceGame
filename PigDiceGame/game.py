@@ -2,8 +2,6 @@ from . import player
 from . import computer
 from . import dice
 from . import highscore
-import random
-# Did we put a licence when we created the repository?
 RED = '\033[91m'
 GREEN = '\33[32m'
 END = '\033[0m'
@@ -120,12 +118,12 @@ Press 4 if you want to quit""")
                     score += die_value
                     game_is_being_played = self.check_if_winner(score, current_player)
                     continue
-                else:
-                    print("Oh you got a " + str(die_value) + " better luck next time\n")
-                    game_is_being_played = False
-                    return True
 
-            elif choice == 2:
+                print("Oh you got a " + str(die_value) + " better luck next time\n")
+                game_is_being_played = False
+                return True
+
+            if choice == 2:
                 current_player.set_total_score(score)
                 self.players[current_player.get_name()] = current_player.get_total_score()
                 current_points = current_player.get_total_score()
@@ -133,7 +131,7 @@ Press 4 if you want to quit""")
                 game_is_being_played = False
                 return True
 
-            elif choice == 3:
+            if choice == 3:
                 old_name = current_player.get_name()
                 value = self.players.pop(old_name)
                 new_name = self.change_name(current_player)
@@ -174,20 +172,19 @@ Press 4 if you want to quit""")
                     game_is_being_played = self.check_if_winner(score, computer)
                     score_this_round += die_value
                     continue
-                else:
-                    print("Oh you got a " + str(die_value) + " better luck next time\n")
-                    game_is_being_played = False
-                    return True
 
-            elif choice == "stay":
+                print("Oh you got a " + str(die_value) + " better luck next time\n")
+                game_is_being_played = False
+                return True
+
+            if choice == "stay":
                 computer.set_total_score(score)
                 current_points = computer.get_total_score()
                 print("Computer stayed and now have " + str(current_points) + " point(s)\n")
                 game_is_being_played = False
                 return True
 
-            else:
-                print("Invalid option!")  # Can make this print in red
+            print("Invalid option!")  # Can make this print in red
         return False
 
     def check_if_winner(self, score, current_player):
@@ -201,25 +198,25 @@ Press 4 if you want to quit""")
                 self.players[current_player.get_name()] = current_player.get_total_score()
                 post_winner.add_winner(current_player.get_name())
                 return False
-            else:
-                return True
-        else:
-            if score >= 100:
-                print("You won in " + str(current_player.get_tossed_amount()) + " throws!")  # can make this green
-                current_player.set_total_score(score)
-                self.players[current_player.get_name()] = current_player.get_total_score()
-                post_winner.add_winner(current_player.get_name())
-                return False
-            else:
-                return True
+
+            return True
+
+        if score >= 100:
+            print("You won in " + str(current_player.get_tossed_amount()) + " throws!")  # can make this green
+            current_player.set_total_score(score)
+            self.players[current_player.get_name()] = current_player.get_total_score()
+            post_winner.add_winner(current_player.get_name())
+            return False
+
+        return True
 
     def get_player_score(self, player_name):
         """To get the players score, this is used for easier testing if the score got updated."""
 
         if player_name in self.players:
             return self.players[player_name]
-        else:
-            return None
+
+        return None
 
     def change_name(self, current_player):
         """Sets a new name for the player."""
