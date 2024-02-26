@@ -1,6 +1,5 @@
 """Computer intelligence"""
 import random
-import dice
 
 
 class Computer:
@@ -13,13 +12,17 @@ class Computer:
 
     def difficulty_choice(self, toss_counter, score):
         if self.difficulty == 1:
-            self.easy_difficulty(toss_counter)
+            option = self.easy_difficulty(toss_counter)
+            return option
         elif self.difficulty == 2:
-            self.medium_difficulty(toss_counter)
+            option = self.medium_difficulty(toss_counter)
+            return option
         elif self.difficulty == 3:
-            self.hard_difficulty(toss_counter, score)
+            option = self.hard_difficulty(score)
+            return option
         elif self.difficulty == 4:
-            self.random_difficulty()
+            option = self.random_difficulty()
+            return option
 
     def set_total_score(self, score):
         self.sum = score
