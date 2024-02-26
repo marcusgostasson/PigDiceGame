@@ -1,7 +1,9 @@
 import unittest
 import os
+import sys
 
-from PigDiceGame import highscore
+from PigDiceGame.highscore import Highscore
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
 class test_highScore(unittest.TestCase):
@@ -45,6 +47,7 @@ class test_highScore(unittest.TestCase):
         self.highscores.seperate_highscores(file_path=self.test_file_path)
         
         with open(self.test_file_path, 'r') as file:
+            """Test file formatting on test_file.txt"""
             for line in file:
                 line = line.strip()
                 parts = line.split(':')
