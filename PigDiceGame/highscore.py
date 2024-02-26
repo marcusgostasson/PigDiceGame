@@ -3,7 +3,10 @@ class Highscore:
         self.highscores = {}
     
     def add_winner(self, player, score):
-        self.highscores[player] = score
+        if player in self.highscores:
+            self.highscores[player] += 1
+        else:
+            self.highscores[player] = score
         
     def increase_score(self, player):
         self.highscores[player] += 1
