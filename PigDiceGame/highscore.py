@@ -6,19 +6,8 @@ class Highscore:
             open('highscore_list.txt', 'x').close()
         except FileExistsError:
             pass
-          
-    def round_over(self, player_name, score):
-         
-     if not isinstance(player_name, str):
-            raise ValueError("Player name must be a string(abc)")
-
-        if score <0:
-            raise ValueError("Error counting score")
-    
-        self.highscores[player_name] = score
         
     def apply_score(self, player_name, score):
-      
         self.highscores[player_name] = score
         
     def get_highscore(self):

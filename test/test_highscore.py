@@ -5,12 +5,11 @@ import sys
 from PigDiceGame.highscore import Highscore
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-
 class test_highScore(unittest.TestCase):
     """Initiate highscore"""
     
     def setUp(self):
-        self.highscores = highscore()
+        self.highscores = Highscore()
         self.test_file_path = "test_highscore_list.txt"
         
     def test_file_reset(self):
