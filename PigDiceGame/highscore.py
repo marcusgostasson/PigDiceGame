@@ -2,10 +2,11 @@ class Highscore:
     def __init__(self):
         self.highscores = {}
     
-    def add_winner(self, player, score):
+    def add_winner(self, player):
         if player in self.highscores:
-            self.highscores[player] += 1
+            self.increase_score(player)
         else:
+            score = 0
             self.highscores[player] = score
         
     def increase_score(self, player):
@@ -15,8 +16,6 @@ class Highscore:
         sorted_highscores = sorted(self.highscores.items(), key=lambda x: x[1], reverse=True)
         return dict(sorted_highscores)
     
-    def sort_winners_player(self):
-        sorted_highscore = sorted(self.highscores.items(), key=lambda x: x[0])
-        return dict(sorted_highscore)
+
         
         
