@@ -9,8 +9,11 @@ class test_highScore(unittest.TestCase):
     """Initiate highscore"""
     
     def setUp(self):
-        self.highscores = Highscore()
         self.test_file_path = "test_highscore_list.txt"
+        with open(self.test_file_path, 'w') as file:
+            file.write("")
+            
+        self.highscores = Highscore()
         
     def test_file_reset(self):
         if os.path.exists(self.test_file_path):

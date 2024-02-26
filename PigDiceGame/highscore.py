@@ -13,10 +13,10 @@ class Highscore:
     def get_highscore(self):
         return self.highscores
         
-    def seperate_highscores(self):
+    def seperate_highscores(self, file_path):
         exsisting_highscores = {}
         try:
-            with open ('highscore_list.txt', 'r') as file:
+            with open (file_path, 'r') as file:
                 for line in file:
                     if line.strip():
                         name, score = line.split(':')
@@ -25,7 +25,7 @@ class Highscore:
             print("File error")
         
         for name, score in self.highscores.items():
-            score = int(score.strip())
+            score = int(score)
             exsisting_highscores.setdefault(name, [].append(score))
         
         sorted_highscores = sorted(exsisting_highscores.items(), key=lambda x: max(x[1]), reverse=True)
