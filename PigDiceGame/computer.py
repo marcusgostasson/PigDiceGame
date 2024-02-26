@@ -9,7 +9,7 @@ class Computer:
         """Constructor for computer's sum"""
         self.sum = 0
         self.difficulty = difficulty
-        self.options = ["toss" , "stay"]
+        self.options = ["toss", "stay"]
 
     def difficulty_choice(self, toss_counter, score):
         if self.difficulty == 1:
@@ -26,10 +26,10 @@ class Computer:
 
     def get_total_score(self):
         return self.sum
-    
+
     def throw_dice(self, die):
         return die.get_random_number()
-    
+
     def hard_difficulty(self, score):
         """Method for hard_difficulty"""
         if score >= 25:
