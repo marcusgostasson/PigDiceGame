@@ -11,6 +11,9 @@ class Highscore:
         
     def increase_score(self, player):
         self.highscores[player] += 1
+        
+    def get_highscore(self):
+        return self.highscores
     
     def sort_winners_score(self):
         sorted_highscores = sorted(self.highscores.items(), key=lambda x: x[1], reverse=True)
