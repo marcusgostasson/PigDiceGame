@@ -1,5 +1,6 @@
 """Histogram."""
 import matplotlib.pyplot as plt
+from . import highscore
 
 
 class Histogram:
@@ -24,7 +25,6 @@ class Histogram:
 
         ax.grid(axis='y', linestyle='--', alpha=0.5)
 
-
         for bar in bars:
             height = bar.get_height()
             ax.annotate('{}'.format(height),
@@ -38,8 +38,9 @@ class Histogram:
         plt.show()
 
 
-names = ['Alice', 'Bob', 'Charlie', 'David', 'Emma']
-highscores = [85, 92, 78, 90, 88]
+names = list(highscore.highscores.keys())
+highscores = list(highscore.highscores.values())
+
 
 histogram = Histogram(names, highscores)
 histogram.plot_chart()

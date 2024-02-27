@@ -18,7 +18,3 @@ class Highscore:
     def sort_winners_score(self):
         sorted_highscores = sorted(self.highscores.items(), key=lambda x: x[1], reverse=True)
         return dict(sorted_highscores)
-    
-
-        
-        
