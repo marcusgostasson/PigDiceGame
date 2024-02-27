@@ -6,7 +6,7 @@ class Highscore:
         if player in self.highscores:
             self.increase_score(player)
         else:
-            score = 0
+            score = 1
             self.highscores[player] = score
         
     def increase_score(self, player):
