@@ -1,6 +1,6 @@
 """Histogram."""
 import matplotlib.pyplot as plt
-from . import highscore
+from PigDiceGame import Highscore
 
 
 class Histogram:
@@ -29,17 +29,17 @@ class Histogram:
             height = bar.get_height()
             ax.annotate('{}'.format(height),
                         xy=(bar.get_x() + bar.get_width() / 2, height),
-                        xytext=(0, 3),  # 3 points vertical offset
+                        xytext=(0, 3),
                         textcoords="offset points",
                         ha='center', va='bottom')
 
         plt.xticks(rotation=45)
-        plt.tight_layout()  #
+        plt.tight_layout()  
         plt.show()
 
 
-names = list(highscore.highscores.keys())
-highscores = list(highscore.highscores.values())
+high_score_and_name = Highscore()
+names, highscores = high_score_and_name.get_name_and_highscore
 
 
 histogram = Histogram(names, highscores)
