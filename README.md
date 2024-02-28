@@ -33,9 +33,8 @@ Good luck, let´s play! 🎲🎲😃
 Check python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p> 
 --------------------------
 
-Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
-
 # Check you Python installation
+Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
 ```
 make version
 ```
