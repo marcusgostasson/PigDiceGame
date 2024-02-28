@@ -43,11 +43,13 @@ Press 4 if you want to quit""")
         while playing:
             playing = self.player_playing(player1)
             if (playing is False and player1.get_total_score() < 100):
-                print(RED + player1.get_name() + " surrendered" + END + " and " + GREEN + player2.get_name() + " won" + END)
+                print(RED + player1.get_name() + " surrendered" + END +
+                      " and " + GREEN + player2.get_name() + " won" + END)
             elif playing is True:
                 playing = self.player_playing(player2)
                 if (playing is False and player2.get_total_score() < 100):
-                    print(RED + player2.get_name() + " surrendered" + END + " and " + GREEN + player1.get_name() + " won" + END)
+                    print(RED + player2.get_name() + " surrendered" + END +
+                          " and " + GREEN + player1.get_name() + " won" + END)
 
     def player_vs_computer(self):
         """The logic when the user picks play vs the computer."""
