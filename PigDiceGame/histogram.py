@@ -34,7 +34,7 @@ class Histogram:
             for bar_ in bars:
                 height = bar_.get_height()
                 ax.annotate(f'{height}',
-                            xy=(b.get_x() + bar_.get_width() / 2, height),
+                            xy=(bar_.get_x() + bar_.get_width() / 2, height),
                             xytext=(0, 3),
                             textcoords="offset points",
                             ha='center', va='bottom')
