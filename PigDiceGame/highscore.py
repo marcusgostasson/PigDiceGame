@@ -1,6 +1,6 @@
 class Highscore:
     def __init__(self):
-        self.highscores = {"Kalle": 11, "Nisse": 12, "Rolf": 6}
+        self.highscores = {}
     
     def add_winner(self, player):
         if player in self.highscores:
