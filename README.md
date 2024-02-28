@@ -45,8 +45,8 @@ export PYTHON=python3
 ```
 make version
 ```
-
-Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
+> [!TIP]
+> Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
 
 ***Install a Python virtual environment and activate it*** <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p>
 --------------------------
@@ -89,8 +89,8 @@ Check what is installed
 ```
 make installed
 ```
-
-Read more on [Python PIP](https://pypi.org/project/pip/).
+> [!TIP]
+> Read more on [Python PIP](https://pypi.org/project/pip/).
 
 
 ***Run the code***   🏃
@@ -127,8 +127,9 @@ You might need to update the Makefile if you change the name of the source direc
 
 Read more on:
 
-* [flake8](https://flake8.pycqa.org/en/latest/)
-* [pylint](https://pylint.org/)
+> [!TIP]
+> * [flake8](https://flake8.pycqa.org/en/latest/)
+> * [pylint](https://pylint.org/)
 
 
 ***Codestyle with black*** ⚫
@@ -143,8 +144,8 @@ make black
 ```
 make codestyle
 ```
-
-Read more on [black](https://pypi.org/project/black/).
+> [!TIP]
+> Read more on [black](https://pypi.org/project/black/).
 
 
 ***Run the unittests***   🏃
@@ -174,8 +175,9 @@ firefox htmlcov/index.html  ????????????????????????
 
 Read more on:
 
-* [unittest](https://docs.python.org/3/library/unittest.html)
-* [coverage](https://coverage.readthedocs.io/)
+> [!TIP]
+> * [unittest](https://docs.python.org/3/library/unittest.html)
+> * [coverage](https://coverage.readthedocs.io/)
 
 
 ***Run parts of the testsuite***   🏃
@@ -220,7 +222,13 @@ make clean-all
 
 The makefile contains more targets, for example these.
 
-* `make pyreverse` to generate class and package diagrams from the code base.
-* `make doc` to generate documentation from the code.
+to generate class and package diagrams from the code base.
+```
+make pyreverse
+```
+to generate documentation from the code.
+```
+make doc
+``` 
 
 
