@@ -53,7 +53,7 @@ Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
 
 
 
-Install a Python virtual environment and activate it. <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p>
+***Install a Python virtual environment and activate it*** <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p>
 --------------------------
 
 Create the virtual environment
@@ -80,7 +80,7 @@ Read more on [Python venv](https://docs.python.org/3/library/venv.html).
 
 
 
-Install the dependencies   💾
+***Install the dependencies***   💾
 --------------------------
 
 Install the PIP packages that are dependencies to the project and/or the development environment. The dependencies are documented in the `requirements.txt`.
@@ -100,7 +100,7 @@ Read more on [Python PIP](https://pypi.org/project/pip/).
 
 
 
-Run the code   🏃
+***Run the code***   🏃
 --------------------------
 
 The example program can be started like this.
@@ -114,7 +114,7 @@ All code is stored below the directory `PigDiceGame/`.
 Good Luck 😀
 
 
-Run the validators   🏃
+***Run the validators***  🏃
 --------------------------
 
 You can run the static code validators like this. They check the sourcecode and exclude the testcode.
@@ -140,7 +140,7 @@ Read more on:
 
 
 
-Codestyle with black ⚫
+***Codestyle with black*** ⚫
 --------------------------
 
 You can unify the codestyle using black. Running black will change your source code to have a codestyle according to black codestyle.
@@ -157,7 +157,7 @@ Read more on [black](https://pypi.org/project/black/).
 
 
 
-Run the unittests   🏃
+***Run the unittests***   🏃
 --------------------------
 
 You can run the unittests like this. The testfiles are stored in the `test/` directory.
@@ -189,7 +189,7 @@ Read more on:
 
 
 
-Run parts of the testsuite   🏃
+***Run parts of the testsuite***   🏃
 --------------------------
 
 You can also run parts of the testsuite, for examples files or methods in files.
@@ -209,7 +209,7 @@ Run a test method, in a class, in a testfile
 python -m unittest test.test_game.TestGameClass.test_init_default_object        ??????????????????
 ```
 
-Remove generated files   🗑️
+***Remove generated files***   🗑️
 --------------------------
 
 You can remove all generated files by this.
@@ -224,7 +224,7 @@ Do also remove all you have installed
 make clean-all
 ```
 
-More targets in the Makefile
+***More targets in the Makefile***
 --------------------------
 
 The makefile contains more targets, for example these.
