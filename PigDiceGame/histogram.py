@@ -1,4 +1,5 @@
 """Histogram."""
+
 import sys
 import os
 import matplotlib.pyplot as plt
@@ -11,13 +12,12 @@ class Histogram:
 
     def __init__(self):
         """Initialize the histogram."""
-        pass
 
     def plot_chart(self):
         """Plot the high score table."""
         high_score = highscore.Highscore()
         names, values = high_score.get_name_and_highscore()
-        
+
         if not names and not values:
             print("The list is empty")
         else:
@@ -31,10 +31,10 @@ class Histogram:
 
             ax.grid(axis='y', linestyle='--', alpha=0.5)
 
-            for bar in bars:
-                height = bar.get_height()
-                ax.annotate('{}'.format(height),
-                            xy=(bar.get_x() + bar.get_width() / 2, height),
+            for bar_ in bars:
+                height = bar_.get_height()
+                ax.annotate(f'{height}',
+                            xy=(b.get_x() + bar_.get_width() / 2, height),
                             xytext=(0, 3),
                             textcoords="offset points",
                             ha='center', va='bottom')
