@@ -10,20 +10,25 @@ class TestHighscore(unittest.TestCase):
     def test_add_winner(self):
         """"Test for adding winning"""
         self.highscore.add_winner("player1")
-        self.assertEqual(self.highscore.highscores["Player1"], 1)
+        exp = {"Player1": 1}
+        self.assertEqual(self.highscore.highscores, exp)
         
         self.highscore.add_winner("Player2")
-        self.assertEqual(self.highscore.highscores["Player2"], 1)
+        exp = {"Player2": 1}
+        self.assertEqual(self.highscore.highscores, exp)
         
         self.highscore.add_winner("Player1")
-        self.assertEqual(self.highscore.highscores["Player1"], 2)
+        exp = {"Player1": 2}
+        self.assertEqual(self.highscore.highscores, exp)
+        
         
 
     def test_increase_score(self):
         """Test for increasing score"""
         self.highscore.add_winner("Player1")
         self.highscore.increase_score("Player1")
-        self.assertEqual(self.highscore.highscores["Player1"], 2)
+        exp = {"Player1": 2}
+        self.assertEqual(self.highscore.highscores, exp)
 
     def test_sort_winners_score(self):
         """Test for sorting dictionary"""
