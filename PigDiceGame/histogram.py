@@ -42,7 +42,3 @@ class Histogram:
             plt.xticks(rotation=45)
             plt.tight_layout()
             plt.show()
-
-
-histogram = Histogram()
-histogram.plot_chart()
