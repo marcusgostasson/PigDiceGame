@@ -52,15 +52,14 @@ Press 4 if you want to quit""")
     def player_vs_computer(self):
         """The logic when the user picks play vs the computer."""
 
-        player_name = input("What is your name? ")
-        player1 = player.Player(player_name)
-        self.players[player1.get_name()] = player1.get_total_score()
+        player1 = self.setup_player()
         difficulty = self.get_choice_from_user("""What difficulty do you want?
 1. Playing against a new born baby
 2. Playing against my uncle that is pretty good with numbers
 3. Playing against Pelle, if you know you know
 4. Completly random no logic\nChoice: """)
         intelligence = computer.Computer(difficulty)
+        self.players["Computer"] = intelligence.get_total_score()
         playing = True
         while playing:
             playing = self.player_playing(player1)
@@ -68,8 +67,6 @@ Press 4 if you want to quit""")
                 print(RED + player1.get_name() + " surrendered" + END + " and " + GREEN + "Computer won" + END)
             elif playing is True:
                 playing = self.computer_playing(intelligence)
-                if (playing is False and computer.get_total_score() < 100):
-                    print(RED + "Computer surrendered" + END + " and " + GREEN + player1.get_name() + " won" + END)
 
     def quit(self):
         """Stops the program"""
@@ -200,13 +197,13 @@ Press 4 if you want to quit""")
                 return False
 
             return True
-
-        if score >= 100:
-            print("You won in " + str(current_player.get_tossed_amount()) + " throws!")  # can make this green
-            current_player.set_total_score(score)
-            self.players[current_player.get_name()] = current_player.get_total_score()
-            post_winner.add_winner(current_player.get_name())
-            return False
+        if isinstance(current_player, computer.Computer):
+            if score >= 100:
+                print("You won in " + str(current_player.get_tossed_amount()) + " throws!")  # can make this green
+                current_player.set_total_score(score)
+                self.players["Computer"] = current_player.get_total_score()
+                post_winner.add_winner("Computer")
+                return False
 
         return True
 

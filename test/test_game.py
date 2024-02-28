@@ -186,13 +186,15 @@ The first player to score 100 or more points wins\n"""
             g.player_playing(p)
             mock_print.assert_any_call(game.RED + "That's not an option" + game.END)
 
-    @patch("builtins.input", side_effect=["raz", "1", "4"])
-    def test_player_vs_computer(self, mock_input):
+    @patch("PigDiceGame.dice.Dice.get_random_number", return_value=6)
+    @patch("builtins.input", side_effect=["raz", "1", "2", "4"])
+    def test_player_vs_computer(self, mock_input, mock_choice):
         """Testing the player vs computer function."""
 
         g = game.Game()
         g.player_vs_computer()
         self.assertIn("raz", g.players)
+        self.assertIn("Computer", g.players)
 
 
 if __name__ == "__main__":
