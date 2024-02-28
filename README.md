@@ -105,8 +105,8 @@ Run the code   🏃
 
 The example program can be started like this.
 
+Execute the main program
 ```
-# Execute the main program
 python PigDiceGame/main.py
 ```
 
@@ -119,12 +119,15 @@ Run the validators   🏃
 
 You can run the static code validators like this. They check the sourcecode and exclude the testcode.
 
+Run each at a time
 ```
-# Run each at a time
 make flake8
+```
+```
 make pylint
-
-# Run all on the same time
+```
+Run all on the same time
+```
 make lint
 ```
 
@@ -142,9 +145,11 @@ Codestyle with black ⚫
 
 You can unify the codestyle using black. Running black will change your source code to have a codestyle according to black codestyle.
 
+Same same, different names
 ```
-# Same same, different names
 make black
+```
+```
 make codestyle
 ```
 
@@ -157,9 +162,10 @@ Run the unittests   🏃
 
 You can run the unittests like this. The testfiles are stored in the `test/` directory.
 
+Run unttests without coverage
 ```
-# Run unttests without coverage
 make unittest
+```
 
 # Run unittests with coverage
 make coverage
