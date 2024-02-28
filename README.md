@@ -1,6 +1,7 @@
 Pig 🐷 Dice game
 ======================
 
+
 Pig, is a fun and simple dice game perfect for playing with family and friends. The game requires only two dice and a strong appetite for risk-taking! Here is a basic description of how it works:
 
 **Player:** Two people against each other.
@@ -28,6 +29,7 @@ Good luck, let´s play! 🎲🎲😃
 ![GitHub License](https://img.shields.io/github/license/Brantin10/Assignment2?style=for-the-badge&logo=Hence)
 ![GitHub Release](https://img.shields.io/github/v/release/Brantin10/Assignment2?include_prereleases&sort=date&display_name=tag&style=for-the-badge)
 
+
 ***Check python version*** <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p> 
 --------------------------
 
@@ -47,6 +49,7 @@ make version
 ```
 > [!TIP]
 > Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
+
 
 ***Install a Python virtual environment and activate it*** <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p>
 --------------------------
