@@ -1,6 +1,6 @@
 class Highscore:
     def __init__(self):
-        self.highscores = {}
+        self.highscores = {"Kalle": 11, "Nisse": 12, "Rolf": 6}
     
     def add_winner(self, player):
         if player in self.highscores:
@@ -10,8 +10,17 @@ class Highscore:
             self.highscores[player] = score
         
     def get_name_and_highscore(self):
-        return self.highscores.keys(), self.highscores.values()
-    
-    def sort_winners_score(self):
+        names = []
+        values = []
+
+        playerlist = self.sorted_list()
+        for keys_values in playerlist:
+            name, value = keys_values
+            names.append(name)
+            values.append(value)
+        return names, values
+
+    def sorted_list(self):
         sorted_highscores = sorted(self.highscores.items(), key=lambda x: x[1], reverse=True)
-        return dict(sorted_highscores)
+        return sorted_highscores
+

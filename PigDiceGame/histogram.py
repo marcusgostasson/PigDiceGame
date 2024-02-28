@@ -1,46 +1,48 @@
 """Histogram."""
+import sys
+import os
 import matplotlib.pyplot as plt
-from PigDiceGame import Highscore
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from PigDiceGame import highscore
 
 
 class Histogram:
     """Histogram Class."""
 
-    def __init__(self, names, highscores):
+    def __init__(self):
         """Initialize the histogram."""
-        self.names = names
-        self.highscores = highscores
+        pass
 
     def plot_chart(self):
         """Plot the high score table."""
-        sorted_data = sorted(zip(self.names, self.highscores), key=lambda x: x[1], reverse=True)
-        sorted_names, sorted_highscores = zip(*sorted_data)
+        high_score = highscore.Highscore()
+        names, values = high_score.get_name_and_highscore()
+        
+        if not names and not values:
+            print("The list is empty")
+        else:
+            fig, ax = plt.subplots()
+            bars = ax.bar(names, values, color='skyblue',
+                          edgecolor='black', alpha=0.7)
 
-        fig, ax = plt.subplots()
-        bars = ax.bar(sorted_names, sorted_highscores, color='skyblue', edgecolor='black', alpha=0.7)
+            ax.set_title('Highscores')
+            ax.set_xlabel('Name')
+            ax.set_ylabel('Highscore')
 
-        ax.set_title('Highscores')
-        ax.set_xlabel('Name')
-        ax.set_ylabel('Highscore')
+            ax.grid(axis='y', linestyle='--', alpha=0.5)
 
-        ax.grid(axis='y', linestyle='--', alpha=0.5)
+            for bar in bars:
+                height = bar.get_height()
+                ax.annotate('{}'.format(height),
+                            xy=(bar.get_x() + bar.get_width() / 2, height),
+                            xytext=(0, 3),
+                            textcoords="offset points",
+                            ha='center', va='bottom')
 
-        for bar in bars:
-            height = bar.get_height()
-            ax.annotate('{}'.format(height),
-                        xy=(bar.get_x() + bar.get_width() / 2, height),
-                        xytext=(0, 3),
-                        textcoords="offset points",
-                        ha='center', va='bottom')
-
-        plt.xticks(rotation=45)
-        plt.tight_layout()  
-        plt.show()
+            plt.xticks(rotation=45)
+            plt.tight_layout()
+            plt.show()
 
 
-high_score_and_name = Highscore()
-names, highscores = high_score_and_name.get_name_and_highscore
-
-
-histogram = Histogram(names, highscores)
+histogram = Histogram()
 histogram.plot_chart()
