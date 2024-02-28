@@ -77,5 +77,5 @@ class TestPlayer(unittest.TestCase):
         self.assertEqual(player.get_tossed_amount(), 1)
 
 
-if __name__ == "__main__":
-    unittest.main()
+#if __name__ == "__main__":
+    #unittest.main()
