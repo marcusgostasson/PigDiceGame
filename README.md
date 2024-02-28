@@ -109,6 +109,7 @@ Execute the main program
 ```
 python PigDiceGame/main.py
 ```
+Good Luck 😀
 
 All code is stored below the directory `PigDiceGame/`.
 
@@ -131,7 +132,7 @@ Run all on the same time
 make lint
 ```
 
-You might need to update the Makefile if you change the name of the source directory currently named `PigDiceGame/`.
+You might need to update the Makefile if you change the name of the source directory currently named `PigDiceGame/`. ??????????????????
 
 Read more on:
 
@@ -166,18 +167,20 @@ Run unttests without coverage
 ```
 make unittest
 ```
-
-# Run unittests with coverage
+Run unittests with coverage
+```
 make coverage
+```
 
-# Run the linters and the unittests with coverage
+Run the linters and the unittests with coverage
+```
 make test
 ```
 
 You can open a web browser to inspect the code coverage as a generated HTML report.
 
 ```
-firefox htmlcov/index.html
+firefox htmlcov/index.html  ????????????????????????
 ```
 
 Read more on:
@@ -194,34 +197,33 @@ You can also run parts of the testsuite, for examples files or methods in files.
 
 You can run all tests from a testfile.
 
+
+Run a testfile
 ```
-# Run a testfile
-python -m unittest test.test_game
+python -m unittest test.test_game                    ?????????????????????????
 ```
 
 You can also run a single testcase from a file.
 
+Run a test method, in a class, in a testfile
 ```
-# Run a test method, in a class, in a testfile
-python -m unittest test.test_game.TestGameClass.test_init_default_object
+python -m unittest test.test_game.TestGameClass.test_init_default_object        ??????????????????
 ```
-
-
 
 Remove generated files   🗑️
 --------------------------
 
 You can remove all generated files by this.
 
+Remove files generated for tests or caching
 ```
-# Remove files generated for tests or caching
 make clean
+```
 
-# Do also remove all you have installed
+Do also remove all you have installed
+```
 make clean-all
 ```
-
-
 
 More targets in the Makefile
 --------------------------
