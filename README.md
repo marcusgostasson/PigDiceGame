@@ -61,17 +61,20 @@ Create the virtual environment
 make venv
 ```
 
-Activate on Windows
+Activate on Windows 🪟
 ```
 . .venv/Scripts/activate
 ```
 
-Activate on Linux / Mac
+Activate on Linux / Mac 🍏
 ```
 . .venv/bin/activate
 ```
 
-When you are done you can leave the venv using the command ```deactivate```.
+When you are done you can leave the venv using the command 🙅🏼
+```
+deactivate
+```
 
 Read more on [Python venv](https://docs.python.org/3/library/venv.html).
 
