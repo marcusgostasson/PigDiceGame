@@ -1,4 +1,4 @@
-###                                                                 Pig (Dice game)  🐷
+###--------------------------------------------------------- Pig (Dice game)  🐷 --------------------------------------------------------------
 
 
 Pig, is a fun and simple dice game perfect for playing with family and friends. The game requires only two dice and a strong appetite for risk-taking! Here is a basic description of how it works:
@@ -109,10 +109,9 @@ Execute the main program
 ```
 python PigDiceGame/main.py
 ```
-Good Luck 😀
-
 All code is stored below the directory `PigDiceGame/`.
 
+Good Luck 😀
 
 
 Run the validators   🏃
