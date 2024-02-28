@@ -36,7 +36,6 @@ Check what version of Python you have. The Makefile uses `PYTHON=python` as defa
 make version
 ```
 
-
 If you have another naming of the Python executable then you can solve that using an environment variable. This is common on Mac and Linux.
 
 Set the environment variable to be your python executable
@@ -49,15 +48,8 @@ make version
 
 Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
 
-
-
 ***Install a Python virtual environment and activate it*** <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p>
 --------------------------
-
-
-
-
-
 
 Create the virtual environment
 ```
@@ -82,17 +74,6 @@ deactivate
 Read more on [Python venv](https://docs.python.org/3/library/venv.html).
 
 
-
-
-
-
-
-
-
-
-
-
-
 ***Install the dependencies***   💾
 --------------------------
 
@@ -110,7 +91,6 @@ make installed
 ```
 
 Read more on [Python PIP](https://pypi.org/project/pip/).
-
 
 
 ***Run the code***   🏃
@@ -143,14 +123,12 @@ Run all on the same time
 ```
 make lint
 ```
-
 You might need to update the Makefile if you change the name of the source directory currently named `PigDiceGame/`. ??????????????????
 
 Read more on:
 
 * [flake8](https://flake8.pycqa.org/en/latest/)
 * [pylint](https://pylint.org/)
-
 
 
 ***Codestyle with black*** ⚫
@@ -167,7 +145,6 @@ make codestyle
 ```
 
 Read more on [black](https://pypi.org/project/black/).
-
 
 
 ***Run the unittests***   🏃
@@ -201,7 +178,6 @@ Read more on:
 * [coverage](https://coverage.readthedocs.io/)
 
 
-
 ***Run parts of the testsuite***   🏃
 --------------------------
 
@@ -222,6 +198,7 @@ Run a test method, in a class, in a testfile
 python -m unittest test.test_game.TestGameClass.test_init_default_object        ??????????????????
 ```
 
+
 ***Remove generated files***   🗑️
 --------------------------
 
@@ -236,6 +213,7 @@ Do also remove all you have installed
 ```
 make clean-all
 ```
+
 
 ***More targets in the Makefile***
 --------------------------
