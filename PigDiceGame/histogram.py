@@ -2,6 +2,8 @@
 import sys
 import os
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
@@ -29,7 +31,7 @@ class Histogram:
             ax.grid(axis='y', linestyle='--', alpha=0.5)
 
             for bar_ in bars:
-                height = bar_.get_height() + 1
+                height = bar_.get_height()
                 ax.annotate(f'{height}',
                             xy=(bar_.get_x() + bar_.get_width() / 2, height),
                             xytext=(0, 3),
@@ -37,5 +39,7 @@ class Histogram:
                             ha='center', va='bottom')
 
             plt.xticks(rotation=45)
+            ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+            ax.set_ylim(0, max(values) * 1.1)
             plt.tight_layout()
             plt.show()
