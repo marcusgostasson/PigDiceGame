@@ -9,9 +9,6 @@ class Highscore:
             score = 1
             self.highscores[player] = score
         
-    def increase_score(self, player):
-        self.highscores[player] += 1
-        
     def get_name_and_highscore(self):
         return self.highscores.keys(), self.highscores.values()
     
