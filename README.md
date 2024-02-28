@@ -56,20 +56,24 @@ Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
 Python virtual environment <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p>
 --------------------------
 
-Install a Python virtual environment and activate it.
+##Install a Python virtual environment and activate it.
 
-```
 # Create the virtual environment
+```
 make venv
+```
 
 # Activate on Windows
+```
 . .venv/Scripts/activate
+```
 
 # Activate on Linux / Mac
+```
 . .venv/bin/activate
 ```
 
-When you are done you can leave the venv using the command `deactivate`.
+When you are done you can leave the venv using the command ```deactivate```.
 
 Read more on [Python venv](https://docs.python.org/3/library/venv.html).
 
