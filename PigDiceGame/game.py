@@ -2,6 +2,7 @@ from . import player
 from . import computer
 from . import dice
 from . import highscore
+from . import histogram
 RED = '\033[91m'
 GREEN = '\33[32m'
 END = '\033[0m'
@@ -20,7 +21,8 @@ class Game:
 Press 1 if you want to play with a friend
 Press 2 if you want to play vs the computer
 Press 3 if you want to see the rules for the game
-Press 4 if you want to quit""")
+Press 4 if you want to see highscore
+Press 5 if you want to quit""")
 
     def get_choice_from_user(self, prompting):
         """Prompting the user for an input until its a number."""
@@ -86,6 +88,9 @@ Press 4 if you want to quit""")
         elif choice == 3:
             self.game_rules()
         elif choice == 4:
+            chart = histogram.Histogram()
+            chart.plot_chart()
+        elif choice == 5:
             self.quit()
         else:
             print(RED + "Invalid option" + END)
