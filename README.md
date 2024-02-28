@@ -35,8 +35,8 @@ Check python version <img src="https://raw.githubusercontent.com/danielcranney/r
 
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
 
-```
 # Check you Python installation
+```
 make version
 ```
 
