@@ -100,6 +100,8 @@ make installed
 > Read more on [Python PIP](https://pypi.org/project/pip/).
 
 
+
+
 ***Run the code***   🏃
 --------------------------
 
@@ -112,6 +114,8 @@ python PigDiceGame/main.py
 All code is stored below the directory `PigDiceGame/`.
 
 Good Luck 😀
+
+
 
 
 ***Run the validators***  🏃
@@ -139,6 +143,8 @@ Read more on:
 > * [pylint](https://pylint.org/)
 
 
+
+
 ***Codestyle with black*** ⚫
 --------------------------
 
@@ -153,6 +159,8 @@ make codestyle
 ```
 > [!TIP]
 > Read more on [black](https://pypi.org/project/black/).
+
+
 
 
 ***Run the unittests***   🏃
@@ -187,6 +195,8 @@ Read more on:
 > * [coverage](https://coverage.readthedocs.io/)
 
 
+
+
 ***Run parts of the testsuite***   🏃
 --------------------------
 
@@ -208,6 +218,8 @@ python -m unittest test.test_game.TestGameClass.test_init_default_object        
 ```
 
 
+
+
 ***Remove generated files***   🗑️
 --------------------------
 
@@ -222,6 +234,8 @@ Do also remove all you have installed
 ```
 make clean-all
 ```
+
+
 
 
 ***More targets in the Makefile***
