@@ -159,10 +159,10 @@ Press 5 if you want to quit
 
                 print("Your new name is now " + new_name)
 
-            elif choice == 4:
+            if choice == 4:
                 return False
 
-            elif choice == 1337:
+            if choice == 1337:
                 current_player.set_total_score(100)
                 game_is_being_played = self.check_if_winner(100, current_player)
             else:
@@ -212,7 +212,7 @@ Press 5 if you want to quit
         """Checks if the current toss is enough to win."""
 
         if isinstance(current_player, player.Player):
-            if score >= 50:
+            if score >= 100:
                 print(GREEN + "You won in " + str(current_player.get_tossed_amount())
                       + " throws!" + END)
                 current_player.set_total_score(score)
@@ -222,7 +222,7 @@ Press 5 if you want to quit
 
             return True
         if isinstance(current_player, computer.Computer):
-            if score >= 50:
+            if score >= 100:
                 print(GREEN + "Computer won in " + str(current_player.get_tossed_amount())
                       + " throws!" + END)
                 current_player.set_total_score(score)
