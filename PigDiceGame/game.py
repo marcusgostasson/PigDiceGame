@@ -3,9 +3,12 @@ from . import computer
 from . import dice
 from . import highscore
 from . import histogram
+import os
 RED = '\033[91m'
 GREEN = '\33[32m'
+YELLOW = '\u001b[33m'
 END = '\033[0m'
+
 post_winner = highscore.Highscore()
 
 
@@ -18,12 +21,14 @@ class Game:
     def display(self):
         """Displaying the startup menu to the user."""
 
-        print("""Hello and welcome to Pig Dice Game
+        print(YELLOW + "Hello and welcome to Pig Dice Game" + END)
+        print("""-------------------------------------------------
 Press 1 if you want to play with a friend
 Press 2 if you want to play vs the computer
 Press 3 if you want to see the rules for the game
 Press 4 if you want to see highscore
-Press 5 if you want to quit""")
+Press 5 if you want to quit
+-------------------------------------------------""")
 
     def get_choice_from_user(self, prompting):
         """Prompting the user for an input until its a number."""
@@ -46,11 +51,13 @@ Press 5 if you want to quit""")
         while playing:
             playing = self.player_playing(player1)
             if (playing is False and player1.get_total_score() < 100):
+                os.system('cls')
                 print(RED + player1.get_name() + " surrendered" + END +
                       " and " + GREEN + player2.get_name() + " won" + END)
             elif playing is True:
                 playing = self.player_playing(player2)
                 if (playing is False and player2.get_total_score() < 100):
+                    os.system('cls')
                     print(RED + player2.get_name() + " surrendered" + END +
                           " and " + GREEN + player1.get_name() + " won" + END)
 
@@ -69,7 +76,9 @@ Press 5 if you want to quit""")
         while playing:
             playing = self.player_playing(player1)
             if (playing is False and player1.get_total_score() < 100):
-                print(RED + player1.get_name() + " surrendered" + END + " and " + GREEN + "Computer won" + END)
+                os.system('cls')
+                print(RED + player1.get_name() + " surrendered" + END +
+                      " and " + GREEN + "Computer won" + END)
             elif playing is True:
                 playing = self.computer_playing(intelligence)
 
@@ -112,9 +121,11 @@ Press 5 if you want to quit""")
         score = current_player.get_total_score()  # Getting score from the player
         game_is_being_played = True
         while game_is_being_played:
-            print(current_player.get_name() + " you currently have " + str(score) + " point(s)")
+            print(current_player.get_name() + " you currently have "
+                  + str(score) + " point(s)")
 
-            choice = self.get_choice_from_user(current_player.get_name() + " what do you want to do?:\nPress 1 to toss\nPress 2 to stay\nPress 3 to change name\nPress 4 to surrender\nChoice: ")
+            choice = self.get_choice_from_user(current_player.get_name() +
+" what do you want to do?:\nPress 1 to toss\nPress 2 to stay\nPress 3 to change name\nPress 4 to surrender\nChoice: ")
 
             if choice == 1:
                 die_value = current_player.throw_dice(die)
@@ -124,6 +135,7 @@ Press 5 if you want to quit""")
                     game_is_being_played = self.check_if_winner(score, current_player)
                     continue
 
+                os.system('cls')
                 print("Oh you got a " + str(die_value) + " better luck next time\n")
                 game_is_being_played = False
                 return True
@@ -132,7 +144,9 @@ Press 5 if you want to quit""")
                 current_player.set_total_score(score)
                 self.players[current_player.get_name()] = current_player.get_total_score()
                 current_points = current_player.get_total_score()
-                print(current_player.get_name() + " stayed and now have " + str(current_points) + " point(s)\n")
+                os.system('cls')
+                print(current_player.get_name() + " stayed and now have "
+                      + str(current_points) + " point(s)\n")
                 game_is_being_played = False
                 return True
 
@@ -178,26 +192,29 @@ Press 5 if you want to quit""")
                     score_this_round += die_value
                     continue
 
-                print("Oh you got a " + str(die_value) + " better luck next time\n")
+                print("Oh you got a " + str(die_value)
+                      + " better luck next time\n")
                 game_is_being_played = False
                 return True
 
             if choice == "stay":
                 computer.set_total_score(score)
                 current_points = computer.get_total_score()
-                print("Computer stayed and now have " + str(current_points) + " point(s)\n")
+                print("Computer stayed and now have " + str(current_points)
+                      + " point(s)\n")
                 game_is_being_played = False
                 return True
 
-            print("Invalid option!")  # Can make this print in red
+            print(RED + "Invalid option!" + END)
         return False
 
     def check_if_winner(self, score, current_player):
         """Checks if the current toss is enough to win."""
 
         if isinstance(current_player, player.Player):
-            if score >= 5:
-                print("You won in " + str(current_player.get_tossed_amount()) + " throws!")  # can make this green
+            if score >= 50:
+                print(GREEN + "You won in " + str(current_player.get_tossed_amount())
+                      + " throws!" + END)
                 current_player.set_total_score(score)
                 self.players[current_player.get_name()] = current_player.get_total_score()
                 post_winner.add_winner(current_player.get_name())
@@ -205,8 +222,9 @@ Press 5 if you want to quit""")
 
             return True
         if isinstance(current_player, computer.Computer):
-            if score >= 5:
-                print("You won in " + str(current_player.get_tossed_amount()) + " throws!")  # can make this green
+            if score >= 50:
+                print(GREEN + "Computer won in " + str(current_player.get_tossed_amount())
+                      + " throws!" + END)
                 current_player.set_total_score(score)
                 self.players["Computer"] = current_player.get_total_score()
                 post_winner.add_winner("Computer")
