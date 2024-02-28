@@ -6,6 +6,7 @@ from . import histogram
 RED = '\033[91m'
 GREEN = '\33[32m'
 END = '\033[0m'
+post_winner = highscore.Highscore()
 
 
 class Game:
@@ -89,7 +90,7 @@ Press 5 if you want to quit""")
             self.game_rules()
         elif choice == 4:
             chart = histogram.Histogram()
-            chart.plot_chart()
+            chart.plot_chart(post_winner)
         elif choice == 5:
             self.quit()
         else:
@@ -194,9 +195,8 @@ Press 5 if you want to quit""")
     def check_if_winner(self, score, current_player):
         """Checks if the current toss is enough to win."""
 
-        post_winner = highscore.Highscore()
         if isinstance(current_player, player.Player):
-            if score >= 100:
+            if score >= 5:
                 print("You won in " + str(current_player.get_tossed_amount()) + " throws!")  # can make this green
                 current_player.set_total_score(score)
                 self.players[current_player.get_name()] = current_player.get_total_score()
@@ -205,7 +205,7 @@ Press 5 if you want to quit""")
 
             return True
         if isinstance(current_player, computer.Computer):
-            if score >= 100:
+            if score >= 5:
                 print("You won in " + str(current_player.get_tossed_amount()) + " throws!")  # can make this green
                 current_player.set_total_score(score)
                 self.players["Computer"] = current_player.get_total_score()
@@ -233,7 +233,7 @@ Press 5 if you want to quit""")
     def setup_player(self):
         """Sets up the player."""
 
-        player_name = input("What is your name? ")
+        player_name = input("What is your name? ").capitalize()
         new_player = player.Player(player_name)
         self.players[player_name] = new_player.get_total_score()
 
