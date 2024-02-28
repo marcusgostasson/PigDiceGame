@@ -80,6 +80,16 @@ Read more on [Python venv](https://docs.python.org/3/library/venv.html).
 
 
 
+
+
+
+
+
+
+
+
+
+
 ***Install the dependencies***   💾
 --------------------------
 
