@@ -38,6 +38,7 @@ Check what version of Python you have. The Makefile uses `PYTHON=python` as defa
 make version
 ```
 
+
 If you have another naming of the Python executable then you can solve that using an environment variable. This is common on Mac and Linux.
 
 Set the environment variable to be your python executable
