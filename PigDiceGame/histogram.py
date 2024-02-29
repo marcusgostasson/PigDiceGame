@@ -25,8 +25,8 @@ class Histogram:
             colors = (['gold', 'silver', 'saddlebrown'] +
                       ['black'] * (len(names) - 3))
 
-            bars = ax.bar(names, values, color=colors,
-                          edgecolor='black', alpha=0.7)
+            bars = ax.bar(names, values, color=colors, edgecolor='black',
+                          alpha=0.7)
 
             ax.set_title('Highscores')
             ax.set_xlabel('Name')
