@@ -124,8 +124,7 @@ Press 5 if you want to quit
             print(current_player.get_name() + " you currently have "
                   + str(score) + " point(s)")
 
-            choice = self.get_choice_from_user(current_player.get_name() +
-" what do you want to do?:\nPress 1 to toss\nPress 2 to stay\nPress 3 to change name\nPress 4 to surrender\nChoice: ")
+            choice = self.get_choice_from_user(current_player.get_name() + " what do you want to do?:\nPress 1 to toss\nPress 2 to stay\nPress 3 to change name\nPress 4 to surrender\nChoice: ")
 
             if choice == 1:
                 die_value = current_player.throw_dice(die)

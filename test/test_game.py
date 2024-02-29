@@ -43,7 +43,7 @@ class Test_game(unittest.TestCase):
         res = True
         self.assertEqual(exp, res)
 
-    @patch("builtins.input", side_effect=["yo", "5", "1"])
+    @patch("builtins.input", side_effect=["yo", "4", "1"])
     def test_get_choice_from_user(self, mock_input):
         """Tests if choice from user is invalid for a string and valid for 1"""
 
@@ -56,7 +56,7 @@ class Test_game(unittest.TestCase):
         self.assertEqual(choice, 1)
 
     @patch("PigDiceGame.dice.Dice.get_random_number", return_value=2) # Die always roll 2
-    @patch("builtins.input", side_effect=["1", "Bob", "raz", "1", "2", "5", "5"])
+    @patch("builtins.input", side_effect=["1", "Bob", "raz", "1", "2", "4", "5"])
     def test_start_game_with_choice_one_then_stay(self, mock_input, mock_choices):
         """Tests to start the game and let player1 roll then stay to see that the score is updated"""
 
@@ -103,7 +103,7 @@ The first player to score 100 or more points wins\n"""
 
         self.assertEqual(mock_stdout.getvalue().strip(), expected_output.strip())
 
-    @patch("builtins.input", side_effect=["bob", "raz", "5", "5", "5", "5"])
+    @patch("builtins.input", side_effect=["bob", "raz", "4"])
     def test_player_vs_player_p1_surrenders(self, mock_input):
         """Tests if the output is correct if the first player surrenders."""
 
@@ -112,7 +112,7 @@ The first player to score 100 or more points wins\n"""
             g.player_vs_player()
             mock_print.assert_called_with(game.RED + "Bob" + " surrendered" + game.END + " and " + game.GREEN + "Raz" + " won" + game.END)
 
-    @patch("builtins.input", side_effect=["bob", "raz", "2", "5", "5", "5"])
+    @patch("builtins.input", side_effect=["bob", "raz", "2", "4", "4", "4"])
     def test_player_vs_player_p2_surrenders(self, mock_input):
         """Tests if the output is correct if the second player surrenders."""
 
@@ -141,7 +141,7 @@ The first player to score 100 or more points wins\n"""
             g.player_playing(p)
             mock_print.assert_called_with("Oh you got a " + "1" + " better luck next time\n")
 
-    @patch("builtins.input", side_effect=["3", "Sven", "5", "3", "Sven", "5", "5"])
+    @patch("builtins.input", side_effect=["3", "Sven", "4", "3", "Sven", "4", "4"])
     def test_user_press_3_change_name_prints_correct(self, mock_input):
         """Checks if the output is correct after the named is changed
         and that the dictionary is correct."""
@@ -177,7 +177,7 @@ The first player to score 100 or more points wins\n"""
         empty = g.get_player_score("Bob")
         self.assertEqual(empty, None)
 
-    @patch("builtins.input", side_effect=["12", "5", "5", "5"])
+    @patch("builtins.input", side_effect=["12", "4"])
     def test_player_playing_invalid_input(self, mock_input):
         """Testsing the player_playing when invalid input 12 in this case."""
         g = game.Game()
@@ -187,7 +187,7 @@ The first player to score 100 or more points wins\n"""
             mock_print.assert_any_call(game.RED + "That's not an option" + game.END)
 
     @patch("PigDiceGame.dice.Dice.get_random_number", return_value=6)
-    @patch("builtins.input", side_effect=["Raz", "1", "2", "5"])
+    @patch("builtins.input", side_effect=["Raz", "1", "2", "4"])
     def test_player_vs_computer(self, mock_input, mock_choice):
         """Testing the player vs computer function."""
 
