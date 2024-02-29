@@ -56,7 +56,7 @@ class Test_game(unittest.TestCase):
         self.assertEqual(choice, 1)
 
     @patch("PigDiceGame.dice.Dice.get_random_number", return_value=2) # Die always roll 2
-    @patch("builtins.input", side_effect=["1", "Bob", "raz", "1", "2", "4", "4"])
+    @patch("builtins.input", side_effect=["1", "Bob", "raz", "1", "2", "4", "5"])
     def test_start_game_with_choice_one_then_stay(self, mock_input, mock_choices):
         """Tests to start the game and let player1 roll then stay to see that the score is updated"""
 
@@ -85,7 +85,7 @@ class Test_game(unittest.TestCase):
         player = g.setup_player()
 
         players_name = player.get_name()
-        self.assertEqual(players_name, "bob")
+        self.assertEqual(players_name, "Bob")
 
     @patch('sys.stdout', new_callable=StringIO)
     def test_game_rules(self, mock_stdout):
@@ -103,14 +103,14 @@ The first player to score 100 or more points wins\n"""
 
         self.assertEqual(mock_stdout.getvalue().strip(), expected_output.strip())
 
-    @patch("builtins.input", side_effect=["bob", "raz", "4", "4", "4", "4"])
+    @patch("builtins.input", side_effect=["bob", "raz", "4"])
     def test_player_vs_player_p1_surrenders(self, mock_input):
         """Tests if the output is correct if the first player surrenders."""
 
         g = game.Game()
         with patch("builtins.print") as mock_print:
             g.player_vs_player()
-            mock_print.assert_called_with(game.RED + "bob" + " surrendered" + game.END + " and " + game.GREEN + "raz" + " won" + game.END)
+            mock_print.assert_called_with(game.RED + "Bob" + " surrendered" + game.END + " and " + game.GREEN + "Raz" + " won" + game.END)
 
     @patch("builtins.input", side_effect=["bob", "raz", "2", "4", "4", "4"])
     def test_player_vs_player_p2_surrenders(self, mock_input):
@@ -119,7 +119,7 @@ The first player to score 100 or more points wins\n"""
         g = game.Game()
         with patch("builtins.print") as mock_print:
             g.player_vs_player()
-            mock_print.assert_called_with(game.RED + "raz" + " surrendered" + game.END + " and " + game.GREEN + "bob" + " won" + game.END)
+            mock_print.assert_called_with(game.RED + "Raz" + " surrendered" + game.END + " and " + game.GREEN + "Bob" + " won" + game.END)
 
     def test_handle_choice_invalid(self):
         """Tests if an invalid option for handle_choice prints right output."""
@@ -141,58 +141,60 @@ The first player to score 100 or more points wins\n"""
             g.player_playing(p)
             mock_print.assert_called_with("Oh you got a " + "1" + " better luck next time\n")
 
-    @patch("builtins.input", side_effect=["3", "sven", "4", "3", "sven", "4"])
+    @patch("builtins.input", side_effect=["3", "Sven", "4", "3", "Sven", "4", "4"])
     def test_user_press_3_change_name_prints_correct(self, mock_input):
         """Checks if the output is correct after the named is changed
         and that the dictionary is correct."""
 
         g = game.Game()
-        p = player.Player("bob")
-        g.players["bob"] = 0
+        p = player.Player("Bob")
+        g.players["Bob"] = 0
 
-        self.assertIn("bob", g.players)
+        self.assertIn("Bob", g.players)
         g.player_playing(p)
-        self.assertNotIn("bob", g.players)
-        self.assertIn("sven", g.players)
+        self.assertNotIn("Bob", g.players)
+        self.assertIn("Sven", g.players)
 
         with patch("builtins.print") as mock_print:
             g.player_playing(p)
-            mock_print.assert_any_call("Your new name is now sven")
+            mock_print.assert_any_call("Your new name is now Sven")
 
     @patch("builtins.input", side_effect=["1337"])
     def test_player_cheats(self, mock_input):
         """Testing if the cheats work that the player gets 100 points."""
         g = game.Game()
-        p = player.Player("bob")
-        g.players["bob"] = 0
+        p = player.Player("Bob")
+        g.players["Bob"] = 0
         g.player_playing(p)
 
-        max_points = g.get_player_score("bob")
+        max_points = g.get_player_score("Bob")
         self.assertEqual(max_points, 100)
 
     def test_get_player_score_when_none(self):
         """Tests if the get_player_score returns None if the name does
         not exist in the dictionary."""
         g = game.Game()
-        empty = g.get_player_score("bob")
+        empty = g.get_player_score("Bob")
         self.assertEqual(empty, None)
 
-    @patch("builtins.input", side_effect=["5", "4"])
+    @patch("builtins.input", side_effect=["12", "4"])
     def test_player_playing_invalid_input(self, mock_input):
-        """Testsing the player_playing when invalid input 5 in this case."""
+        """Testsing the player_playing when invalid input 12 in this case."""
         g = game.Game()
-        p = player.Player("bob")
+        p = player.Player("Bob")
         with patch("builtins.print") as mock_print:
             g.player_playing(p)
             mock_print.assert_any_call(game.RED + "That's not an option" + game.END)
 
-    @patch("builtins.input", side_effect=["raz", "1", "4"])
-    def test_player_vs_computer(self, mock_input):
+    @patch("PigDiceGame.dice.Dice.get_random_number", return_value=6)
+    @patch("builtins.input", side_effect=["Raz", "1", "2", "4"])
+    def test_player_vs_computer(self, mock_input, mock_choice):
         """Testing the player vs computer function."""
 
         g = game.Game()
         g.player_vs_computer()
-        self.assertIn("raz", g.players)
+        self.assertIn("Raz", g.players)
+        self.assertIn("Computer", g.players)
 
 
 if __name__ == "__main__":

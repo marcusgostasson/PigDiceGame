@@ -4,18 +4,23 @@ class Highscore:
     
     def add_winner(self, player):
         if player in self.highscores:
-            self.increase_score(player)
+            self.highscores[player] += 1
         else:
-            score = 0
+            score = 1
             self.highscores[player] = score
         
-    def increase_score(self, player):
-        self.highscores[player] += 1
-    
-    def sort_winners_score(self):
-        sorted_highscores = sorted(self.highscores.items(), key=lambda x: x[1], reverse=True)
-        return dict(sorted_highscores)
-    
+    def get_name_and_highscore(self):
+        names = []
+        values = []
 
-        
-        
+        playerlist = self.sorted_list()
+        for keys_values in playerlist:
+            name, value = keys_values
+            names.append(name)
+            values.append(value)
+        return names, values
+
+    def sorted_list(self):
+        sorted_highscores = sorted(self.highscores.items(), key=lambda x: x[1], reverse=True)
+        return sorted_highscores
+

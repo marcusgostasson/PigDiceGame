@@ -2,11 +2,14 @@ from . import player
 from . import computer
 from . import dice
 from . import highscore
-import random
-# Did we put a licence when we created the repository?
+from . import histogram
+import os
 RED = '\033[91m'
 GREEN = '\33[32m'
+YELLOW = '\u001b[33m'
 END = '\033[0m'
+
+post_winner = highscore.Highscore()
 
 
 class Game:
@@ -18,11 +21,14 @@ class Game:
     def display(self):
         """Displaying the startup menu to the user."""
 
-        print("""Hello and welcome to Pig Dice Game
+        print(YELLOW + "Hello and welcome to Pig Dice Game" + END)
+        print("""-------------------------------------------------
 Press 1 if you want to play with a friend
 Press 2 if you want to play vs the computer
 Press 3 if you want to see the rules for the game
-Press 4 if you want to quit""")
+Press 4 if you want to see highscore
+Press 5 if you want to quit
+-------------------------------------------------""")
 
     def get_choice_from_user(self, prompting):
         """Prompting the user for an input until its a number."""
@@ -45,33 +51,36 @@ Press 4 if you want to quit""")
         while playing:
             playing = self.player_playing(player1)
             if (playing is False and player1.get_total_score() < 100):
-                print(RED + player1.get_name() + " surrendered" + END + " and " + GREEN + player2.get_name() + " won" + END)
+                os.system('cls')
+                print(RED + player1.get_name() + " surrendered" + END +
+                      " and " + GREEN + player2.get_name() + " won" + END)
             elif playing is True:
                 playing = self.player_playing(player2)
                 if (playing is False and player2.get_total_score() < 100):
-                    print(RED + player2.get_name() + " surrendered" + END + " and " + GREEN + player1.get_name() + " won" + END)
+                    os.system('cls')
+                    print(RED + player2.get_name() + " surrendered" + END +
+                          " and " + GREEN + player1.get_name() + " won" + END)
 
     def player_vs_computer(self):
         """The logic when the user picks play vs the computer."""
 
-        player_name = input("What is your name? ")
-        player1 = player.Player(player_name)
-        self.players[player1.get_name()] = player1.get_total_score()
+        player1 = self.setup_player()
         difficulty = self.get_choice_from_user("""What difficulty do you want?
 1. Playing against a new born baby
 2. Playing against my uncle that is pretty good with numbers
 3. Playing against Pelle, if you know you know
 4. Completly random no logic\nChoice: """)
         intelligence = computer.Computer(difficulty)
+        self.players["Computer"] = intelligence.get_total_score()
         playing = True
         while playing:
             playing = self.player_playing(player1)
             if (playing is False and player1.get_total_score() < 100):
-                print(RED + player1.get_name() + " surrendered" + END + " and " + GREEN + "Computer won" + END)
+                os.system('cls')
+                print(RED + player1.get_name() + " surrendered" + END +
+                      " and " + GREEN + "Computer won" + END)
             elif playing is True:
                 playing = self.computer_playing(intelligence)
-                if (playing is False and computer.get_total_score() < 100):
-                    print(RED + "Computer surrendered" + END + " and " + GREEN + player1.get_name() + " won" + END)
 
     def quit(self):
         """Stops the program"""
@@ -89,6 +98,9 @@ Press 4 if you want to quit""")
         elif choice == 3:
             self.game_rules()
         elif choice == 4:
+            chart = histogram.Histogram()
+            chart.plot_chart(post_winner)
+        elif choice == 5:
             self.quit()
         else:
             print(RED + "Invalid option" + END)
@@ -109,7 +121,8 @@ Press 4 if you want to quit""")
         score = current_player.get_total_score()  # Getting score from the player
         game_is_being_played = True
         while game_is_being_played:
-            print(current_player.get_name() + " you currently have " + str(score) + " point(s)")
+            print(current_player.get_name() + " you currently have "
+                  + str(score) + " point(s)")
 
             choice = self.get_choice_from_user(current_player.get_name() + " what do you want to do?:\nPress 1 to toss\nPress 2 to stay\nPress 3 to change name\nPress 4 to surrender\nChoice: ")
 
@@ -120,20 +133,23 @@ Press 4 if you want to quit""")
                     score += die_value
                     game_is_being_played = self.check_if_winner(score, current_player)
                     continue
-                else:
-                    print("Oh you got a " + str(die_value) + " better luck next time\n")
-                    game_is_being_played = False
-                    return True
 
-            elif choice == 2:
-                current_player.set_total_score(score)
-                self.players[current_player.get_name()] = current_player.get_total_score()
-                current_points = current_player.get_total_score()
-                print(current_player.get_name() + " stayed and now have " + str(current_points) + " point(s)\n")
+                os.system('cls')
+                print("Oh you got a " + str(die_value) + " better luck next time\n")
                 game_is_being_played = False
                 return True
 
-            elif choice == 3:
+            if choice == 2:
+                current_player.set_total_score(score)
+                self.players[current_player.get_name()] = current_player.get_total_score()
+                current_points = current_player.get_total_score()
+                os.system('cls')
+                print(current_player.get_name() + " stayed and now have "
+                      + str(current_points) + " point(s)\n")
+                game_is_being_played = False
+                return True
+
+            if choice == 3:
                 old_name = current_player.get_name()
                 value = self.players.pop(old_name)
                 new_name = self.change_name(current_player)
@@ -142,10 +158,10 @@ Press 4 if you want to quit""")
 
                 print("Your new name is now " + new_name)
 
-            elif choice == 4:
+            if choice == 4:
                 return False
 
-            elif choice == 1337:
+            if choice == 1337:
                 current_player.set_total_score(100)
                 game_is_being_played = self.check_if_winner(100, current_player)
             else:
@@ -156,58 +172,72 @@ Press 4 if you want to quit""")
         """The logic for when the computer is playing."""
 
         die = dice.Dice()
-        score = computer.get_total_score()  # Getting score from the computer
+        score = computer.get_total_score()
+        score_this_round = 0
         game_is_being_played = True
-        toss_counter = 0 # something with the first toss is 100% toss then i change weight based on how many toss
+        toss_counter = 0
         while game_is_being_played:
             print("Computer currently have " + str(score) + " point(s)")
 
-            decision = computer.difficulty_choice(toss_counter, score)
-
-            if decision == "toss":
+            decision = computer.difficulty_choice(toss_counter, score_this_round)
+            choice = decision[0]
+            if choice == "toss":
+                toss_counter += 1
                 die_value = computer.throw_dice(die)
                 print("Computer got a " + str(die_value))
                 if die_value != 1:
                     score += die_value
-                    game_is_being_played = self.check_if_winner(score)
+                    game_is_being_played = self.check_if_winner(score, computer)
+                    score_this_round += die_value
                     continue
-                else:
-                    print("Oh you got a " + str(die_value) + " better luck next time\n")
-                    game_is_being_played = False
-                    return True
 
-            elif decision == "stay":
-                computer.set_total_score(score)
-                current_points = computer.get_total_score()
-                print("Computer stayed and now have " + str(current_points) + " point(s)\n")
+                print("Oh you got a " + str(die_value)
+                      + " better luck next time\n")
                 game_is_being_played = False
                 return True
 
-            else:
-                print("Invalid option!")  # Can make this print in red
+            if choice == "stay":
+                computer.set_total_score(score)
+                current_points = computer.get_total_score()
+                print("Computer stayed and now have " + str(current_points)
+                      + " point(s)\n")
+                game_is_being_played = False
+                return True
+
+            print(RED + "Invalid option!" + END)
         return False
 
     def check_if_winner(self, score, current_player):
         """Checks if the current toss is enough to win."""
-        
-        post_winner = highscore.Highscore()
 
-        if score >= 100:
-            print("You won in " + str(current_player.get_tossed_amount()) + " throws!")  # can make this green
-            current_player.set_total_score(score)
-            self.players[current_player.get_name()] = current_player.get_total_score()
-            post_winner.add_winner(current_player.get_name())
-            return False
-        else:
+        if isinstance(current_player, player.Player):
+            if score >= 2:
+                print(GREEN + "You won in " + str(current_player.get_tossed_amount())
+                      + " throws!" + END)
+                current_player.set_total_score(score)
+                self.players[current_player.get_name()] = current_player.get_total_score()
+                post_winner.add_winner(current_player.get_name())
+                return False
+
             return True
+        if isinstance(current_player, computer.Computer):
+            if score >= 2:
+                print(GREEN + "Computer won in " + str(current_player.get_tossed_amount())
+                      + " throws!" + END)
+                current_player.set_total_score(score)
+                self.players["Computer"] = current_player.get_total_score()
+                post_winner.add_winner("Computer")
+                return False
+
+        return True
 
     def get_player_score(self, player_name):
         """To get the players score, this is used for easier testing if the score got updated."""
 
         if player_name in self.players:
             return self.players[player_name]
-        else:
-            return None
+
+        return None
 
     def change_name(self, current_player):
         """Sets a new name for the player."""
@@ -220,7 +250,7 @@ Press 4 if you want to quit""")
     def setup_player(self):
         """Sets up the player."""
 
-        player_name = input("What is your name? ")
+        player_name = input("What is your name? ").capitalize()
         new_player = player.Player(player_name)
         self.players[player_name] = new_player.get_total_score()
 

@@ -8,6 +8,7 @@ class Computer:
         """Constructor for computer's sum"""
         self.tossed_amount = 0
         self.sum = 0
+        self.tossed_amount = 0
         self.difficulty = difficulty
         self.options = ["toss", "stay"]
 
@@ -30,12 +31,22 @@ class Computer:
 
     def get_total_score(self):
         return self.sum
+    
+    def set_tossed_amount(self):
+        self.tossed_amount += 1
+        
+    def get_tossed_amount(self):
+        return self.tossed_amount
 
     def get_tossed_amount(self):
         return self.tossed_amount
 
     def throw_dice(self, die):
+<<<<<<< HEAD
         self.tossed_amount += 1
+=======
+        self.set_tossed_amount()
+>>>>>>> 851ce2b4904cff259647188b089ed759357ae5a5
         return die.get_random_number()
 
     def hard_difficulty(self, score):
