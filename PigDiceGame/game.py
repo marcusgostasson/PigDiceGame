@@ -211,7 +211,7 @@ Press 5 if you want to quit
         """Checks if the current toss is enough to win."""
 
         if isinstance(current_player, player.Player):
-            if score >= 100:
+            if score >= 2:
                 print(GREEN + "You won in " + str(current_player.get_tossed_amount())
                       + " throws!" + END)
                 current_player.set_total_score(score)
@@ -221,7 +221,7 @@ Press 5 if you want to quit
 
             return True
         if isinstance(current_player, computer.Computer):
-            if score >= 100:
+            if score >= 2:
                 print(GREEN + "Computer won in " + str(current_player.get_tossed_amount())
                       + " throws!" + END)
                 current_player.set_total_score(score)

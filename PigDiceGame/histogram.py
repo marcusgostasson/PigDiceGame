@@ -20,7 +20,11 @@ class Histogram:
         if not names and not values:
             print("The list is empty")
         else:
-            fig, ax = plt.subplots()
+            if len(names) > 10:
+                names = names[:10]
+                values = values[:10]
+
+                fig, ax = plt.subplots()
 
             colors = (['gold', 'silver', 'saddlebrown'] +
                       ['black'] * (len(names) - 3))

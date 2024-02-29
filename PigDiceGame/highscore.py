@@ -1,6 +1,9 @@
 class Highscore:
     def __init__(self):
-        self.highscores = {}
+        self.highscores = {"Kalle": 1, "Marcus": 2, "Rasmus": 3, "Oliver": 4,
+                           "Emil": 5, "Karin": 6, "Anna": 7, "Angelica": 8,
+                           "Bob": 9, "Sven": 10, "Nicklas": 12,
+                           "Bengt-arne": 12}
     
     def add_winner(self, player):
         if player in self.highscores:
