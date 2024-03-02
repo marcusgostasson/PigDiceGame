@@ -31,27 +31,27 @@ Good luck, let´s play! 🎲🎲😃
 
 # Table of Contents
 
-[Check Python version](#-check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" /></a></p>
+- [Check Python version](#check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" /></a></p>
 
-[Install a Python virtual environment and activate it](#-install-a-python-virtual-environment-and-activate-it) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" /></a></p>
+- [Install a Python virtual environment and activate it](#install-a-python-virtual-environment-and-activate-it) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" /></a></p>
 
-[Install the dependencies 💾](#-install-the-dependencies)
+- [Install the dependencies 💾](#-install-the-dependencies)
 
-[Run-the-code 🏃](#️run-the-code)
+- [Run the code 🏃](#️run-the-code)
 
-[Run the validators 🏃](#️run-the-validators)
+- [Run the validators 🏃](#️run-the-validators)
 
-[Codestyle with black  ⏺](#️codestyle-with-black)
+- [Codestyle with black  ⏺](#️codestyle-with-black)
 
-[Run the unittests 🏃](#️run-the-unittests)
+- [Run the unittests 🏃](#️run-the-unittests)
 
-[Run parts of the testsuite 🏃](#️run-parts-of-the-testsuite)
+- [Run parts of the testsuite 🏃](#️run-parts-of-the-testsuite)
 
-[Remove generated files 🗑️](#️remove-generated-files)
+- [Remove generated files 🗑️](#️remove-generated-files)
 
-[More targets in the Makefile 📄](#️more-targets-in-the-makefile)
+- [More targets in the Makefile 📄](#️more-targets-in-the-makefile)
 
-# <a name = "check python version"></a> Check python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
+# <a name = "check-python-version"></a>Check python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
 --------------------------
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
 ```
@@ -73,7 +73,7 @@ make version
 
 
 
-# ***Install a Python virtual environment and activate it*** <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
+# <a name = "Check-python-versionInstall-a-Python virtual-environment-and-activate-it" ></a> Check python versionInstall a Python virtual environment and activate it <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
 --------------------------
 Create the virtual environment
 ```
@@ -100,7 +100,7 @@ deactivate
 
 
 
-# ***Install the dependencies*** 💾
+# <a name="install-the-dependencies"></a>Install the dependencies 💾
 --------------------------
 Install the PIP packages that are dependencies to the project and/or the development environment. The dependencies are documented in the `requirements.txt`.
 
@@ -120,7 +120,7 @@ make installed
 
 
 
-# ***Run the code***   🏃
+# <a name="run-the-code"></a>Run the code  🏃 
 --------------------------
 The example program can be started like this.
 
@@ -135,7 +135,7 @@ Good Luck 😀
 
 
 
-# ***Run the validators***  🏃
+# <a name="run-the-validators"></a> Run the validators 🏃
 --------------------------
 You can run the static code validators like this. They check the sourcecode and exclude the testcode.
 
@@ -161,7 +161,7 @@ Read more on:
 
 
 
-# ***Codestyle with black*** ⚫
+# <a name="codestyle-with-black"></a>Codestyle with black ⚫
 --------------------------
 You can unify the codestyle using black. Running black will change your source code to have a codestyle according to black codestyle.
 
@@ -178,7 +178,7 @@ make codestyle
 
 
 
-# ***Run the unittests***   🏃
+# <a name="run-the-unittests"></a>Run the unittests   🏃
 --------------------------
 You can run the unittests like this. The testfiles are stored in the `test/` directory.
 
@@ -211,7 +211,7 @@ Read more on:
 
 
 
-# ***Run parts of the testsuite***   🏃
+# <a name="run-parts-of-the-testsuite"></a>Run parts of the testsuite   🏃
 --------------------------
 You can also run parts of the testsuite, for examples files or methods in files.
 
@@ -233,7 +233,7 @@ python -m unittest test.test_game.TestGameClass.test_init_default_object        
 
 
 
-# ***Remove generated files***   🗑️
+# <a name="remove-generated-files"></a>Remove generated files   🗑️
 -------------------------
 You can remove all generated files by this.
 
@@ -250,7 +250,7 @@ make clean-all
 
 
 
-# ***More targets in the Makefile***  📄
+# <a name="more-targets-in-the-makefile"></a> More targets in the Makefile  📄
 --------------------------
 The makefile contains more targets, for example these.
 
