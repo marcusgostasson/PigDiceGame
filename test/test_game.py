@@ -1,19 +1,14 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-"""Unit testing."""
-
 import unittest
 import sys
 import os
 from io import StringIO
 from unittest.mock import patch
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from PigDiceGame import game, player
+from PigDiceGame import game, player, computer
 
 
-class Test_game(unittest.TestCase):
-    """Test the class."""
+class Testgame(unittest.TestCase):
+    """Test class for the game class"""
 
     def test_init_default_object(self):
         """Instantiate an object and check its properties."""
@@ -29,7 +24,7 @@ class Test_game(unittest.TestCase):
         res = True
         self.assertEqual(exp, res)
 
-    def test_check_winner(self):
+    def test_check_winner_player(self):
         """Checks if the player wins if he has 100 points and 
         checks if the player is still playing if he has 50 points"""
 
@@ -42,6 +37,19 @@ class Test_game(unittest.TestCase):
         exp = g.check_if_winner(50, p)
         res = True
         self.assertEqual(exp, res)
+
+    def test_check_if_winner_computer(self):
+        """Checks if the output is correct when the computer wins
+        and if the dictionary is updated correctly."""
+        g = game.Game()
+        c = computer.Computer(1)
+        with patch("builtins.print") as mock_print:
+            g.check_if_winner(100, c)
+            mock_print.assert_any_call(game.GREEN + "Computer won in 0"
+                                       + " throws!" + game.END)
+        name, points = g.players.popitem()
+        self.assertEqual(name, "Computer")
+        self.assertEqual(points, 100)
 
     @patch("builtins.input", side_effect=["yo", "4", "1"])
     def test_get_choice_from_user(self, mock_input):
@@ -98,7 +106,6 @@ If the player rolls any other number, it is added to their turn total and the pl
 If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
 The first player to score 100 or more points wins\n"""
 
-        #game.Game().game_rules()
         game.Game().handle_choice(3)
 
         self.assertEqual(mock_stdout.getvalue().strip(), expected_output.strip())
@@ -195,6 +202,16 @@ The first player to score 100 or more points wins\n"""
         g.player_vs_computer()
         self.assertIn("Raz", g.players)
         self.assertIn("Computer", g.players)
+
+    @patch("PigDiceGame.dice.Dice.get_random_number", return_value=1)
+    def test_computer_playing_when_get_1(self, mock_choice):
+        """Testing if the output is right when the computer rolls a 1."""
+        g = game.Game()
+        c = computer.Computer(1)
+        with patch("builtins.print") as mock_print:
+            g.computer_playing(c)
+            mock_print.assert_any_call("Oh you got a 1"
+                                       + " better luck next time\n")
 
 
 if __name__ == "__main__":

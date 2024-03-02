@@ -1,9 +1,10 @@
+import time
+import os
 from . import player
 from . import computer
 from . import dice
 from . import highscore
 from . import histogram
-import os
 RED = '\033[91m'
 GREEN = '\33[32m'
 YELLOW = '\u001b[33m'
@@ -178,7 +179,7 @@ Press 5 if you want to quit
         toss_counter = 0
         while game_is_being_played:
             print("Computer currently have " + str(score) + " point(s)")
-
+            time.sleep(1)
             decision = computer.difficulty_choice(toss_counter, score_this_round)
             choice = decision[0]
             if choice == "toss":
@@ -203,9 +204,6 @@ Press 5 if you want to quit
                       + " point(s)\n")
                 game_is_being_played = False
                 return True
-
-            print(RED + "Invalid option!" + END)
-        return False
 
     def check_if_winner(self, score, current_player):
         """Checks if the current toss is enough to win."""
@@ -258,7 +256,7 @@ Press 5 if you want to quit
 
     def game_rules(self):
         """Displays the rules of the game."""
-
+        os.system('cls')
         print("""\nEach turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
 
 If the player rolls a 1, they score nothing and it becomes the next player's turn.
