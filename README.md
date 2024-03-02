@@ -31,7 +31,7 @@ Good luck, let´s play! 🎲🎲😃
 
 # Table of Contents
 
--[Check Python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>](#-check-python-version)
+[Check Python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>](#-check-python-version-)
 
 [Install a Python virtual environment and activate it]<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="10" height="10" alt="Python" /></a></p> Install a Python virtual environment and activate it](#-Install-a-Python-virtual-environment-and-activate-it-)
 
@@ -51,7 +51,7 @@ Good luck, let´s play! 🎲🎲😃
 
 [ More targets in the Makefile]📄(#️-More-targets-in-the-Makefile-)
 
-## ***Check python version*** <a name = "Check python version"></a> <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p> 
+## ***Check python version <a name = "Check python version"></a>***  <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p> 
 --------------------------
 
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
