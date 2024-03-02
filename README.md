@@ -23,7 +23,7 @@ Pig, is a fun and simple dice game perfect for playing with family and friends. 
 - It is important to weigh the risk and reward when deciding to continue or stay.
 - A common strategy is to accumulate points slowly by stopping at each safe sum to avoid losing everything in a single turn.
 
-Good luck, let´s play! 🎲🎲😃
+Good luck, let´s play! 🎲🎲
 
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Brantin10/Assignment2/total?style=for-the-badge&logo=docusign&logoColor=%2340AEF0&color=%2340AEF0)
 ![GitHub License](https://img.shields.io/github/license/Brantin10/Assignment2?style=for-the-badge&logo=Hence)
@@ -37,7 +37,7 @@ Good luck, let´s play! 🎲🎲😃
 
 [Install the dependencies 🪢](#install-the-dependencies)
 
-[Run the code 🏃](#run-the-code)
+[Run the code 👩‍💻](#run-the-code)
 
 [Run the validators 🏃](#run-the-validators)
 
@@ -120,7 +120,7 @@ make installed
 
 
 
-# <a name="run-the-code"></a> Run the code  🏃 
+# <a name="run-the-code"></a> Run the code 👩‍💻 
 --------------------------
 The example program can be started like this.
 
@@ -130,7 +130,7 @@ python PigDiceGame/main.py
 ```
 All code is stored below the directory `PigDiceGame/`.
 
-Good Luck 😀
+Good Luck! 😀
 
 
 
