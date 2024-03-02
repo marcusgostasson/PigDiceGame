@@ -39,7 +39,7 @@ Good luck, let´s play! 🎲🎲
 
 [Run the code 👩‍💻](#run-the-code)
 
-[Run the validators 🏃](#run-the-validators)
+[Run the validators ✅](#run-the-validators)
 
 [Codestyle with black  ⏺](#codestyle-with-black)
 
@@ -135,7 +135,7 @@ Good Luck! 😀
 
 
 
-# <a name="run-the-validators"></a> Run the validators 🏃
+# <a name="run-the-validators"></a> Run the validators ✅
 --------------------------
 You can run the static code validators like this. They check the sourcecode and exclude the testcode.
 
