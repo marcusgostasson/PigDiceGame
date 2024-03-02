@@ -33,25 +33,25 @@ Good luck, let´s play! 🎲🎲😃
 
 [Check Python version](#-check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" /></a></p>
 
-[Install a Python virtual environment and activate it](#-install-a-python-virtual-environment-and-activate-it-) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" /></a></p>
+[Install a Python virtual environment and activate it](#-install-a-python-virtual-environment-and-activate-it) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" /></a></p>
 
-[Install the dependencies 💾](#-install-the-dependencies-)
+[Install the dependencies 💾](#-install-the-dependencies)
 
-[Run-the-code 🏃](#️-run-the-code-)
+[Run-the-code 🏃](#️run-the-code)
 
-[Run the validators 🏃](#️-run-the-validators-)
+[Run the validators 🏃](#️run-the-validators)
 
-[Codestyle with black  ⏺](#️-codestyle-with-black-)
+[Codestyle with black  ⏺](#️codestyle-with-black)
 
-[Run the unittests 🏃](#️-run-the-unittests-)
+[Run the unittests 🏃](#️run-the-unittests)
 
-[Run parts of the testsuite 🏃](#️-run-parts-of-the-testsuite-)
+[Run parts of the testsuite 🏃](#️run-parts-of-the-testsuite)
 
-[Remove generated files 🗑️](#️-remove-generated-files-)
+[Remove generated files 🗑️](#️remove-generated-files)
 
-[More targets in the Makefile 📄](#️-more-targets-in-the-makefile-)
+[More targets in the Makefile 📄](#️more-targets-in-the-makefile)
 
-# Check python version <a name = "check-python-version"></a>
+# <a name = "check python version"></a> Check python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
 --------------------------
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
 ```
