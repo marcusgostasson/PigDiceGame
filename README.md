@@ -51,7 +51,7 @@ Good luck, let´s play! 🎲🎲😃
 
 [More targets in the Makefile📄](#️-More-targets-in-the-Makefile-)
 
-## Check python version <a name = "Check python version"></a>
+### Check python version <a name = "Check python version"></a>
 --------------------------
 
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
