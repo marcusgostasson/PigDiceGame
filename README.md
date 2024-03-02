@@ -100,7 +100,7 @@ deactivate
 
 
 
-# <a name="install-the-dependencies"></a>Install the dependencies 💾
+# <a name="install-the-dependencies"></a> Install the dependencies 💾
 --------------------------
 Install the PIP packages that are dependencies to the project and/or the development environment. The dependencies are documented in the `requirements.txt`.
 
@@ -120,7 +120,7 @@ make installed
 
 
 
-# <a name="run-the-code"></a>Run the code  🏃 
+# <a name="run-the-code"></a> Run the code  🏃 
 --------------------------
 The example program can be started like this.
 
@@ -161,7 +161,7 @@ Read more on:
 
 
 
-# <a name="codestyle-with-black"></a>Codestyle with black ⚫
+# <a name="codestyle-with-black"></a> Codestyle with black ⚫
 --------------------------
 You can unify the codestyle using black. Running black will change your source code to have a codestyle according to black codestyle.
 
@@ -178,7 +178,7 @@ make codestyle
 
 
 
-# <a name="run-the-unittests"></a>Run the unittests   🏃
+# <a name="run-the-unittests"></a> Run the unittests   🏃
 --------------------------
 You can run the unittests like this. The testfiles are stored in the `test/` directory.
 
@@ -211,7 +211,7 @@ Read more on:
 
 
 
-# <a name="run-parts-of-the-testsuite"></a>Run parts of the testsuite   🏃
+# <a name="run-parts-of-the-testsuite"></a> Run parts of the testsuite   🏃
 --------------------------
 You can also run parts of the testsuite, for examples files or methods in files.
 
@@ -233,7 +233,7 @@ python -m unittest test.test_game.TestGameClass.test_init_default_object        
 
 
 
-# <a name="remove-generated-files"></a>Remove generated files   🗑️
+# <a name="remove-generated-files"></a> Remove generated files   🗑️
 -------------------------
 You can remove all generated files by this.
 
