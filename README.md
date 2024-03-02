@@ -35,7 +35,7 @@ Good luck, let´s play! 🎲🎲😃
 
 [Install Python virtual environment and activate it](#install-python-virtual-environment-and-activate-it) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" />
 
-[Install the dependencies 💾](#install-the-dependencies)
+[Install the dependencies 🪢](#install-the-dependencies)
 
 [Run the code 🏃](#run-the-code)
 
@@ -100,7 +100,7 @@ deactivate
 
 
 
-# <a name="install-the-dependencies"></a> Install the dependencies 💾
+# <a name="install-the-dependencies"></a> Install the dependencies 🪢
 --------------------------
 Install the PIP packages that are dependencies to the project and/or the development environment. The dependencies are documented in the `requirements.txt`.
 
