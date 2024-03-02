@@ -18,7 +18,7 @@ class Histogram:
         names, values = high_score.get_name_and_highscore()
 
         if not names and not values:
-            print("The list is empty")
+            print("\nThe list is empty\n")
         else:
             if len(names) > 10:
                 names = names[:10]
