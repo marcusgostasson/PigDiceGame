@@ -30,8 +30,11 @@ Good luck, let´s play! 🎲🎲😃
 ![GitHub Release](https://img.shields.io/github/v/release/Brantin10/Assignment2?include_prereleases&sort=date&display_name=tag&style=for-the-badge)
 
 * Table of Contents
-[<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p> Python version](#-check-python-version-)
-[<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p> Install a Python virtual environment and activate it](#-Install-a-Python-virtual-environment-and-activate-it-)
+
+
+[<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="10" height="10" alt="Python" /></a></p> Python version](#-check-python-version-)
+[<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="10" height="10" alt="Python" /></a></p>
+Install a Python virtual environment and activate it](#-Install-a-Python-virtual-environment-and-activate-it-)
 [💾 Install the dependencies](#-Install-the-dependencies-)
 [🏃 Run-the-code](#️-Run-the-code-)
 [🏃 Run the validators](#️-Run-the-validators-)
