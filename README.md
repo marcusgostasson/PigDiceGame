@@ -29,8 +29,30 @@ Good luck, let´s play! 🎲🎲😃
 ![GitHub License](https://img.shields.io/github/license/Brantin10/Assignment2?style=for-the-badge&logo=Hence)
 ![GitHub Release](https://img.shields.io/github/v/release/Brantin10/Assignment2?include_prereleases&sort=date&display_name=tag&style=for-the-badge)
 
+# Table of Contents
 
-***Check python version*** <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p> 
+
+[<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="10" height="10" alt="Python" /></a></p> Python version](#-check-python-version-)
+
+[<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="10" height="10" alt="Python" /></a></p>Install a Python virtual environment and activate it](#-Install-a-Python-virtual-environment-and-activate-it-)
+
+[💾 Install the dependencies](#-Install-the-dependencies-)
+
+[🏃 Run-the-code](#️-Run-the-code-)
+
+[🏃 Run the validators](#️-Run-the-validators-)
+
+[⏺ Codestyle with black](#️-Codestyle-with-black-)
+
+[🏃 Run the unittests](#️-Run-the-unittests-)
+
+[🏃 Run parts of the testsuite](#️-Run-parts-of-the-testsuite-)
+
+[🗑️ Remove generated files](#️-Remove-generated-files-)
+
+[📄 More targets in the Makefile](#️-More-targets-in-the-Makefile-)
+
+## ***Check python version*** <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p> 
 --------------------------
 
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
@@ -53,7 +75,7 @@ make version
 
 
 
-***Install a Python virtual environment and activate it*** <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a></p>
+## ***Install a Python virtual environment and activate it*** <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
 --------------------------
 
 Create the virtual environment
@@ -81,7 +103,7 @@ deactivate
 
 
 
-***Install the dependencies***   💾
+## ***Install the dependencies***   💾
 --------------------------
 
 Install the PIP packages that are dependencies to the project and/or the development environment. The dependencies are documented in the `requirements.txt`.
@@ -102,7 +124,7 @@ make installed
 
 
 
-***Run the code***   🏃
+## ***Run the code***   🏃
 --------------------------
 
 The example program can be started like this.
@@ -118,7 +140,7 @@ Good Luck 😀
 
 
 
-***Run the validators***  🏃
+## ***Run the validators***  🏃
 --------------------------
 
 You can run the static code validators like this. They check the sourcecode and exclude the testcode.
@@ -145,7 +167,7 @@ Read more on:
 
 
 
-***Codestyle with black*** ⚫
+## ***Codestyle with black*** ⚫
 --------------------------
 
 You can unify the codestyle using black. Running black will change your source code to have a codestyle according to black codestyle.
@@ -163,7 +185,7 @@ make codestyle
 
 
 
-***Run the unittests***   🏃
+## ***Run the unittests***   🏃
 --------------------------
 
 You can run the unittests like this. The testfiles are stored in the `test/` directory.
@@ -197,7 +219,7 @@ Read more on:
 
 
 
-***Run parts of the testsuite***   🏃
+## ***Run parts of the testsuite***   🏃
 --------------------------
 
 You can also run parts of the testsuite, for examples files or methods in files.
@@ -220,7 +242,7 @@ python -m unittest test.test_game.TestGameClass.test_init_default_object        
 
 
 
-***Remove generated files***   🗑️
+## ***Remove generated files***   🗑️
 --------------------------
 
 You can remove all generated files by this.
@@ -238,7 +260,7 @@ make clean-all
 
 
 
-***More targets in the Makefile***
+## ***More targets in the Makefile***  📄
 --------------------------
 
 The makefile contains more targets, for example these.

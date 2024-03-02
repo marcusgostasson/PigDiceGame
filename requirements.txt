@@ -15,6 +15,7 @@ black
 pdoc3
 sphinx
 sphinx-rtd-theme # for ReadTheDocs local build
+graphviz
 
 # Unit test and coverage
 coverage

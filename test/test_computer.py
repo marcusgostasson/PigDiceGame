@@ -24,6 +24,30 @@ class test_computer(unittest.TestCase):
         exp = "stay"
         self.assertEqual(res, exp)
 
+    def test_medium_difficulty_toss(self):
+        c = computer.Computer()
+        res = c.medium_difficulty(0)
+        exp = "toss"
+        self.assertEqual(res, exp)
+
+    def test_medium_difficulty_stay(self):
+        c = computer.Computer()
+        res = c.medium_difficulty(8)
+        exp = "stay"
+        self.assertEqual(res, exp)
+
+    def test_hard_difficulty_toss(self):
+        c = computer.Computer()
+        res = c.hard_difficulty(24)
+        exp = "toss"
+        self.assertEqual(res, exp)
+
+    def test_hard_difficulty_stay(self):
+        c = computer.Computer()
+        res = c.hard_difficulty(25)
+        exp = "stay"
+        self.assertEqual(res, exp)
+
 
 if __name__ == "__main__":
     unittest.main()
