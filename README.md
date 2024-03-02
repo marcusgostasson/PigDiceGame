@@ -33,7 +33,7 @@ Good luck, let´s play! 🎲🎲😃
 
 - [Check Python version](#check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" /></a></p>
 
-- [Install a Python virtual environment and activate it](#install-a-python-virtual-environment-and-activate-it) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" /></a></p>
+- [Install Python virtual environment and activate it](#install-python-virtual-environment-and-activate-it) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" /></a></p>
 
 - [Install the dependencies 💾](#-install-the-dependencies)
 
@@ -73,7 +73,7 @@ make version
 
 
 
-# <a name = "Check-python-versionInstall-a-Python virtual-environment-and-activate-it" ></a> Check python versionInstall a Python virtual environment and activate it <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
+# <a name = "Install-Python virtual-environment-and-activate-it" ></a> Check python versionInstall a Python virtual environment and activate it <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
 --------------------------
 Create the virtual environment
 ```
