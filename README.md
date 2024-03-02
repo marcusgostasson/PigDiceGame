@@ -29,7 +29,7 @@ Good luck, let´s play! 🎲🎲😃
 ![GitHub License](https://img.shields.io/github/license/Brantin10/Assignment2?style=for-the-badge&logo=Hence)
 ![GitHub Release](https://img.shields.io/github/v/release/Brantin10/Assignment2?include_prereleases&sort=date&display_name=tag&style=for-the-badge)
 
-* Table of Contents
+# Table of Contents
 
 
 [<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="10" height="10" alt="Python" /></a></p> Python version](#-check-python-version-)
