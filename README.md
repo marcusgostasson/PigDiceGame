@@ -53,7 +53,6 @@ Good luck, let´s play! 🎲🎲😃
 
 # Check python version <a name = "Check python version"></a>
 --------------------------
-
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
 ```
 make version
@@ -76,7 +75,6 @@ make version
 
 # ***Install a Python virtual environment and activate it*** <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
 --------------------------
-
 Create the virtual environment
 ```
 make venv
@@ -104,7 +102,6 @@ deactivate
 
 # ***Install the dependencies*** 💾
 --------------------------
-
 Install the PIP packages that are dependencies to the project and/or the development environment. The dependencies are documented in the `requirements.txt`.
 
 Do not forget to check that you have an active venv.
@@ -125,7 +122,6 @@ make installed
 
 # ***Run the code***   🏃
 --------------------------
-
 The example program can be started like this.
 
 Execute the main program
@@ -141,7 +137,6 @@ Good Luck 😀
 
 # ***Run the validators***  🏃
 --------------------------
-
 You can run the static code validators like this. They check the sourcecode and exclude the testcode.
 
 Run each at a time
@@ -168,7 +163,6 @@ Read more on:
 
 # ***Codestyle with black*** ⚫
 --------------------------
-
 You can unify the codestyle using black. Running black will change your source code to have a codestyle according to black codestyle.
 
 Same same, different names
@@ -186,7 +180,6 @@ make codestyle
 
 # ***Run the unittests***   🏃
 --------------------------
-
 You can run the unittests like this. The testfiles are stored in the `test/` directory.
 
 Run unttests without coverage
@@ -220,7 +213,6 @@ Read more on:
 
 # ***Run parts of the testsuite***   🏃
 --------------------------
-
 You can also run parts of the testsuite, for examples files or methods in files.
 
 You can run all tests from a testfile.
@@ -242,8 +234,7 @@ python -m unittest test.test_game.TestGameClass.test_init_default_object        
 
 
 # ***Remove generated files***   🗑️
---------------------------
-
+-------------------------
 You can remove all generated files by this.
 
 Remove files generated for tests or caching
@@ -261,7 +252,6 @@ make clean-all
 
 # ***More targets in the Makefile***  📄
 --------------------------
-
 The makefile contains more targets, for example these.
 
 to generate class and package diagrams from the code base.
