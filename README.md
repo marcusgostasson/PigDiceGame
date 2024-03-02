@@ -32,27 +32,27 @@ Good luck, let´s play! 🎲🎲😃
 # Table of Contents
 
 
-[<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="10" height="10" alt="Python" /></a></p> Python version](#-check-python-version-)
+[Python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="10" height="10" alt="Python" /></a></p>[(#-check-python-version-)
 
-[<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="10" height="10" alt="Python" /></a></p>Install a Python virtual environment and activate it](#-Install-a-Python-virtual-environment-and-activate-it-)
+[Install a Python virtual environment and activate it]<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="10" height="10" alt="Python" /></a></p>Install a Python virtual environment and activate it](#-Install-a-Python-virtual-environment-and-activate-it-)
 
-[💾 Install the dependencies](#-Install-the-dependencies-)
+[Install the dependencies](#-Install-the-dependencies-💾)
 
-[🏃 Run-the-code](#️-Run-the-code-)
+[Run-the-code]🏃(#️-Run-the-code-)
 
-[🏃 Run the validators](#️-Run-the-validators-)
+[ Run the validators]🏃(#️-Run-the-validators-)
 
-[⏺ Codestyle with black](#️-Codestyle-with-black-)
+[⏺ Codestyle with black]⏺(#️-Codestyle-with-black-)
 
-[🏃 Run the unittests](#️-Run-the-unittests-)
+[ Run the unittests]🏃(#️-Run-the-unittests-)
 
-[🏃 Run parts of the testsuite](#️-Run-parts-of-the-testsuite-)
+[ Run parts of the testsuite]🏃(#️-Run-parts-of-the-testsuite-)
 
-[🗑️ Remove generated files](#️-Remove-generated-files-)
+[ Remove generated files]🗑️(#️-Remove-generated-files-)
 
-[📄 More targets in the Makefile](#️-More-targets-in-the-Makefile-)
+[ More targets in the Makefile]📄(#️-More-targets-in-the-Makefile-)
 
-## ***Check python version*** <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p> 
+## ***Check python version*** <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p> <a name = "Check python version"></a>
 --------------------------
 
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
