@@ -31,7 +31,7 @@ Good luck, let´s play! 🎲🎲😃
 
 # Table of Contents
 
-[Check Python version](#-check-python-version-)<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" /></a></p>
+[Check Python version](#-Check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" /></a></p>
 
 [Install a Python virtual environment and activate it <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" /></a></p>](#-Install-a-Python-virtual-environment-and-activate-it-)
 
