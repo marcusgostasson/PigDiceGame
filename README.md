@@ -1,4 +1,4 @@
-#Pig 🐷 Dice game
+Pig 🐷 Dice game
 ======================
 
 
