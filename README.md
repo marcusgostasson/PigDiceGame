@@ -31,27 +31,27 @@ Good luck, let´s play! 🎲🎲😃
 
 # Table of Contents
 
-[Check Python version](#-Check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" /></a></p>
+[Check Python version](#-check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" /></a></p>
 
-[Install a Python virtual environment and activate it](#-Install-a-Python-virtual-environment-and-activate-it-) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" /></a></p>
+[Install a Python virtual environment and activate it](#-install-a-python-virtual-environment-and-activate-it-) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" /></a></p>
 
-[Install the dependencies 💾](#-Install-the-dependencies-)
+[Install the dependencies 💾](#-install-the-dependencies-)
 
-[Run-the-code 🏃](#️-Run-the-code-)
+[Run-the-code 🏃](#️-run-the-code-)
 
-[Run the validators 🏃](#️-Run-the-validators-)
+[Run the validators 🏃](#️-run-the-validators-)
 
-[Codestyle with black  ⏺](#️-Codestyle-with-black-)
+[Codestyle with black  ⏺](#️-codestyle-with-black-)
 
-[Run the unittests 🏃](#️-Run-the-unittests-)
+[Run the unittests 🏃](#️-run-the-unittests-)
 
-[Run parts of the testsuite 🏃](#️-Run-parts-of-the-testsuite-)
+[Run parts of the testsuite 🏃](#️-run-parts-of-the-testsuite-)
 
-[Remove generated files 🗑️](#️-Remove-generated-files-)
+[Remove generated files 🗑️](#️-remove-generated-files-)
 
-[More targets in the Makefile 📄](#️-More-targets-in-the-Makefile-)
+[More targets in the Makefile 📄](#️-more-targets-in-the-makefile-)
 
-# Check python version <a name = "Check-python-version"></a>
+# Check python version <a name = "check-python-version"></a>
 --------------------------
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
 ```
