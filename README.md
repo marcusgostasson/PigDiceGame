@@ -57,7 +57,7 @@ Good luck, let´s play! 🎲🎲
 
 - [More targets in the Makefile 📄](#more-targets-in-the-makefile)
 
-# <a name = "Clone-repositorie"></a> Clone Repositorie 🖨️
+# <a name = "clone-repositorie"></a> Clone Repositorie 🖨️
 Clone repositorie
 ```
 git clone https://github.com/Brantin10/Assignment2
