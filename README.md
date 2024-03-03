@@ -61,7 +61,7 @@ Click on the link to get to the section!
 
 - [More targets in the Makefile 📄](#more-targets-in-the-makefile)
 
-# <a name = "clone-repositorie"></a> Clone repositorie 🖨️
+<a name = "clone-repositorie"></a> Clone repositorie 🖨️
 =========================================================
 Here is a guide how to clone the repositorie [Clone repositorie](https://www.youtube.com/watch?v=S1rDpn5fk5s&list=PLEtyhUSKTK3iTFcdLANJq0TkKo246XAlv&index=4).
 ```
@@ -69,8 +69,8 @@ git clone https://github.com/Brantin10/Assignment2
 ```
 
 
-# <a name = "check-python-version"></a> Check Python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
---------------------------
+<a name = "check-python-version"></a> Check Python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
+=============================================================================================================================
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
 ```
 make version
