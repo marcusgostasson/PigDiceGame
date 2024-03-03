@@ -58,8 +58,8 @@ Click on the link to get to the section!
 
 - [More targets in the Makefile 📄](#more-targets-in-the-makefile)
 
-# <a name = "clone-repositorie"></a> Clone Repositorie 🖨️
-Here is a guide to clone repositorie : [Clone Repositorie](https://www.youtube.com/watch?v=S1rDpn5fk5s&list=PLEtyhUSKTK3iTFcdLANJq0TkKo246XAlv&index=4).
+# <a name = "clone-repositorie"></a> Clone repositorie 🖨️
+Here is a guide to clone the repositorie [Clone repositorie](https://www.youtube.com/watch?v=S1rDpn5fk5s&list=PLEtyhUSKTK3iTFcdLANJq0TkKo246XAlv&index=4).
 ```
 git clone https://github.com/Brantin10/Assignment2
 ```
