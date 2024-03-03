@@ -35,10 +35,10 @@ Click on the link to get to the section!
 - [Get started](#clone-repositorie)
 
   - [Clone repositorie](#clone-repositorie) 🖨️
+ 
+  - [Check Python version](#check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" />
 
   - [Install Python virtual environment and activate it](#install-python-virtual-environment-and-activate-it) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" />
-
-  - [Check Python version](#check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" />
 
   - [Install the dependencies 💾](#install-the-dependencies)
 
@@ -63,6 +63,24 @@ Here is a guide how to clone the repositorie [Clone repositorie](https://www.you
 ```
 git clone https://github.com/Brantin10/Assignment2
 ```
+# <a name = "check-python-version"></a> Check Python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
+--------------------------
+Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
+```
+make version
+```
+
+If you have another naming of the Python executable then you can solve that using an environment variable. This is common on Mac and Linux.
+
+Set the environment variable to be your python executable
+```
+export PYTHON=python3
+```
+```
+make version
+```
+> [!TIP]
+> Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
 
 # <a name = "install-python-virtual-environment-and-activate-it"></a> Install a Python virtual environment and activate it <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
 --------------------------
@@ -87,31 +105,6 @@ deactivate
 ```
 > [!TIP]
 > Read more on [Python venv](https://docs.python.org/3/library/venv.html).
-
-
-# <a name = "check-python-version"></a> Check Python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
---------------------------
-Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
-```
-make version
-```
-
-If you have another naming of the Python executable then you can solve that using an environment variable. This is common on Mac and Linux.
-
-Set the environment variable to be your python executable
-```
-export PYTHON=python3
-```
-```
-make version
-```
-> [!TIP]
-> Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
-
-
-
-
-
 
 
 
