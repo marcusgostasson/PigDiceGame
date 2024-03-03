@@ -136,7 +136,7 @@ make installed
 
 <a name="run-the-code"></a> Run the code 👩‍💻 
 -------------------------------------------
-The example program can be started like this.
+The program can be started like this.
 
 Execute the main program
 ```
