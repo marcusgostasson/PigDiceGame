@@ -162,8 +162,6 @@ Run all on the same time
 ```
 make lint
 ```
-You might need to update the Makefile if you change the name of the source directory currently named `PigDiceGame/`. ??????????????????
-
 Read more on:
 
 > [!TIP]
