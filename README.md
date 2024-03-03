@@ -38,11 +38,11 @@ Click on the link to get to the section!
 
   - [Clone repositorie](#clone-repositorie) 🖨️
  
-  - [Check Python version](#check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme- 
-    generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" />
+  - [Check Python version](#check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" alt="Python" width="15" height="15" />
 
-  - [Install Python virtual environment and activate it](#install-python-virtual-environment-and-activate-it) <img src="https://raw.githubusercontent.com/danielcranney/readme- 
-    generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" />
+
+  - [Install Python virtual environment and activate it](#install-python-virtual-environment-and-activate-it) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" alt="Python" width="15" height="15" />
+
 
   - [Install the dependencies 💾](#install-the-dependencies)
 
