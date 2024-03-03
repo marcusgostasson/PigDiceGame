@@ -30,6 +30,7 @@ Good luck, let´s play! 🎲🎲
 ![GitHub Release](https://img.shields.io/github/v/release/Brantin10/Assignment2?include_prereleases&sort=date&display_name=tag&style=for-the-badge)
 
 # Table of Contents 📃
+Click on the link to get to the section!
 
 - [Get started](#clone-repositorie)
 
