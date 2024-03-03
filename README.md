@@ -39,11 +39,13 @@ Good luck, let´s play! 🎲🎲
 
   - [Check Python version](#check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" />
 
-[Install the dependencies 💾](#install-the-dependencies)
+  - [Install the dependencies 💾](#install-the-dependencies)
 
-[Run the code 🏃](#run-the-code)
-
-[Run the validators 🏃](#run-the-validators)
+  - [Run the code 🏃](#run-the-code)
+    
+- [Test code](#run-the-validators)
+  
+  - [Run the validators 🏃](#run-the-validators)
 
   - [Codestyle with black  ⏺](#codestyle-with-black)
 
