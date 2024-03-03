@@ -122,7 +122,7 @@ Install the PIP packages that are dependencies to the project and/or the develop
 
 Do not forget to check that you have an active venv.
 
-Do install them
+To install them
 ```
 make install
 ```
