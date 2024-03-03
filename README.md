@@ -31,47 +31,35 @@ Good luck, let´s play! 🎲🎲
 
 # Table of Contents 📃
 
-[Check Python version](#check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" />
+- [Get started](#clone-repositorie)
 
-[Install Python virtual environment and activate it](#install-python-virtual-environment-and-activate-it) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" />
+  - [Clone Repositorie](#clone-repositorie) 🖨️
 
-[Install the dependencies 🪢](#install-the-dependencies)
+  - [Install Python virtual environment and activate it](#install-python-virtual-environment-and-activate-it) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" />
 
-[Run the code 👩‍💻](#run-the-code)
+  - [Check Python version](#check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" />
 
-[Run the validators ✅](#run-the-validators)
+[Install the dependencies 💾](#install-the-dependencies)
 
-[Codestyle with black  ⏺](#codestyle-with-black)
+[Run the code 🏃](#run-the-code)
 
-[Run the unittests 🏃](#run-the-unittests)
+[Run the validators 🏃](#run-the-validators)
 
-[Run parts of the testsuite 🏃](#run-parts-of-the-testsuite)
+  - [Codestyle with black  ⏺](#codestyle-with-black)
 
-[Remove generated files 🗑️](#remove-generated-files)
+  - [Run the unittests 🏃](#run-the-unittests)
 
-[More targets in the Makefile 📄](#more-targets-in-the-makefile)
+  - [Run parts of the testsuite 🏃](#run-parts-of-the-testsuite)
 
-# <a name = "check-python-version"></a> Check Python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
---------------------------
-Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
+- [Remove generated files 🗑️](#remove-generated-files)
+
+- [More targets in the Makefile 📄](#more-targets-in-the-makefile)
+
+# <a name = "Clone-repositorie"></a> Clone Repositorie 🖨️
+Clone repositorie
 ```
-make version
+git clone https://github.com/Brantin10/Assignment2
 ```
-
-If you have another naming of the Python executable then you can solve that using an environment variable. This is common on Mac and Linux.
-
-Set the environment variable to be your python executable
-```
-export PYTHON=python3
-```
-```
-make version
-```
-> [!TIP]
-> Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
-
-
-
 
 # <a name = "install-python-virtual-environment-and-activate-it"></a> Install a Python virtual environment and activate it <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
 --------------------------
@@ -96,6 +84,31 @@ deactivate
 ```
 > [!TIP]
 > Read more on [Python venv](https://docs.python.org/3/library/venv.html).
+
+
+# <a name = "check-python-version"></a> Check Python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
+--------------------------
+Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
+```
+make version
+```
+
+If you have another naming of the Python executable then you can solve that using an environment variable. This is common on Mac and Linux.
+
+Set the environment variable to be your python executable
+```
+export PYTHON=python3
+```
+```
+make version
+```
+> [!TIP]
+> Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
+
+
+
+
+
 
 
 
