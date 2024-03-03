@@ -71,7 +71,8 @@ git clone https://github.com/Brantin10/Assignment2
 ```
 
 
-<a name = "check-python-version"></a> Check Python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
+<a name = "check-python-version"></a> Check Python version ![Python](https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg)
+
 -----------------------------------------------------------------------------------------------------------------------------
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
 ```
