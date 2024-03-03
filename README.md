@@ -34,7 +34,7 @@ Click on the link to get to the section!
 
 - [Get started](#clone-repositorie)
 
-  - [Clone Repositorie](#clone-repositorie) 🖨️
+  - [Clone repositorie](#clone-repositorie) 🖨️
 
   - [Install Python virtual environment and activate it](#install-python-virtual-environment-and-activate-it) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" />
 
