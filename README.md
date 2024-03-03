@@ -30,7 +30,8 @@ Good luck, let´s play! 🎲🎲
 ![GitHub Release](https://img.shields.io/github/v/release/Brantin10/Assignment2?include_prereleases&sort=date&display_name=tag&style=for-the-badge)
 
 
-# Table of Contents 📃
+Table of Contents 📃
+----------------------
 Click on the link to get to the section!
 
 - [Get started](#clone-repositorie)
@@ -70,7 +71,7 @@ git clone https://github.com/Brantin10/Assignment2
 
 
 <a name = "check-python-version"></a> Check Python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
-=============================================================================================================================
+-----------------------------------------------------------------------------------------------------------------------------
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
 ```
 make version
@@ -88,9 +89,9 @@ make version
 > Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
 
 
-# <a name = "install-python-virtual-environment-and-activate-it"></a> Install a Python virtual environment and activate it <img 
+<a name = "install-python-virtual-environment-and-activate-it"></a> Install a Python virtual environment and activate it <img 
 src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
---------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
 Here is a guide how to install the Python virtual environment [Create the virtual environment](https://www.youtube.com/watch?v=UsmNyNxndv4)
 ```
 make venv
@@ -114,8 +115,8 @@ deactivate
 > Read more on [Python venv](https://docs.python.org/3/library/venv.html).
 
 
-# <a name="install-the-dependencies"></a> Install the dependencies 🪢
---------------------------
+<a name="install-the-dependencies"></a> Install the dependencies 🪢
+---------------------------------------------------------------------
 Install the PIP packages that are dependencies to the project and/or the development environment. The dependencies are documented in the `requirements.txt`.
 
 Do not forget to check that you have an active venv.
@@ -132,8 +133,8 @@ make installed
 > Read more on [Python PIP](https://pypi.org/project/pip/).
 
 
-# <a name="run-the-code"></a> Run the code 👩‍💻 
---------------------------
+<a name="run-the-code"></a> Run the code 👩‍💻 
+-------------------------------------------
 The example program can be started like this.
 
 Execute the main program
@@ -145,8 +146,8 @@ All code is stored below the directory `PigDiceGame/`.
 Good Luck! 😀
 
 
-# <a name="run-the-validators"></a> Run the validators ✅
---------------------------
+<a name="run-the-validators"></a> Run the validators ✅
+-------------------------------------------------------
 You can run the static code validators like this. They check the sourcecode and exclude the testcode.
 
 Run each at a time
@@ -169,8 +170,8 @@ Read more on:
 > * [pylint](https://pylint.org/)
 
 
-# <a name="codestyle-with-black"></a> Codestyle with black ⚫
---------------------------
+<a name="codestyle-with-black"></a> Codestyle with black ⚫
+-----------------------------------------------------------
 You can unify the codestyle using black. Running black will change your source code to have a codestyle according to black codestyle.
 
 Same same, different names
@@ -184,8 +185,8 @@ make codestyle
 > Read more on [black](https://pypi.org/project/black/).
 
 
-# <a name="run-the-unittests"></a> Run the unittests   🏃
---------------------------
+<a name="run-the-unittests"></a> Run the unittests 🏃
+--------------------------------------------------------
 You can run the unittests like this. The testfiles are stored in the `test/` directory.
 
 Run unttests without coverage
@@ -214,9 +215,8 @@ Read more on:
 > * [unittest](https://docs.python.org/3/library/unittest.html)
 > * [coverage](https://coverage.readthedocs.io/)
 
-
-# <a name="run-parts-of-the-testsuite"></a> Run parts of the testsuite   🏃
---------------------------
+<a name="run-parts-of-the-testsuite"></a> Run parts of the testsuite   🏃
+-------------------------------------------------------------------------
 You can also run parts of the testsuite, for examples files or methods in files.
 
 You can run all tests from a testfile.
@@ -234,8 +234,8 @@ python -m unittest test.test_game.TestGameClass.test_init_default_object        
 ```
 
 
-# <a name="remove-generated-files"></a> Remove generated files   🗑️
--------------------------
+<a name="remove-generated-files"></a> Remove generated files 🗑️
+---------------------------------------------------------------
 You can remove all generated files by this.
 
 Remove files generated for tests or caching
@@ -249,8 +249,8 @@ make clean-all
 ```
 
 
-# <a name="more-targets-in-the-makefile"></a> More targets in the Makefile  📄
---------------------------
+<a name="more-targets-in-the-makefile"></a> More targets in the Makefile 📄
+---------------------------------------------------------------------------
 The makefile contains more targets, for example these.
 
 to generate class and package diagrams from the code base.
