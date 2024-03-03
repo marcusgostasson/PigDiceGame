@@ -26,8 +26,11 @@ Pig, is a fun and simple dice game perfect for playing with family and friends. 
 Good luck, let´s play! 🎲🎲
 
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Brantin10/Assignment2/total?style=for-the-badge&logo=docusign&logoColor=%2340AEF0color=%2340AEF0)
+
 ![GitHub License](https://img.shields.io/github/license/Brantin10/Assignment?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0ibTMgNiAzIDFtMCAwLTMgOWE1LjAwMiA1LjAwMiAwIDAgMCA2LjAwMSAwTTYgN2wzIDlNNiA3bDYtMm02IDIgMy0xbS0zIDEtMyA5YTUuMDAyIDUuMDAyIDAgMCAwIDYuMDAxIDBNMTggN2wzIDltLTMtOS02LTJtMC0ydjJtMCAxNlY1bTAgMTZIOW0zIDBoMyIvPjwvc3ZnPg%3D%3D)
+
 ![GitHub Release](https://img.shields.io/github/v/release/Brantin10/Assignment2?include_prereleases&sort=date&display_name=tag&style=for-the-badge)
+
 
 # Table of Contents 📃
 Click on the link to get to the section!
@@ -36,9 +39,12 @@ Click on the link to get to the section!
 
   - [Clone repositorie](#clone-repositorie) 🖨️
  
-  - [Check Python version](#check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" />
+  - [Check Python version](#check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme- 
+    generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" />
 
-  - [Install Python virtual environment and activate it](#install-python-virtual-environment-and-activate-it) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" alt="Python" />
+  - [Install Python virtual environment and activate it](#install-python-virtual-environment-and-activate-it) <img 
+     src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="15" height="15" 
+     alt="Python" />
 
   - [Install the dependencies 💾](#install-the-dependencies)
 
@@ -63,13 +69,14 @@ Here is a guide how to clone the repositorie [Clone repositorie](https://www.you
 ```
 git clone https://github.com/Brantin10/Assignment2
 ```
+
+
 # <a name = "check-python-version"></a> Check Python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
 --------------------------
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
 ```
 make version
 ```
-
 If you have another naming of the Python executable then you can solve that using an environment variable. This is common on Mac and Linux.
 
 Set the environment variable to be your python executable
@@ -82,9 +89,11 @@ make version
 > [!TIP]
 > Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
 
-# <a name = "install-python-virtual-environment-and-activate-it"></a> Install a Python virtual environment and activate it <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
+
+# <a name = "install-python-virtual-environment-and-activate-it"></a> Install a Python virtual environment and activate it <img 
+src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
 --------------------------
-Create the virtual environment
+[Create the virtual environment](https://www.youtube.com/watch?v=UsmNyNxndv4)
 ```
 make venv
 ```
@@ -107,8 +116,6 @@ deactivate
 > Read more on [Python venv](https://docs.python.org/3/library/venv.html).
 
 
-
-
 # <a name="install-the-dependencies"></a> Install the dependencies 🪢
 --------------------------
 Install the PIP packages that are dependencies to the project and/or the development environment. The dependencies are documented in the `requirements.txt`.
@@ -127,8 +134,6 @@ make installed
 > Read more on [Python PIP](https://pypi.org/project/pip/).
 
 
-
-
 # <a name="run-the-code"></a> Run the code 👩‍💻 
 --------------------------
 The example program can be started like this.
@@ -140,8 +145,6 @@ python PigDiceGame/main.py
 All code is stored below the directory `PigDiceGame/`.
 
 Good Luck! 😀
-
-
 
 
 # <a name="run-the-validators"></a> Run the validators ✅
@@ -168,8 +171,6 @@ Read more on:
 > * [pylint](https://pylint.org/)
 
 
-
-
 # <a name="codestyle-with-black"></a> Codestyle with black ⚫
 --------------------------
 You can unify the codestyle using black. Running black will change your source code to have a codestyle according to black codestyle.
@@ -183,8 +184,6 @@ make codestyle
 ```
 > [!TIP]
 > Read more on [black](https://pypi.org/project/black/).
-
-
 
 
 # <a name="run-the-unittests"></a> Run the unittests   🏃
@@ -218,14 +217,11 @@ Read more on:
 > * [coverage](https://coverage.readthedocs.io/)
 
 
-
-
 # <a name="run-parts-of-the-testsuite"></a> Run parts of the testsuite   🏃
 --------------------------
 You can also run parts of the testsuite, for examples files or methods in files.
 
 You can run all tests from a testfile.
-
 
 Run a testfile
 ```
@@ -238,8 +234,6 @@ Run a test method, in a class, in a testfile
 ```
 python -m unittest test.test_game.TestGameClass.test_init_default_object        ??????????????????
 ```
-
-
 
 
 # <a name="remove-generated-files"></a> Remove generated files   🗑️
@@ -255,8 +249,6 @@ Do also remove all you have installed
 ```
 make clean-all
 ```
-
-
 
 
 # <a name="more-targets-in-the-makefile"></a> More targets in the Makefile  📄
