@@ -30,9 +30,10 @@ class TestGame(unittest.TestCase):
 
         g = game.Game()
         p = player.Player("Bob")
-        exp = g.check_if_winner(100, p)
-        res = False
-        self.assertEqual(exp, res)
+        with patch('PigDiceGame.highscore.Highscore.add_winner') as mock_add_winner:
+            exp = g.check_if_winner(100, p)
+            res = False
+            self.assertEqual(exp, res)
 
         exp = g.check_if_winner(50, p)
         res = True
@@ -43,7 +44,8 @@ class TestGame(unittest.TestCase):
         and if the dictionary is updated correctly."""
         g = game.Game()
         c = computer.Computer("1")
-        with patch("builtins.print") as mock_print:
+        with patch("builtins.print") as mock_print, \
+             patch("PigDiceGame.highscore.Highscore.add_winner") as mock_add_winner:
             g.check_if_winner(100, c)
             mock_print.assert_any_call(game.GREEN + "Computer won in 0"
                                        + " throws!" + game.END)
@@ -179,7 +181,8 @@ The first player to score 100 or more points wins\n""" + game.END
         g = game.Game()
         p = player.Player("Bob")
         g.players["Bob"] = 0
-        g.player_playing(p)
+        with patch('PigDiceGame.highscore.Highscore.add_winner') as mock_add_winner:
+            g.player_playing(p)
 
         max_points = g.get_player_score("Bob")
         self.assertEqual(max_points, 100)
