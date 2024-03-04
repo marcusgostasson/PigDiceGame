@@ -51,5 +51,6 @@ class TestHighscore(unittest.TestCase):
             exp = {"Oliver": 20, "Marcus": 25}
             self.assertEqual(retrieved_highscores, exp)
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     unittest.main()
