@@ -13,16 +13,16 @@ class Computer:
 
     def difficulty_choice(self, toss_counter, score):
         """Method for choosing difficulty"""
-        if self.difficulty == 1:
+        if self.difficulty == "1":
             option = self.easy_difficulty(toss_counter)
             return option
-        elif self.difficulty == 2:
+        elif self.difficulty == "2":
             option = self.medium_difficulty(toss_counter)
             return option
-        elif self.difficulty == 3:
+        elif self.difficulty == "Pelle":
             option = self.hard_difficulty(score)
             return option
-        elif self.difficulty == 4:
+        elif self.difficulty == "4":
             option = self.random_difficulty()
             return option
 
@@ -44,7 +44,7 @@ class Computer:
 
     def throw_dice(self, die):
         """Method for throwing the dice"""
-        self.tossed_amount()
+        self.set_tossed_amount()
         return die.get_random_number()
 
     def hard_difficulty(self, score):
