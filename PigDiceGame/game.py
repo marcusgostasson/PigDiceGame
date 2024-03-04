@@ -270,8 +270,9 @@ Press 5 if you want to quit
     def game_rules(self):
         """Display the rules of the game."""
         os.system('cls')
-        print("""\nEach turn, a player repeatedly rolls a die until either a 1
-        is rolled or the player decides to "hold":
+        print("""
+\nEach turn, a player repeatedly rolls a die until either a 1 is rolled
+or the player decides to "hold":
 
 If the player rolls a 1, they score nothing and it becomes the next
 player's turn.
