@@ -2,6 +2,7 @@
 # import shell
 import sys
 import os
+from PigDiceGame import highscore
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from PigDiceGame import game
 
@@ -13,6 +14,7 @@ def main():
     """Execute the main program."""
     # print(__doc__)
     # shell.Shell().cmdloop()
+    highscore.Highscore().retreive_highscore_file()
     game.Game().start_game()
 
 
