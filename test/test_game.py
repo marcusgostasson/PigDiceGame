@@ -8,7 +8,7 @@ from PigDiceGame import game, player, computer
 
 
 class TestGame(unittest.TestCase):
-    """All the tests for the game class"""
+    """All the tests for the game class."""
 
     def test_init_default_object(self):
         """Instantiate an object and check its properties."""
@@ -26,7 +26,7 @@ class TestGame(unittest.TestCase):
 
     def test_check_winner_player(self):
         """Checks if the player wins if he has 100 points and 
-        checks if the player is still playing if he has 50 points"""
+        checks if the player is still playing if he has 50 points."""
 
         g = game.Game()
         p = player.Player("Bob")
@@ -64,10 +64,11 @@ class TestGame(unittest.TestCase):
             g.player_playing(p)
             mock_print.assert_any_call(game.RED + "That's not an option" + game.END)
 
-    @patch("PigDiceGame.dice.Dice.get_random_number", return_value=2) # Die always roll 2
+    @patch("PigDiceGame.dice.Dice.get_random_number", return_value=2)  # Die always roll 2
     @patch("builtins.input", side_effect=["1", "Bob", "raz", "1", "2", "4", "5"])
     def test_start_game_with_choice_one_then_stay(self, mock_input, mock_choices):
-        """Tests to start the game and let player1 roll then stay to see that the score is updated"""
+        """Tests to start the game and let player1 roll
+        then stay to see that the score is updated"""
 
         g = game.Game()
         g.start_game()
