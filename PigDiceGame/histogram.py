@@ -27,7 +27,7 @@ class Histogram:
                 combined_names = names[:10]
                 combined_values = values[:10]
 
-        fig, ax = plt.subplots()
+        _, ax = plt.subplots()
 
         colors = (['gold', 'silver', 'saddlebrown'] +
                   ['black'] * (len(names) - 3))
