@@ -224,7 +224,7 @@ Press 5 if you want to quit
                       + " throws!" + END)
                 current_player.set_total_score(score)
                 points = current_player.get_total_score()
-                self.players[current_player.get_name()] = points 
+                self.players[current_player.get_name()] = points
                 post_winner.add_winner(current_player.get_name())
                 return False
 
