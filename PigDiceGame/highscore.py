@@ -16,6 +16,8 @@ class Highscore:
             score = 1
             self.highscores[player] = score
 
+        self.add_highscore_to_file(self.highscores)
+
     def get_name_and_highscore(self):
         """Class method to get name and score."""
         names = []
@@ -36,12 +38,12 @@ class Highscore:
 
     def retreive_highscore_file(self):
         """Class method to retreive highscore file."""
-        highscores = {}
+        self.highscores = {}
         with open("highscore_list.txt", 'r', encoding='utf-8') as file:
             for line in file:
                 name, score = line.srip().split(':')
-                highscores[name] = int(score)
-        return highscores
+                self.highscores[name] = int(score)
+        return self.highscores
 
     def sorted_list(self):
         """Class method to sort highscores."""
