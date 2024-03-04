@@ -12,6 +12,7 @@ class Computer:
         self.options = ["toss", "stay"]
 
     def difficulty_choice(self, toss_counter, score):
+        """Method for choosing difficulty"""
         if self.difficulty == 1:
             option = self.easy_difficulty(toss_counter)
             return option
@@ -26,18 +27,23 @@ class Computer:
             return option
 
     def set_total_score(self, score):
+        """Setter for sum of computer"""
         self.sum = score
 
     def get_total_score(self):
+        """Getter for sum of computer"""
         return self.sum
-    
+
     def set_tossed_amount(self):
+        """Setter for amount of tosses the computer has done"""
         self.tossed_amount += 1
-        
+
     def get_tossed_amount(self):
+        """Getter for amount of tosses the computer has done"""
         return self.tossed_amount
 
     def throw_dice(self, die):
+        """Method for throwing the dice"""
         self.tossed_amount()
         return die.get_random_number()
 

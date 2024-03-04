@@ -23,43 +23,60 @@ Pig, is a fun and simple dice game perfect for playing with family and friends. 
 - It is important to weigh the risk and reward when deciding to continue or stay.
 - A common strategy is to accumulate points slowly by stopping at each safe sum to avoid losing everything in a single turn.
 
-Good luck, let´s play! 🎲🎲😃
+Good luck, let´s play! 🎲🎲
 
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Brantin10/Assignment2/total?style=for-the-badge&logo=docusign&logoColor=%2340AEF0&color=%2340AEF0)
-![GitHub License](https://img.shields.io/github/license/Brantin10/Assignment2?style=for-the-badge&logo=Hence)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Brantin10/Assignment2/total?style=for-the-badge&logo=docusign&logoColor=%2340AEF0color=%2340AEF0)
+![GitHub License](https://img.shields.io/github/license/Brantin10/Assignment?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0ibTMgNiAzIDFtMCAwLTMgOWE1LjAwMiA1LjAwMiAwIDAgMCA2LjAwMSAwTTYgN2wzIDlNNiA3bDYtMm02IDIgMy0xbS0zIDEtMyA5YTUuMDAyIDUuMDAyIDAgMCAwIDYuMDAxIDBNMTggN2wzIDltLTMtOS02LTJtMC0ydjJtMCAxNlY1bTAgMTZIOW0zIDBoMyIvPjwvc3ZnPg%3D%3D)
 ![GitHub Release](https://img.shields.io/github/v/release/Brantin10/Assignment2?include_prereleases&sort=date&display_name=tag&style=for-the-badge)
 
-# Table of Contents
+
+Table of Contents 📃
+----------------------
+Click on the link to get to the section!
+
+- [Get started](#clone-repositorie)
+
+  - [Clone repositorie](#clone-repositorie) 🖨️
+ 
+  - [Check Python version](#check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" alt="Python" width="15" height="15" />
 
 
-[<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="10" height="10" alt="Python" /></a></p> Python version](#-check-python-version-)
+  - [Install Python virtual environment and activate it](#install-python-virtual-environment-and-activate-it) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" alt="Python" width="15" height="15" />
 
-[<img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="10" height="10" alt="Python" /></a></p>Install a Python virtual environment and activate it](#-Install-a-Python-virtual-environment-and-activate-it-)
 
-[💾 Install the dependencies](#-Install-the-dependencies-)
+  - [Install the dependencies 💾](#install-the-dependencies)
 
-[🏃 Run-the-code](#️-Run-the-code-)
+  - [Run the code 🏃](#run-the-code)
+    
+- [Test code](#run-the-validators)
+  
+  - [Run the validators 🏃](#run-the-validators)
 
-[🏃 Run the validators](#️-Run-the-validators-)
+  - [Codestyle with black  ⏺](#codestyle-with-black)
 
-[⏺ Codestyle with black](#️-Codestyle-with-black-)
+  - [Run the unittests 🏃](#run-the-unittests)
 
-[🏃 Run the unittests](#️-Run-the-unittests-)
+  - [Run parts of the testsuite 🏃](#run-parts-of-the-testsuite)
 
-[🏃 Run parts of the testsuite](#️-Run-parts-of-the-testsuite-)
+- [Remove generated files 🗑️](#remove-generated-files)
 
-[🗑️ Remove generated files](#️-Remove-generated-files-)
+- [More targets in the Makefile 📄](#more-targets-in-the-makefile)
 
-[📄 More targets in the Makefile](#️-More-targets-in-the-Makefile-)
+<a name = "clone-repositorie"></a> Clone repositorie 🖨️
+--------------------------------------------------------
+Here is a guide how to clone the repositorie -->
+[Clone repositorie](https://www.youtube.com/watch?v=S1rDpn5fk5s&list=PLEtyhUSKTK3iTFcdLANJq0TkKo246XAlv&index=4).
+```
+git clone https://github.com/Brantin10/Assignment2
+```
 
-## ***Check python version*** <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p> 
---------------------------
 
+<a name = "check-python-version"></a> Check Python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" alt="Python" width="20" height="20" />
+-----------------------------------------------------------------------------------------------------------------------------
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
 ```
 make version
 ```
-
 If you have another naming of the Python executable then you can solve that using an environment variable. This is common on Mac and Linux.
 
 Set the environment variable to be your python executable
@@ -73,12 +90,10 @@ make version
 > Read more on [GNU make](https://www.gnu.org/software/make/manual/make.html).
 
 
-
-
-## ***Install a Python virtual environment and activate it*** <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
---------------------------
-
-Create the virtual environment
+<a name = "install-python-virtual-environment-and-activate-it"></a> Install a Python virtual environment and activate it <img 
+src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
+------------------------------------------------------------------------------------------------------------------------------------------
+Here is a guide how to install the Python virtual environment [Create the virtual environment](https://www.youtube.com/watch?v=UsmNyNxndv4)
 ```
 make venv
 ```
@@ -101,16 +116,13 @@ deactivate
 > Read more on [Python venv](https://docs.python.org/3/library/venv.html).
 
 
-
-
-## ***Install the dependencies***   💾
---------------------------
-
+<a name="install-the-dependencies"></a> Install the dependencies 🪢
+---------------------------------------------------------------------
 Install the PIP packages that are dependencies to the project and/or the development environment. The dependencies are documented in the `requirements.txt`.
 
 Do not forget to check that you have an active venv.
 
-Do install them
+To install them
 ```
 make install
 ```
@@ -122,12 +134,9 @@ make installed
 > Read more on [Python PIP](https://pypi.org/project/pip/).
 
 
-
-
-## ***Run the code***   🏃
---------------------------
-
-The example program can be started like this.
+<a name="run-the-code"></a> Run the code 👩‍💻 
+-------------------------------------------
+The program can be started like this.
 
 Execute the main program
 ```
@@ -135,14 +144,11 @@ python PigDiceGame/main.py
 ```
 All code is stored below the directory `PigDiceGame/`.
 
-Good Luck 😀
+Good Luck! 😀
 
 
-
-
-## ***Run the validators***  🏃
---------------------------
-
+<a name="run-the-validators"></a> Run the validators ✅
+-------------------------------------------------------
 You can run the static code validators like this. They check the sourcecode and exclude the testcode.
 
 Run each at a time
@@ -156,8 +162,6 @@ Run all on the same time
 ```
 make lint
 ```
-You might need to update the Makefile if you change the name of the source directory currently named `PigDiceGame/`. ??????????????????
-
 Read more on:
 
 > [!TIP]
@@ -165,11 +169,8 @@ Read more on:
 > * [pylint](https://pylint.org/)
 
 
-
-
-## ***Codestyle with black*** ⚫
---------------------------
-
+<a name="codestyle-with-black"></a> Codestyle with black ⚫
+-----------------------------------------------------------
 You can unify the codestyle using black. Running black will change your source code to have a codestyle according to black codestyle.
 
 Same same, different names
@@ -183,11 +184,8 @@ make codestyle
 > Read more on [black](https://pypi.org/project/black/).
 
 
-
-
-## ***Run the unittests***   🏃
---------------------------
-
+<a name="run-the-unittests"></a> Run the unittests 🏃
+--------------------------------------------------------
 You can run the unittests like this. The testfiles are stored in the `test/` directory.
 
 Run unttests without coverage
@@ -216,16 +214,11 @@ Read more on:
 > * [unittest](https://docs.python.org/3/library/unittest.html)
 > * [coverage](https://coverage.readthedocs.io/)
 
-
-
-
-## ***Run parts of the testsuite***   🏃
---------------------------
-
+<a name="run-parts-of-the-testsuite"></a> Run parts of the testsuite   🏃
+-------------------------------------------------------------------------
 You can also run parts of the testsuite, for examples files or methods in files.
 
 You can run all tests from a testfile.
-
 
 Run a testfile
 ```
@@ -240,11 +233,8 @@ python -m unittest test.test_game.TestGameClass.test_init_default_object        
 ```
 
 
-
-
-## ***Remove generated files***   🗑️
---------------------------
-
+<a name="remove-generated-files"></a> Remove generated files 🗑️
+---------------------------------------------------------------
 You can remove all generated files by this.
 
 Remove files generated for tests or caching
@@ -258,11 +248,8 @@ make clean-all
 ```
 
 
-
-
-## ***More targets in the Makefile***  📄
---------------------------
-
+<a name="more-targets-in-the-makefile"></a> More targets in the Makefile 📄
+---------------------------------------------------------------------------
 The makefile contains more targets, for example these.
 
 to generate class and package diagrams from the code base.

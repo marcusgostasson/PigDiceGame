@@ -10,6 +10,8 @@ You can read about the cmd module in the docs:
 
 import cmd
 import game
+YELLOW = '\u001b[33m'
+END = '\033[0m'
 
 
 class Shell(cmd.Cmd):
@@ -24,11 +26,15 @@ class Shell(cmd.Cmd):
         self.game = game.Game()
 
     def do_start(self, _):
-        """Start the game with a new number."""
-        msg = (
-            "I am ready and is now thinking of a new secret number"
-            " between {} and {}."
-        )
+        """Start the game."""
+        msg = (YELLOW + "Hello and welcome to Pig Dice Game" + END +
+               """-------------------------------------------------
+               Press 1 if you want to play with a friend
+               Press 2 if you want to play vs the computer
+               Press 3 if you want to see the rules for the game
+               Press 4 if you want to see highscore
+               Press 5 if you want to quit
+               -------------------------------------------------""")
         self.game.start()
         print(msg.format(self.game.low(), self.game.high()))
 
@@ -38,7 +44,7 @@ class Shell(cmd.Cmd):
 
     def do_guess(self, arg):
         """Do a guess of a number."""
-        msg = "Missing argument on the number you are guessing. Try 'guess 42'."
+        msg = "Missing argument on the number you are guessing.Try 'guess 42'."
         if not arg:
             print(msg)
             return
