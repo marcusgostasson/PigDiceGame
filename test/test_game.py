@@ -101,7 +101,7 @@ class TestGame(unittest.TestCase):
     def test_game_rules(self, mock_stdout):
         """Tests if the game rules prints out the same."""
 
-        expected_output = """
+        expected_output = game.UNDERLINE + game.CITALIC + """
 \nEach turn, a player repeatedly rolls a die until either a 1 is rolled
 or the player decides to "hold":
 
@@ -111,7 +111,7 @@ If the player rolls any other number, it is added to their turn total and
 the player's turn continues.
 If a player chooses to "hold", their turn total is added to their score,
 and it becomes the next player's turn.
-The first player to score 100 or more points wins\n"""
+The first player to score 100 or more points wins\n""" + game.END
 
         game.Game().handle_choice("3")
 

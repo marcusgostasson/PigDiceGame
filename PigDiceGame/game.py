@@ -127,13 +127,14 @@ Press 5 if you want to quit
             print(current_player.get_name() + " you currently have "
                   + str(score) + " point(s)")
 
-            choice = self.get_choice_from_user(current_player.get_name() +
-                                               """ what do you want to do?:\n
-                                               Press 1 to toss\n
-                                               Press 2 to stay\n
-                                               Press 3 to change name\n
-                                               Press 4 to surrender\n
-                                               Choice: """)
+            choice = self.get_choice_from_user(
+                current_player.get_name() +
+""" what do you want to do?:\n
+Press 1 to toss
+Press 2 to stay
+Press 3 to change name
+Press 4 to surrender
+Choice: """) # noqa: 122 ignores line missing indentation
 
             if choice == "1":
                 die_value = current_player.throw_dice(die)
