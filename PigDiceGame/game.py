@@ -60,10 +60,16 @@ Press 5 if you want to quit
         """The logic when the user picks play vs the computer."""
 
         player1 = self.setup_player()
-        difficulty = self.get_choice_from_user("""What difficulty do you want?
+        while True:
+            difficulty = self.get_choice_from_user("""What difficulty do you want?
 1. Playing against a new born baby
 2. Playing against a grown up
-3. Completly random no logic\nChoice: """) # måste ändra i computer
+3. Completly random no logic\nChoice: """)
+            if difficulty in ["1", "2", "3", "Pelle"]:
+                break
+            print("Invalid option")
+            os.system('cls')
+
         if difficulty == "Pelle":
             ascii_pictures.Ascii().pelle()
         intelligence = computer.Computer(difficulty)
@@ -164,26 +170,26 @@ Press 5 if you want to quit
                 print(RED + "That's not an option" + END)
         return False
 
-    def computer_playing(self, computer):
+    def computer_playing(self, pc):
         """The logic for when the computer is playing."""
 
         die = dice.Dice()
-        score = computer.get_total_score()
+        score = pc.get_total_score()
         score_this_round = 0
         game_is_being_played = True
         toss_counter = 0
         while game_is_being_played:
             print("Computer currently have " + str(score) + " point(s)")
             time.sleep(1)
-            decision = computer.difficulty_choice(toss_counter, score_this_round)
+            decision = pc.difficulty_choice(toss_counter, score_this_round)
             choice = decision[0]
             if choice == "toss":
                 toss_counter += 1
-                die_value = computer.throw_dice(die)
+                die_value = pc.throw_dice(die)
                 print("Computer got a " + str(die_value))
                 if die_value != 1:
                     score += die_value
-                    game_is_being_played = self.check_if_winner(score, computer)
+                    game_is_being_played = self.check_if_winner(score, pc)
                     score_this_round += die_value
                     continue
 
@@ -193,8 +199,8 @@ Press 5 if you want to quit
                 return True
 
             if choice == "stay":
-                computer.set_total_score(score)
-                current_points = computer.get_total_score()
+                pc.set_total_score(score)
+                current_points = pc.get_total_score()
                 print("Computer stayed and now have " + str(current_points)
                       + " point(s)\n")
                 game_is_being_played = False

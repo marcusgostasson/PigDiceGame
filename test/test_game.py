@@ -7,7 +7,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from PigDiceGame import game, player, computer
 
 
-class Testgame(unittest.TestCase):
+class TestGame(unittest.TestCase):
     """All the tests for the game class"""
 
     def test_init_default_object(self):
