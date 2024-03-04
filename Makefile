@@ -95,7 +95,7 @@ coverage:
 	coverage report -m
 
 coverage_game:
-	@$(call MESSAGE, Running coverage for test_game.py, test_player.py, test_highscore, test_computer)
+	@$(call MESSAGE, Running coverage for test_game.py, test_player.py, test_highscore, test_computer,$@)
 	coverage run -m unittest test.test_game
 	coverage report -m
 	
