@@ -1,12 +1,12 @@
 """Game class."""
 import time
 import os
-from . import player
-from . import computer
-from . import dice
-from . import highscore
-from . import histogram
-from . import ascii_pictures
+from PigDiceGame import player
+from PigDiceGame import computer
+from PigDiceGame import dice
+from PigDiceGame import highscore
+from PigDiceGame import histogram
+from PigDiceGame import ascii_pictures
 RED = '\033[91m'
 GREEN = '\33[32m'
 YELLOW = '\u001b[33m'
