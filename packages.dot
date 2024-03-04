@@ -1,0 +1,23 @@
+digraph "packages" {
+rankdir=BT
+charset="utf-8"
+"PigDiceGame" [color="black", label=<PigDiceGame>, shape="box", style="solid"];
+"PigDiceGame.ascii_pictures" [color="black", label=<PigDiceGame.ascii_pictures>, shape="box", style="solid"];
+"PigDiceGame.computer" [color="black", label=<PigDiceGame.computer>, shape="box", style="solid"];
+"PigDiceGame.dice" [color="black", label=<PigDiceGame.dice>, shape="box", style="solid"];
+"PigDiceGame.game" [color="black", label=<PigDiceGame.game>, shape="box", style="solid"];
+"PigDiceGame.highscore" [color="black", label=<PigDiceGame.highscore>, shape="box", style="solid"];
+"PigDiceGame.histogram" [color="black", label=<PigDiceGame.histogram>, shape="box", style="solid"];
+"PigDiceGame.main" [color="black", label=<PigDiceGame.main>, shape="box", style="solid"];
+"PigDiceGame.player" [color="black", label=<PigDiceGame.player>, shape="box", style="solid"];
+"PigDiceGame.game" -> "PigDiceGame" [arrowhead="open", arrowtail="none"];
+"PigDiceGame.game" -> "PigDiceGame.ascii_pictures" [arrowhead="open", arrowtail="none"];
+"PigDiceGame.game" -> "PigDiceGame.computer" [arrowhead="open", arrowtail="none"];
+"PigDiceGame.game" -> "PigDiceGame.dice" [arrowhead="open", arrowtail="none"];
+"PigDiceGame.game" -> "PigDiceGame.highscore" [arrowhead="open", arrowtail="none"];
+"PigDiceGame.game" -> "PigDiceGame.histogram" [arrowhead="open", arrowtail="none"];
+"PigDiceGame.game" -> "PigDiceGame.player" [arrowhead="open", arrowtail="none"];
+"PigDiceGame.main" -> "PigDiceGame" [arrowhead="open", arrowtail="none"];
+"PigDiceGame.main" -> "PigDiceGame.game" [arrowhead="open", arrowtail="none"];
+"PigDiceGame.main" -> "PigDiceGame.highscore" [arrowhead="open", arrowtail="none"];
+}
