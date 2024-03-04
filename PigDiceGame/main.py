@@ -12,8 +12,6 @@ from PigDiceGame import game
 
 def main():
     """Execute the main program."""
-    # print(__doc__)
-    # shell.Shell().cmdloop()
     highscore.Highscore().retreive_highscore_file()
     game.Game().start_game()
 
