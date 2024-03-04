@@ -1,3 +1,4 @@
+"""Game class"""
 import time
 import os
 from . import player
@@ -15,14 +16,15 @@ post_winner = highscore.Highscore()
 
 
 class Game:
-    """Initialize the Game class."""
+    """Game class."""
+
     def __init__(self):
+        """Instanciate game class."""
         self.playing = True
         self.players = {}
 
     def display(self):
-        """Displaying the startup menu to the user."""
-
+        """Display the startup menu to the user."""
         print(YELLOW + "Hello and welcome to Pig Dice Game" + END)
         print("""-------------------------------------------------
 Press 1 if you want to play with a friend
@@ -38,8 +40,7 @@ Press 5 if you want to quit
         return choice
 
     def player_vs_player(self):
-        """The logic when the user picks play vs another player."""
-
+        """Logic when the user picks play vs another player."""
         player1 = self.setup_player()
         player2 = self.setup_player()
         playing = True
@@ -57,13 +58,12 @@ Press 5 if you want to quit
                           " and " + GREEN + player1.get_name() + " won" + END)
 
     def player_vs_computer(self):
-        """The logic when the user picks play vs the computer."""
-
+        """Logic when the user picks play vs the computer."""
         player1 = self.setup_player()
         difficulty = self.get_choice_from_user("""What difficulty do you want?
 1. Playing against a new born baby
 2. Playing against a grown up
-3. Completly random no logic\nChoice: """) # måste ändra i computer
+3. Completly random no logic\nChoice: """)  # måste ändra i computer
         if difficulty == "Pelle":
             ascii_pictures.Ascii().pelle()
         intelligence = computer.Computer(difficulty)
@@ -79,14 +79,12 @@ Press 5 if you want to quit
                 playing = self.computer_playing(intelligence)
 
     def quit(self):
-        """Stops the program"""
-
+        """Stop the program."""
         print("Quit out of the game")
         self.playing = False
 
     def handle_choice(self, choice):
         """Goes into a function depending what the user types in."""
-
         if choice == "1":
             self.player_vs_player()
         elif choice == "2":
@@ -102,8 +100,7 @@ Press 5 if you want to quit
             print(RED + "Invalid option" + END)
 
     def start_game(self):
-        """The beginning of the program."""
-
+        """Beginning of the program."""
         while self.playing:
             self.display()
 
@@ -111,33 +108,43 @@ Press 5 if you want to quit
             self.handle_choice(choice)
 
     def player_playing(self, current_player):
-        """The logic for when the player is playing."""
-
+        """Logic for when the player is playing."""
         die = dice.Dice()
-        score = current_player.get_total_score()  # Getting score from the player
+        score = current_player.get_total_score()
+        # Getting score from the player
         game_is_being_played = True
         while game_is_being_played:
             print(current_player.get_name() + " you currently have "
                   + str(score) + " point(s)")
 
-            choice = self.get_choice_from_user(current_player.get_name() + " what do you want to do?:\nPress 1 to toss\nPress 2 to stay\nPress 3 to change name\nPress 4 to surrender\nChoice: ")
+            choice = self.get_choice_from_user(current_player.get_name() +
+                                               """ what do you want to do?:\n
+                                               Press 1 to toss\n
+                                               Press 2 to stay\n
+                                               Press 3 to change name\n
+                                               Press 4 to surrender\n
+                                               Choice: """)
 
             if choice == "1":
                 die_value = current_player.throw_dice(die)
                 print(current_player.get_name() + " got a " + str(die_value))
                 if die_value != 1:
                     score += die_value
-                    game_is_being_played = self.check_if_winner(score, current_player)
+                    game_is_being_played = self.check_if_winner(score,
+                                                                current_player)
                     continue
 
                 os.system('cls')
-                print("Oh you got a " + str(die_value) + " better luck next time\n")
+                print("Oh you got a " + str(die_value) +
+                      " better luck next time\n")
                 game_is_being_played = False
                 return True
 
             if choice == "2":
                 current_player.set_total_score(score)
-                self.players[current_player.get_name()] = current_player.get_total_score()
+                name = current_player.get_name()
+                self.players[name] = current_player.get_total_score()
+
                 current_points = current_player.get_total_score()
                 os.system('cls')
                 print(current_player.get_name() + " stayed and now have "
@@ -165,8 +172,7 @@ Press 5 if you want to quit
         return False
 
     def computer_playing(self, computer):
-        """The logic for when the computer is playing."""
-
+        """Logic for when the computer is playing."""
         die = dice.Dice()
         score = computer.get_total_score()
         score_this_round = 0
@@ -201,8 +207,7 @@ Press 5 if you want to quit
                 return True
 
     def check_if_winner(self, score, current_player):
-        """Checks if the current toss is enough to win."""
-
+        """Check if the current toss is enough to win."""
         if isinstance(current_player, player.Player):
             if score >= 100:
                 print(GREEN + "You won in " + str(current_player.get_tossed_amount())
@@ -225,24 +230,25 @@ Press 5 if you want to quit
         return True
 
     def get_player_score(self, player_name):
-        """To get the players score, this is used for easier testing if the score got updated."""
+        """
+        To get the players score, this is used for easier testing if the.
 
+        score got updated.
+        """
         if player_name in self.players:
             return self.players[player_name]
 
         return None
 
     def change_name(self, current_player):
-        """Sets a new name for the player."""
-
+        """Set a new name for the player."""
         new_name = input("Input new name: ")
         current_player.set_name(new_name)
 
         return new_name
 
     def setup_player(self):
-        """Sets up the player."""
-
+        """Set up the player."""
         player_name = input("What is your name? ").capitalize()
         new_player = player.Player(player_name)
         self.players[player_name] = new_player.get_total_score()
@@ -250,11 +256,15 @@ Press 5 if you want to quit
         return new_player
 
     def game_rules(self):
-        """Displays the rules of the game."""
+        """Display the rules of the game."""
         os.system('cls')
-        print("""\nEach turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
+        print("""\nEach turn, a player repeatedly rolls a die until either a 1
+        is rolled or the player decides to "hold":
 
-If the player rolls a 1, they score nothing and it becomes the next player's turn.
-If the player rolls any other number, it is added to their turn total and the player's turn continues.
-If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
+If the player rolls a 1, they score nothing and it becomes the next
+player's turn.
+If the player rolls any other number, it is added to their turn total and
+the player's turn continues.
+If a player chooses to "hold", their turn total is added to their score,
+and it becomes the next player's turn.
 The first player to score 100 or more points wins\n""")
