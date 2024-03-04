@@ -1,4 +1,4 @@
-"""Game class"""
+"""Game class."""
 import time
 import os
 from . import player
