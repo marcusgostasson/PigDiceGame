@@ -44,7 +44,7 @@ class Shell(cmd.Cmd):
 
     def do_guess(self, arg):
         """Do a guess of a number."""
-        msg = "Missing argument on the number you are guessing. Try 'guess 42'."
+        msg = "Missing argument on the number you are guessing.Try 'guess 42'."
         if not arg:
             print(msg)
             return
