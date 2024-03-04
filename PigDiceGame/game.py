@@ -61,10 +61,13 @@ Press 5 if you want to quit
         """Logic when the user picks play vs the computer."""
         player1 = self.setup_player()
         while True:
-            difficulty = self.get_choice_from_user("""What difficulty do you want?
-1. Playing against a new born baby
-2. Playing against a grown up
-3. Completly random no logic\nChoice: """) 
+            difficulty = self.get_choice_from_user(
+                """
+                What difficulty do you want?
+                1. Playing against a new born baby
+                2. Playing against a grown up
+                3. Completly random no logic\nChoice:
+                """)
             if difficulty in ["1", "2", "3", "Pelle"]:
                 break
             print("Invalid option")
@@ -117,7 +120,6 @@ Press 5 if you want to quit
         """Logic for when the player is playing."""
         die = dice.Dice()
         score = current_player.get_total_score()
-        # Getting score from the player
         game_is_being_played = True
         while game_is_being_played:
             print(current_player.get_name() + " you currently have "
@@ -172,14 +174,14 @@ Press 5 if you want to quit
 
             if choice == "ezwin":
                 current_player.set_total_score(100)
-                game_is_being_played = self.check_if_winner(100, current_player)
+                game_is_being_played = self.check_if_winner(
+                    100, current_player)
             else:
                 print(RED + "That's not an option" + END)
         return False
 
     def computer_playing(self, pc):
-        """The logic for when the computer is playing."""
-
+        """Logic for when the computer is playing."""
         die = dice.Dice()
         score = pc.get_total_score()
         score_this_round = 0
@@ -217,17 +219,20 @@ Press 5 if you want to quit
         """Check if the current toss is enough to win."""
         if isinstance(current_player, player.Player):
             if score >= 100:
-                print(GREEN + "You won in " + str(current_player.get_tossed_amount())
+                print(GREEN + "You won in " + str(
+                    current_player.get_tossed_amount())
                       + " throws!" + END)
                 current_player.set_total_score(score)
-                self.players[current_player.get_name()] = current_player.get_total_score()
+                points = current_player.get_total_score()
+                self.players[current_player.get_name()] = points 
                 post_winner.add_winner(current_player.get_name())
                 return False
 
             return True
         if isinstance(current_player, computer.Computer):
             if score >= 100:
-                print(GREEN + "Computer won in " + str(current_player.get_tossed_amount())
+                print(GREEN + "Computer won in " + str(
+                    current_player.get_tossed_amount())
                       + " throws!" + END)
                 current_player.set_total_score(score)
                 self.players["Computer"] = current_player.get_total_score()
