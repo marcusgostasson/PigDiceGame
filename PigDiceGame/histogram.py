@@ -21,7 +21,7 @@ class Histogram:
         names, values = high_score.get_name_and_highscore()
 
         if not names and not values:
-            print(RED + "\nTHE LIST IS EMPTY\n" + END)
+            print(RED + "\nTHE LIST IS EMPTY !\n" + END)
         else:
             if len(names) <= 10:
                 combined_names = names
@@ -33,7 +33,7 @@ class Histogram:
             _, ax = plt.subplots()
 
             colors = (['gold', 'silver', 'saddlebrown'] +
-                    ['black'] * (len(names) - 3))
+                      ['black'] * (len(names) - 3))
 
             bars = ax.bar(combined_names, combined_values, color=colors,
                           edgecolor='black', alpha=0.7)
