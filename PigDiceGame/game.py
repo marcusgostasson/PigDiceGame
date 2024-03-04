@@ -5,6 +5,7 @@ from . import computer
 from . import dice
 from . import highscore
 from . import histogram
+from . import ascii_pictures
 RED = '\033[91m'
 GREEN = '\33[32m'
 YELLOW = '\u001b[33m'
@@ -32,16 +33,9 @@ Press 5 if you want to quit
 -------------------------------------------------""")
 
     def get_choice_from_user(self, prompting):
-        """Prompting the user for an input until its a number."""
-
-        while True:
-            try:
-                choice = int(input(prompting))
-            except ValueError:
-                print(RED + "Invalid input. That is not a number" + END)
-                continue
-
-            return choice
+        """Prompting the user for an input."""
+        choice = input(prompting)
+        return choice
 
     def player_vs_player(self):
         """The logic when the user picks play vs another player."""
@@ -68,9 +62,10 @@ Press 5 if you want to quit
         player1 = self.setup_player()
         difficulty = self.get_choice_from_user("""What difficulty do you want?
 1. Playing against a new born baby
-2. Playing against my uncle that is pretty good with numbers
-3. Playing against Pelle, if you know you know
-4. Completly random no logic\nChoice: """)
+2. Playing against a grown up
+3. Completly random no logic\nChoice: """) # måste ändra i computer
+        if difficulty == "Pelle":
+            ascii_pictures.Ascii().pelle()
         intelligence = computer.Computer(difficulty)
         self.players["Computer"] = intelligence.get_total_score()
         playing = True
@@ -92,16 +87,16 @@ Press 5 if you want to quit
     def handle_choice(self, choice):
         """Goes into a function depending what the user types in."""
 
-        if choice == 1:
+        if choice == "1":
             self.player_vs_player()
-        elif choice == 2:
+        elif choice == "2":
             self.player_vs_computer()
-        elif choice == 3:
+        elif choice == "3":
             self.game_rules()
-        elif choice == 4:
+        elif choice == "4":
             chart = histogram.Histogram()
             chart.plot_chart(post_winner)
-        elif choice == 5:
+        elif choice == "5":
             self.quit()
         else:
             print(RED + "Invalid option" + END)
@@ -127,7 +122,7 @@ Press 5 if you want to quit
 
             choice = self.get_choice_from_user(current_player.get_name() + " what do you want to do?:\nPress 1 to toss\nPress 2 to stay\nPress 3 to change name\nPress 4 to surrender\nChoice: ")
 
-            if choice == 1:
+            if choice == "1":
                 die_value = current_player.throw_dice(die)
                 print(current_player.get_name() + " got a " + str(die_value))
                 if die_value != 1:
@@ -140,7 +135,7 @@ Press 5 if you want to quit
                 game_is_being_played = False
                 return True
 
-            if choice == 2:
+            if choice == "2":
                 current_player.set_total_score(score)
                 self.players[current_player.get_name()] = current_player.get_total_score()
                 current_points = current_player.get_total_score()
@@ -150,7 +145,7 @@ Press 5 if you want to quit
                 game_is_being_played = False
                 return True
 
-            if choice == 3:
+            if choice == "3":
                 old_name = current_player.get_name()
                 value = self.players.pop(old_name)
                 new_name = self.change_name(current_player)
@@ -159,10 +154,10 @@ Press 5 if you want to quit
 
                 print("Your new name is now " + new_name)
 
-            if choice == 4:
+            if choice == "4":
                 return False
 
-            if choice == 1337:
+            if choice == "ezwin":
                 current_player.set_total_score(100)
                 game_is_being_played = self.check_if_winner(100, current_player)
             else:

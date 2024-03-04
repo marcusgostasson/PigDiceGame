@@ -8,7 +8,7 @@ from PigDiceGame import game, player, computer
 
 
 class Testgame(unittest.TestCase):
-    """Test class for the game class"""
+    """All the tests for the game class"""
 
     def test_init_default_object(self):
         """Instantiate an object and check its properties."""
@@ -42,7 +42,7 @@ class Testgame(unittest.TestCase):
         """Checks if the output is correct when the computer wins
         and if the dictionary is updated correctly."""
         g = game.Game()
-        c = computer.Computer(1)
+        c = computer.Computer("1")
         with patch("builtins.print") as mock_print:
             g.check_if_winner(100, c)
             mock_print.assert_any_call(game.GREEN + "Computer won in 0"
@@ -51,17 +51,18 @@ class Testgame(unittest.TestCase):
         self.assertEqual(name, "Computer")
         self.assertEqual(points, 100)
 
-    @patch("builtins.input", side_effect=["yo", "4", "1"])
+    @patch("builtins.input", side_effect=["1", "word", "4"])
     def test_get_choice_from_user(self, mock_input):
         """Tests if choice from user is invalid for a string and valid for 1"""
 
         g = game.Game()
-        with patch("builtins.print") as mock_print:
-            choice = g.get_choice_from_user("Choice: ")
-            mock_print.assert_called_with(game.RED + "Invalid input. That is not a number" + game.END)
 
         choice = g.get_choice_from_user("Choice: ")
-        self.assertEqual(choice, 1)
+        self.assertEqual(choice, "1")
+        p = player.Player("Sven")
+        with patch("builtins.print") as mock_print:
+            g.player_playing(p)
+            mock_print.assert_any_call(game.RED + "That's not an option" + game.END)
 
     @patch("PigDiceGame.dice.Dice.get_random_number", return_value=2) # Die always roll 2
     @patch("builtins.input", side_effect=["1", "Bob", "raz", "1", "2", "4", "5"])
@@ -106,7 +107,7 @@ If the player rolls any other number, it is added to their turn total and the pl
 If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
 The first player to score 100 or more points wins\n"""
 
-        game.Game().handle_choice(3)
+        game.Game().handle_choice("3")
 
         self.assertEqual(mock_stdout.getvalue().strip(), expected_output.strip())
 
@@ -166,7 +167,7 @@ The first player to score 100 or more points wins\n"""
             g.player_playing(p)
             mock_print.assert_any_call("Your new name is now Sven")
 
-    @patch("builtins.input", side_effect=["1337"])
+    @patch("builtins.input", side_effect=["ezwin"])
     def test_player_cheats(self, mock_input):
         """Testing if the cheats work that the player gets 100 points."""
         g = game.Game()
@@ -207,7 +208,7 @@ The first player to score 100 or more points wins\n"""
     def test_computer_playing_when_get_1(self, mock_choice):
         """Testing if the output is right when the computer rolls a 1."""
         g = game.Game()
-        c = computer.Computer(1)
+        c = computer.Computer("1")
         with patch("builtins.print") as mock_print:
             g.computer_playing(c)
             mock_print.assert_any_call("Oh you got a 1"
