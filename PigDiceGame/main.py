@@ -2,9 +2,8 @@
 # import shell
 import sys
 import os
-from PigDiceGame import highscore
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from PigDiceGame import game
+from PigDiceGame import game, highscore
 
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
