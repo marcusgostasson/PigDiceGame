@@ -4,7 +4,7 @@ import os
 from io import StringIO
 from unittest.mock import patch
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from PigDiceGame import game, player, computer
+from PigDiceGame import game, player, computer, highscore
 
 
 class TestGame(unittest.TestCase):
@@ -12,8 +12,8 @@ class TestGame(unittest.TestCase):
 
     def test_init_default_object(self):
         """Instantiate an object and check its properties."""
-
-        g = game.Game()
+        high = highscore.Highscore()
+        g = game.Game(high)
         self.assertIsInstance(g, game.Game)
 
         players = g.players
@@ -27,8 +27,8 @@ class TestGame(unittest.TestCase):
     def test_check_winner_player(self):
         """Checks if the player wins if he has 100 points and 
         checks if the player is still playing if he has 50 points."""
-
-        g = game.Game()
+        high = highscore.Highscore()
+        g = game.Game(high)
         p = player.Player("Bob")
         with patch('PigDiceGame.highscore.Highscore.add_winner') as mock_add_winner:
             exp = g.check_if_winner(100, p)
@@ -42,7 +42,8 @@ class TestGame(unittest.TestCase):
     def test_check_if_winner_computer(self):
         """Checks if the output is correct when the computer wins
         and if the dictionary is updated correctly."""
-        g = game.Game()
+        high = highscore.Highscore()
+        g = game.Game(high)
         c = computer.Computer("1")
         with patch("builtins.print") as mock_print, \
              patch("PigDiceGame.highscore.Highscore.add_winner") as mock_add_winner:
@@ -56,8 +57,8 @@ class TestGame(unittest.TestCase):
     @patch("builtins.input", side_effect=["1", "word", "4"])
     def test_get_choice_from_user(self, mock_input):
         """Tests if choice from user is invalid for a string and valid for 1"""
-
-        g = game.Game()
+        high = highscore.Highscore()
+        g = game.Game(high)
 
         choice = g.get_choice_from_user("Choice: ")
         self.assertEqual(choice, "1")
@@ -71,8 +72,8 @@ class TestGame(unittest.TestCase):
     def test_start_game_with_choice_one_then_stay(self, mock_input, mock_choices):
         """Tests to start the game and let player1 roll
         then stay to see that the score is updated"""
-
-        g = game.Game()
+        high = highscore.Highscore()
+        g = game.Game(high)
         g.start_game()
 
         player_score_before_toss = g.get_player_score("Bob")
@@ -81,8 +82,8 @@ class TestGame(unittest.TestCase):
     @patch("builtins.input", side_effect=["bob", "sven"])
     def test_change_name(self, mock_input):
         """Testing to change name from bob to sven"""
-
-        g = game.Game()
+        high = highscore.Highscore()
+        g = game.Game(high)
         p = player.Player("bob")
         bob = g.change_name(p)
         exp_new_name = g.change_name(p)
@@ -92,8 +93,8 @@ class TestGame(unittest.TestCase):
     @patch("builtins.input", side_effect=["bob"])
     def test_setup_player(self, mock_input):
         """Testing if the setup works that the name is the same."""
-
-        g = game.Game()
+        high = highscore.Highscore()
+        g = game.Game(high)
         player = g.setup_player()
 
         players_name = player.get_name()
@@ -114,16 +115,16 @@ the player's turn continues.
 If a player chooses to "hold", their turn total is added to their score,
 and it becomes the next player's turn.
 The first player to score 100 or more points wins\n""" + game.END
-
-        game.Game().handle_choice("3")
+        high = highscore.Highscore()
+        game.Game(high).handle_choice("3")
 
         self.assertEqual(mock_stdout.getvalue().strip(), expected_output.strip())
 
     @patch("builtins.input", side_effect=["bob", "raz", "4"])
     def test_player_vs_player_p1_surrenders(self, mock_input):
         """Tests if the output is correct if the first player surrenders."""
-
-        g = game.Game()
+        high = highscore.Highscore()
+        g = game.Game(high)
         with patch("builtins.print") as mock_print:
             g.player_vs_player()
             mock_print.assert_called_with(game.RED + "Bob" + " surrendered" + game.END + " and " + game.GREEN + "Raz" + " won" + game.END)
@@ -131,16 +132,16 @@ The first player to score 100 or more points wins\n""" + game.END
     @patch("builtins.input", side_effect=["bob", "raz", "2", "4", "4", "4"])
     def test_player_vs_player_p2_surrenders(self, mock_input):
         """Tests if the output is correct if the second player surrenders."""
-
-        g = game.Game()
+        high = highscore.Highscore()
+        g = game.Game(high)
         with patch("builtins.print") as mock_print:
             g.player_vs_player()
             mock_print.assert_called_with(game.RED + "Raz" + " surrendered" + game.END + " and " + game.GREEN + "Bob" + " won" + game.END)
 
     def test_handle_choice_invalid(self):
         """Tests if an invalid option for handle_choice prints right output."""
-
-        g = game.Game()
+        high = highscore.Highscore()
+        g = game.Game(high)
         with patch("builtins.print") as mock_print:
             g.handle_choice(6)
             mock_print.assert_called_with(game.RED + "Invalid option" + game.END)
@@ -149,8 +150,8 @@ The first player to score 100 or more points wins\n""" + game.END
     @patch("builtins.input", side_effect=["1"])
     def test_player_playing_when_getting_a_one(self, mock_input, mock_choices):
         """Tests if the output is correct when the user gets a 1."""
-
-        g = game.Game()
+        high = highscore.Highscore()
+        g = game.Game(high)
         p = player.Player("bob")
 
         with patch("builtins.print") as mock_print:
@@ -161,8 +162,8 @@ The first player to score 100 or more points wins\n""" + game.END
     def test_user_press_3_change_name_prints_correct(self, mock_input):
         """Checks if the output is correct after the named is changed
         and that the dictionary is correct."""
-
-        g = game.Game()
+        high = highscore.Highscore()
+        g = game.Game(high)
         p = player.Player("Bob")
         g.players["Bob"] = 0
 
@@ -178,7 +179,8 @@ The first player to score 100 or more points wins\n""" + game.END
     @patch("builtins.input", side_effect=["ezwin"])
     def test_player_cheats(self, mock_input):
         """Testing if the cheats work that the player gets 100 points."""
-        g = game.Game()
+        high = highscore.Highscore()
+        g = game.Game(high)
         p = player.Player("Bob")
         g.players["Bob"] = 0
         with patch('PigDiceGame.highscore.Highscore.add_winner') as mock_add_winner:
@@ -190,14 +192,16 @@ The first player to score 100 or more points wins\n""" + game.END
     def test_get_player_score_when_none(self):
         """Tests if the get_player_score returns None if the name does
         not exist in the dictionary."""
-        g = game.Game()
+        high = highscore.Highscore()
+        g = game.Game(high)
         empty = g.get_player_score("Bob")
         self.assertEqual(empty, None)
 
     @patch("builtins.input", side_effect=["12", "4"])
     def test_player_playing_invalid_input(self, mock_input):
         """Testsing the player_playing when invalid input 12 in this case."""
-        g = game.Game()
+        high = highscore.Highscore()
+        g = game.Game(high)
         p = player.Player("Bob")
         with patch("builtins.print") as mock_print:
             g.player_playing(p)
@@ -207,8 +211,8 @@ The first player to score 100 or more points wins\n""" + game.END
     @patch("builtins.input", side_effect=["Raz", "1", "2", "4"])
     def test_player_vs_computer(self, mock_input, mock_choice):
         """Testing the player vs computer function."""
-
-        g = game.Game()
+        high = highscore.Highscore()
+        g = game.Game(high)
         g.player_vs_computer()
         self.assertIn("Raz", g.players)
         self.assertIn("Computer", g.players)
@@ -216,7 +220,8 @@ The first player to score 100 or more points wins\n""" + game.END
     @patch("PigDiceGame.dice.Dice.get_random_number", return_value=1)
     def test_computer_playing_when_get_1(self, mock_choice):
         """Testing if the output is right when the computer rolls a 1."""
-        g = game.Game()
+        high = highscore.Highscore()
+        g = game.Game(high)
         c = computer.Computer("1")
         with patch("builtins.print") as mock_print:
             g.computer_playing(c)
