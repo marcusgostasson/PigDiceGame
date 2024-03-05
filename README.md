@@ -199,7 +199,7 @@ make codestyle
 --------------------------------------------------------
 You can run the unittests like this. The testfiles are stored in the `test/` directory.
 
-Run unttests without coverage
+Run unittests without coverage
 ```
 make unittest
 ```
