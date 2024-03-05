@@ -269,13 +269,15 @@ make clean-all
 ---------------------------------------------------------------------------
 The makefile contains more targets, for example these.
 
+to generate documentation from the code.
+```
+make doc
+```
+
 to generate class and package diagrams from the code base.
 ```
 make pyreverse
 ```
-to generate documentation from the code.
-```
-make doc
-``` 
+
 
 
