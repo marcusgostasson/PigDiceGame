@@ -213,10 +213,17 @@ Run the linters and the unittests with coverage
 make test
 ```
 
-You can open a web browser to inspect the code coverage as a generated HTML report.
+Copy and insert in terminal to open the web browser to inspect the code coverage as a generated HTML report.
+
+On windows 🪟
 
 ```
-google-chrome htmlcov/index.html
+start htmlcov/index.html
+```
+On linux/ Mac 🍏
+```
+open htmlcov/index.html
+
 ```
 
 Read more on:
