@@ -244,14 +244,14 @@ You can run all tests from a testfile.
 
 Run a testfile
 ```
-python -m unittest test.test_game                    ?????????????????????????
+python -m unittest test.test_game
 ```
 
 You can also run a single testcase from a file.
 
 Run a test method, in a class, in a testfile
 ```
-python -m unittest test.test_game.TestGameClass.test_init_default_object        ??????????????????
+python -m unittest test.test_game.TestGameClass.test_init_default_object
 ```
 
 
