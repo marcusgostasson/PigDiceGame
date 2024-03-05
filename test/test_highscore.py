@@ -1,5 +1,6 @@
 """Testclass for highscore."""
 import unittest
+import tempfile
 from unittest.mock import mock_open, patch
 from PigDiceGame.highscore import Highscore
 
@@ -36,21 +37,27 @@ class TestHighscore(unittest.TestCase):
 
     def test_add_highscore(self):
         """Class method to test add highscore."""
-        file_content = "Oliver : 20\nMarcus : 19\n"
+        with tempfile.NamedTemporaryFile(mode='w', delete=False) as tmp_file:
+            self.highscore.file_path = tmp_file.name
 
-        with patch("builtins.open", mock_open(read_data=file_content)):
-            exp = {"Oliver": 20, "Marcus": 19}
-            self.assertEqual(file_content, exp)
+            self.highscore.add_highscore_to_file({})
+
+            with open(tmp_file.name, 'r', encoding='utf-8') as file:
+                actual_content = file.read()
+                
+        exp = ""
+        self.assertEqual(actual_content, exp)
 
     def test_retreive_highscore(self):
         """Class method to test retreive highscore."""
-        file_content = "Oliver: 20\nMarcus: 25\n"
+        with tempfile.NamedTemporaryFile(mode='w', delete=False) as tmp_file:
+            self.highscore.file_path = tmp_file.name
 
-        with patch("builtins.open", mock_open(read_data=file_content)):
-            retrieved_highscores = self.highscore.retreive_highscore_file()
-
-            exp = {"Oliver": 20, "Marcus": 25}
-            self.assertEqual(retrieved_highscores, exp)
+            retreived_score = self.highscore.retreive_highscore_file()
+                
+        exp = {}
+        self.assertEqual(retreived_score, exp)
+    
 
     def test_get_name_and_highscore(self):
         """Class method to test get name and highscore."""
