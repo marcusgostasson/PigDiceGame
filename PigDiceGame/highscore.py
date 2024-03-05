@@ -41,7 +41,7 @@ class Highscore:
         self.highscores = {}
         with open("highscore_list.txt", 'r', encoding='utf-8') as file:
             for line in file:
-                name, score = line.srip().split(':')
+                name, score = line.strip().split(':')
                 self.highscores[name] = int(score)
         return self.highscores
 
