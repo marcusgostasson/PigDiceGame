@@ -99,7 +99,7 @@ make version
 src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
 ------------------------------------------------------------------------------------------------------------------------------------------
 Here is a guide how to install the Python virtual environment --> [Create the virtual environment](https://www.youtube.com/watch?v=UsmNyNxndv4)
-
+### Create
 Create a .venv on 🪟
 ```
 python -m venv .venv
@@ -108,7 +108,7 @@ Create a .venv on Linux / Mac 🍏
 ```
 python3 -m venv .venv
 ```
-
+### open
 Open the .venv
 ```
 make venv
