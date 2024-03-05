@@ -58,9 +58,9 @@ Click on the link to get to the section!
 
   - [Run parts of the testsuite 🏃](#run-parts-of-the-testsuite)
 
-- [Remove generated files 🗑️](#remove-generated-files)
-
 - [More targets in the Makefile 📄](#more-targets-in-the-makefile)
+
+- [Remove generated files 🗑️](#remove-generated-files)
 
 <a name = "clone-repositorie"></a> Clone Repositorie 🖨️
 --------------------------------------------------------
@@ -255,21 +255,6 @@ python -m unittest test.test_game.TestGameClass.test_init_default_object
 ```
 
 
-<a name="remove-generated-files"></a> Remove generated files 🗑️
----------------------------------------------------------------
-You can remove all generated files by this.
-
-Remove files generated for tests or caching
-```
-make clean
-```
-
-Do also remove all you have installed
-```
-make clean-all
-```
-
-
 <a name="more-targets-in-the-makefile"></a> More targets in the Makefile 📄
 ---------------------------------------------------------------------------
 The makefile contains more targets, for example these.
@@ -288,6 +273,21 @@ Open with:
 On windows 🪟
 ```
 start doc/pyreverse/classes.png && start doc/pyreverse/packages.png
+```
+
+
+<a name="remove-generated-files"></a> Remove generated files 🗑️
+---------------------------------------------------------------
+You can remove all generated files by this.
+
+Remove files generated for tests or caching
+```
+make clean
+```
+
+Do also remove all you have installed
+```
+make clean-all
 ```
 
 on Mac (add xdg-, before if you have linux)
