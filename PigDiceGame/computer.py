@@ -16,15 +16,16 @@ class Computer:
         if self.difficulty == "1":
             option = self.easy_difficulty(toss_counter)
             return option
-        elif self.difficulty == "2":
+        if self.difficulty == "2":
             option = self.medium_difficulty(toss_counter)
             return option
-        elif self.difficulty == "Pelle":
+        if self.difficulty == "Pelle":
             option = self.hard_difficulty(score)
             return option
-        elif self.difficulty == "3":
+        if self.difficulty == "3":
             option = self.random_difficulty()
             return option
+        return None  # This line should never execute
 
     def set_total_score(self, score):
         """Setter for sum of computer."""
@@ -51,36 +52,36 @@ class Computer:
         """Class method for hard_difficulty."""
         if score >= 25:
             return random.choices(self.options, weights=(0, 100))
-        else:
-            return random.choices(self.options, weights=(100, 0))
+
+        return random.choices(self.options, weights=(100, 0))
 
     def medium_difficulty(self, toss_count):
         """Class method for medium_difficulty."""
         if toss_count == 0:
             return random.choices(self.options, weights=(100, 0))
-        elif toss_count == 1:
+        if toss_count == 1:
             return random.choices(self.options, weights=(80, 20))
-        elif toss_count == 2:
+        if toss_count == 2:
             return random.choices(self.options, weights=(70, 30))
-        elif toss_count == 3:
+        if toss_count == 3:
             return random.choices(self.options, weights=(60, 40))
-        elif toss_count == 4:
+        if toss_count == 4:
             return random.choices(self.options, weights=(50, 50))
-        elif toss_count == 5:
+        if toss_count == 5:
             return random.choices(self.options, weights=(40, 60))
-        elif toss_count == 6:
+        if toss_count == 6:
             return random.choices(self.options, weights=(30, 70))
-        elif toss_count == 7:
+        if toss_count == 7:
             return random.choices(self.options, weights=(20, 80))
-        elif toss_count == 8:
-            return random.choices(self.options, weights=(0, 100))
+
+        return random.choices(self.options, weights=(0, 100))
 
     def easy_difficulty(self, toss_count):
         """Class method for easy_difficulty."""
         if toss_count == 0:
             return random.choices(self.options, weights=(100, 0))
-        elif toss_count == 1:
-            return random.choices(self.options, weights=(0, 100))
+
+        return random.choices(self.options, weights=(0, 100))
 
     def random_difficulty(self):
         """Class method for random_difficulty."""
