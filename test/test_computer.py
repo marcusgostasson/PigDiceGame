@@ -54,6 +54,56 @@ class TestComputer(unittest.TestCase):
         exp = ['stay']
         self.assertEqual(res, exp)
 
+    def test_medium_difficulty(self):
+        """Test for medium_difficulty."""
+        c = computer.Computer("2")
+        res = c.medium_difficulty(1)
+        exp = (['stay'], ['toss'])
+        self.assertIn(res, exp)
+
+        c = computer.Computer("2")
+        res = c.medium_difficulty(2)
+        exp = (['stay'], ['toss'])
+        self.assertIn(res, exp)
+
+        c = computer.Computer("2")
+        res = c.medium_difficulty(3)
+        exp = (['stay'], ['toss'])
+        self.assertIn(res, exp)
+
+        c = computer.Computer("2")
+        res = c.medium_difficulty(4)
+        exp = (['stay'], ['toss'])
+        self.assertIn(res, exp)
+
+        c = computer.Computer("2")
+        res = c.medium_difficulty(5)
+        exp = (['stay'], ['toss'])
+        self.assertIn(res, exp)
+
+        c = computer.Computer("2")
+        res = c.medium_difficulty(6)
+        exp = (['stay'], ['toss'])
+        self.assertIn(res, exp)
+
+        c = computer.Computer("2")
+        res = c.medium_difficulty(7)
+        exp = (['stay'], ['toss'])
+        self.assertIn(res, exp)
+
+    def test_random_difficulty(self):
+        """Test for random difficulty"""
+        c = computer.Computer
+        res = c.random_difficulty
+        exp = (['stay'], ['toss'])
+        self.assertIn(res, exp)
+
+    def test_difficulty_choice(self):
+        """Test for choosing difficulty"""
+        c = computer.Computer
+        res = c.difficulty_choice
+        self.assertIsNotNone(res)
+
 
 if __name__ == "__main__":
     unittest.main()

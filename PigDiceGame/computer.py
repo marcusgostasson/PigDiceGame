@@ -22,7 +22,7 @@ class Computer:
         elif self.difficulty == "Pelle":
             option = self.hard_difficulty(score)
             return option
-        elif self.difficulty == "4":
+        elif self.difficulty == "3":
             option = self.random_difficulty()
             return option
 
