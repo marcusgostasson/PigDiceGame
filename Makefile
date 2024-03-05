@@ -93,21 +93,6 @@ coverage:
 	coverage run -m unittest discover
 	coverage html
 	coverage report -m
-
-coverage_game:
-	@$(call MESSAGE, Running coverage for test_game.py, test_player.py, test_highscore, test_computer,$@)
-	coverage run -m unittest test.test_game
-	coverage report -m
-	
-	coverage run -m unittest test.test_player
-	coverage report -m
-
-	coverage run -m unittest test.test_highscore 
-	coverage report -m
-
-	coverage run -m unittest test.test_computer
-	coverage report -m
-
 	
 test: lint coverage
 
