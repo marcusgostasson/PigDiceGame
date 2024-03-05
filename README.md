@@ -67,11 +67,11 @@ Click on the link to get to the section!
 Here is a guide how to clone the repositorie -->
 [Clone repositorie](https://www.youtube.com/watch?v=S1rDpn5fk5s&list=PLEtyhUSKTK3iTFcdLANJq0TkKo246XAlv&index=4).
 
-Https://
+###Https://
 ```
 git clone https://github.com/Brantin10/Assignment2
 ```
-SSH
+###SSH
 ```
 git clone git@github.com:Brantin10/Assignment2.git
 ```
