@@ -9,49 +9,49 @@ class TestComputer(unittest.TestCase):
 
     def test_init_default_object(self):
         """Instantiate an object and check its properties."""
-        res = computer.Computer()
+        res = computer.Computer("1")
         self.assertIsInstance(res, computer.Computer)
 
     def test_easy_difficulty_toss(self):
         """Test easy_difficulty_toss."""
-        c = computer.Computer()
+        c = computer.Computer("1")
         res = c.easy_difficulty(0)
-        exp = "toss"
+        exp = ['toss']
         self.assertEqual(res, exp)
 
     def test_easy_difficulty_stay(self):
         """Test easy_difficulty_stay."""
-        c = computer.Computer()
+        c = computer.Computer("1")
         res = c.easy_difficulty(1)
-        exp = "stay"
+        exp = ['stay']
         self.assertEqual(res, exp)
 
     def test_medium_difficulty_toss(self):
         """Test medium_difficulty_toss."""
-        c = computer.Computer()
+        c = computer.Computer("2")
         res = c.medium_difficulty(0)
-        exp = "toss"
+        exp = ['toss']
         self.assertEqual(res, exp)
 
     def test_medium_difficulty_stay(self):
         """Test medium_difficulty_stay."""
-        c = computer.Computer()
+        c = computer.Computer("2")
         res = c.medium_difficulty(8)
-        exp = "stay"
+        exp = ['stay']
         self.assertEqual(res, exp)
 
     def test_hard_difficulty_toss(self):
         """Test hard_difficulty_toss."""
-        c = computer.Computer()
+        c = computer.Computer("Pelle")
         res = c.hard_difficulty(24)
-        exp = "toss"
+        exp = ['toss']
         self.assertEqual(res, exp)
 
     def test_hard_difficulty_stay(self):
         """Test hard_difficulty_stay."""
-        c = computer.Computer()
+        c = computer.Computer("Pelle")
         res = c.hard_difficulty(25)
-        exp = "stay"
+        exp = ['stay']
         self.assertEqual(res, exp)
 
 
