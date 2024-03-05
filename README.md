@@ -193,9 +193,6 @@ Same same, different names
 ```
 make black
 ```
-```
-make codestyle
-```
 > [!TIP]
 > Read more on [black](https://pypi.org/project/black/).
 
