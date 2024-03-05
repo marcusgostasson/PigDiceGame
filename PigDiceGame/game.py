@@ -21,8 +21,9 @@ post_winner = highscore.Highscore()
 class Game:
     """Game class."""
 
-    def __init__(self):
+    def __init__(self, highscore):
         """Instanciate game class."""
+        self.high = highscore
         self.playing = True
         self.players = {}
 
@@ -119,7 +120,7 @@ What difficulty do you want?
         elif choice == "4":
             self.clear_screen()
             chart = histogram.Histogram()
-            chart.plot_chart(post_winner)
+            chart.plot_chart(self.high)
         elif choice == "5":
             self.quit()
         else:
@@ -128,6 +129,7 @@ What difficulty do you want?
 
     def start_game(self):
         """Beginning of the program."""
+        self.high.retreive_highscore_file()
         while self.playing:
             self.display()
 
@@ -250,7 +252,7 @@ Choice: """) # noqa: 122 ignores line missing indentation
                 current_player.set_total_score(score)
                 points = current_player.get_total_score()
                 self.players[current_player.get_name()] = points
-                post_winner.add_winner(current_player.get_name())
+                self.high.add_winner(current_player.get_name())
                 return False
 
             return True
@@ -261,7 +263,7 @@ Choice: """) # noqa: 122 ignores line missing indentation
                       + " throws!" + END)
                 current_player.set_total_score(score)
                 self.players["Computer"] = current_player.get_total_score()
-                post_winner.add_winner("Computer")
+                self.high.add_winner("Computer")
                 return False
 
         return True
