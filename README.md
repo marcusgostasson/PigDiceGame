@@ -10,9 +10,9 @@ Pig, is a fun and simple dice game perfect for playing with family and friends. 
 
 **Rules:**
 
-1. The player rolls the two dice.
-2. If the player rolls a one on any of the dice, they lose all points collected during the round and it is the next player's turn.
-3. If the player does not roll a one, the sum of the two dice is added to their score for the round.
+1. The player / computer rolls the  dice.
+2. If the player rolls a one on the dice, they lose all points collected during the round and it is the next player's turn.
+3. If the player does not roll a one, the sum of the dice is added to their score for the round.
 4. The player can choose to either roll the dice again to increase their score for the round, or stay and add the score to their total score for the game.
 5. If the player decides to stay, control passes to the next player.
 6. First player to reach 100 points wins the game.
@@ -23,7 +23,7 @@ Pig, is a fun and simple dice game perfect for playing with family and friends. 
 - It is important to weigh the risk and reward when deciding to continue or stay.
 - A common strategy is to accumulate points slowly by stopping at each safe sum to avoid losing everything in a single turn.
 
-Good luck, let´s play! 🎲🎲
+Good luck, let´s play! 🎲
 
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Brantin10/Assignment2/total?style=for-the-badge&logo=docusign&logoColor=%2340AEF0color=%2340AEF0)
 ![GitHub License](https://img.shields.io/github/license/Brantin10/Assignment?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0ibTMgNiAzIDFtMCAwLTMgOWE1LjAwMiA1LjAwMiAwIDAgMCA2LjAwMSAwTTYgN2wzIDlNNiA3bDYtMm02IDIgMy0xbS0zIDEtMyA5YTUuMDAyIDUuMDAyIDAgMCAwIDYuMDAxIDBNMTggN2wzIDltLTMtOS02LTJtMC0ydjJtMCAxNlY1bTAgMTZIOW0zIDBoMyIvPjwvc3ZnPg%3D%3D)
