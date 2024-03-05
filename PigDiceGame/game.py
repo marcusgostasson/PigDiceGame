@@ -27,8 +27,7 @@ class Game:
         return choice
 
     def clear_screen(self):
-        """Makes sure that it clears screen for both Windows
-        and Mac users"""
+        """Clear screen for both Windows and Mac users."""
         if platform.system() == "Windows":
             os.system('cls')
         else:
@@ -140,7 +139,8 @@ Choice: """) # noqa: 122 ignores line missing indentation
             if choice == "1":
                 self.clear_screen()
                 die_value = current_player.throw_dice(die)
-                print(current_player.get_name() + " rolled a " + str(die_value))
+                print(current_player.get_name() + " rolled a " +
+                      str(die_value))
                 if die_value != 1:
                     score += die_value
                     game_is_being_played = self.check_if_winner(score,
