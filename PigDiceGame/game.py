@@ -48,7 +48,7 @@ Press 5 if you want to quit
         if platform.system() == "Windows":
             os.system('cls')
         else:
-            os.system('Clear')
+            os.system('clear')
 
     def player_vs_player(self):
         """Logic when the user picks play vs another player."""
