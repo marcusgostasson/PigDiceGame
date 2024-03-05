@@ -113,7 +113,7 @@ Open the .venv
 ```
 make venv
 ```
-
+### Activate
 Activate on Windows 🪟
 ```
 . .venv/Scripts/activate
