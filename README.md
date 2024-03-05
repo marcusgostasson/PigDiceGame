@@ -137,7 +137,7 @@ To install them
 ```
 make install
 ```
-Check what is installed
+Check what is installed in .venv
 ```
 make installed
 ```
