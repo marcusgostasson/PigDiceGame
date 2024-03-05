@@ -100,26 +100,6 @@ class TestGame(unittest.TestCase):
         players_name = player.get_name()
         self.assertEqual(players_name, "Bob")
 
-    @patch('sys.stdout', new_callable=StringIO)
-    def test_game_rules(self, mock_stdout):
-        """Tests if the game rules prints out the same."""
-
-        expected_output = game.UNDERLINE + game.CITALIC + """
-\nEach turn, a player repeatedly rolls a die until either a 1 is rolled
-or the player decides to "hold":
-
-If the player rolls a 1, they score nothing and it becomes the next
-player's turn.
-If the player rolls any other number, it is added to their turn total and
-the player's turn continues.
-If a player chooses to "hold", their turn total is added to their score,
-and it becomes the next player's turn.
-The first player to score 100 or more points wins\n""" + game.END
-        high = highscore.Highscore()
-        game.Game(high).handle_choice("3")
-
-        self.assertEqual(mock_stdout.getvalue().strip(), expected_output.strip())
-
     @patch("builtins.input", side_effect=["bob", "raz", "4"])
     def test_player_vs_player_p1_surrenders(self, mock_input):
         """Tests if the output is correct if the first player surrenders."""

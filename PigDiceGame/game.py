@@ -5,17 +5,11 @@ import platform
 from PigDiceGame import player
 from PigDiceGame import computer
 from PigDiceGame import dice
-from PigDiceGame import highscore
 from PigDiceGame import histogram
-from PigDiceGame import ascii_pictures
+from PigDiceGame import output
 RED = '\033[91m'
 GREEN = '\33[32m'
-YELLOW = '\u001b[33m'
 END = '\033[0m'
-CITALIC = '\33[3m'
-UNDERLINE = '\033[4m'
-
-post_winner = highscore.Highscore()
 
 
 class Game:
@@ -26,17 +20,6 @@ class Game:
         self.high = highscore
         self.playing = True
         self.players = {}
-
-    def display(self):
-        """Display the startup menu to the user."""
-        print(YELLOW + "Hello and welcome to Pig Dice Game" + END)
-        print("""-------------------------------------------------
-Press 1 if you want to play with a friend
-Press 2 if you want to play vs the computer
-Press 3 if you want to see the rules for the game
-Press 4 if you want to see highscore
-Press 5 if you want to quit
--------------------------------------------------""")
 
     def get_choice_from_user(self, prompting):
         """Prompting the user for an input."""
@@ -88,7 +71,7 @@ What difficulty do you want?
         self.clear_screen()
         if difficulty == "Pelle":
             self.clear_screen()
-            ascii_pictures.Ascii().pelle()
+            output.Output().pelle()
         intelligence = computer.Computer(difficulty)
         self.players["Computer"] = intelligence.get_total_score()
         playing = True
@@ -116,7 +99,7 @@ What difficulty do you want?
             self.player_vs_computer()
         elif choice == "3":
             self.clear_screen()
-            self.game_rules()
+            output.Output().game_rules()
         elif choice == "4":
             self.clear_screen()
             chart = histogram.Histogram()
@@ -131,7 +114,7 @@ What difficulty do you want?
         """Beginning of the program."""
         self.high.retreive_highscore_file()
         while self.playing:
-            self.display()
+            output.Output().display()
 
             choice = self.get_choice_from_user("Choice: ")
             self.handle_choice(choice)
@@ -294,17 +277,3 @@ Choice: """) # noqa: 122 ignores line missing indentation
         self.players[player_name] = new_player.get_total_score()
 
         return new_player
-
-    def game_rules(self):
-        """Display the rules of the game."""
-        print(UNDERLINE + CITALIC + """
-\nEach turn, a player repeatedly rolls a die until either a 1 is rolled
-or the player decides to "hold":
-
-If the player rolls a 1, they score nothing and it becomes the next
-player's turn.
-If the player rolls any other number, it is added to their turn total and
-the player's turn continues.
-If a player chooses to "hold", their turn total is added to their score,
-and it becomes the next player's turn.
-The first player to score 100 or more points wins\n""" + END)
