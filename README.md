@@ -93,7 +93,7 @@ make version
 <a name = "install-python-virtual-environment-and-activate-it"></a> Install a Python virtual environment and activate it <img 
 src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="20" height="20" alt="Python" /></a></p>
 ------------------------------------------------------------------------------------------------------------------------------------------
-Here is a guide how to install the Python virtual environment [Create the virtual environment](https://www.youtube.com/watch?v=UsmNyNxndv4)
+Here is a guide how to install the Python virtual environment --> [Create the virtual environment](https://www.youtube.com/watch?v=UsmNyNxndv4)
 
 Create a .venv on 🪟
 ```
