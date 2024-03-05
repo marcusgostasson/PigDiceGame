@@ -223,7 +223,6 @@ start htmlcov/index.html
 On linux/ Mac 🍏
 ```
 open htmlcov/index.html
-
 ```
 
 Read more on:
