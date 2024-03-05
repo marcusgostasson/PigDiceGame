@@ -45,6 +45,7 @@ Press 5 if you want to quit
         """Logic when the user picks play vs another player."""
         player1 = self.setup_player()
         player2 = self.setup_player()
+        os.system('cls')
         playing = True
         while playing:
             playing = self.player_playing(player1)
@@ -62,20 +63,21 @@ Press 5 if you want to quit
     def player_vs_computer(self):
         """Logic when the user picks play vs the computer."""
         player1 = self.setup_player()
+        os.system('cls')
         while True:
             difficulty = self.get_choice_from_user(
-                """
-                What difficulty do you want?
-                1. Playing against a new born baby
-                2. Playing against a grown up
-                3. Completly random no logic\nChoice:
-                """)
+"""
+What difficulty do you want?
+1. Playing against a new born baby
+2. Playing against a grown up
+3. Completly random no logic\nChoice: """) # noqa: 122 ignores line missing indentation
             if difficulty in ["1", "2", "3", "Pelle"]:
                 break
             print("Invalid option")
             os.system('cls')
 
         if difficulty == "Pelle":
+            os.system('cls')
             ascii_pictures.Ascii().pelle()
         intelligence = computer.Computer(difficulty)
         self.players["Computer"] = intelligence.get_total_score()
@@ -97,12 +99,16 @@ Press 5 if you want to quit
     def handle_choice(self, choice):
         """Goes into a function depending what the user types in."""
         if choice == "1":
+            os.system('cls')
             self.player_vs_player()
         elif choice == "2":
+            os.system('cls')
             self.player_vs_computer()
         elif choice == "3":
+            os.system('cls')
             self.game_rules()
         elif choice == "4":
+            os.system('cls')
             chart = histogram.Histogram()
             chart.plot_chart(post_winner)
         elif choice == "5":
@@ -137,8 +143,9 @@ Press 4 to surrender
 Choice: """) # noqa: 122 ignores line missing indentation
 
             if choice == "1":
+                os.system('cls')
                 die_value = current_player.throw_dice(die)
-                print(current_player.get_name() + " got a " + str(die_value))
+                print(current_player.get_name() + " rolled a " + str(die_value))
                 if die_value != 1:
                     score += die_value
                     game_is_being_played = self.check_if_winner(score,
@@ -164,13 +171,15 @@ Choice: """) # noqa: 122 ignores line missing indentation
                 return True
 
             if choice == "3":
+                os.system('cls')
                 old_name = current_player.get_name()
                 value = self.players.pop(old_name)
                 new_name = self.change_name(current_player)
                 new_key = new_name
                 self.players[new_key] = value
-
+                os.system('cls')
                 print("Your new name is now " + new_name)
+                continue
 
             if choice == "4":
                 return False
@@ -257,7 +266,8 @@ Choice: """) # noqa: 122 ignores line missing indentation
 
     def change_name(self, current_player):
         """Set a new name for the player."""
-        new_name = input("Input new name: ")
+        print("Old name: " + current_player.get_name())
+        new_name = input("Input new name: ").capitalize()
         current_player.set_name(new_name)
 
         return new_name
@@ -272,7 +282,6 @@ Choice: """) # noqa: 122 ignores line missing indentation
 
     def game_rules(self):
         """Display the rules of the game."""
-        os.system('cls')
         print(UNDERLINE + CITALIC + """
 \nEach turn, a player repeatedly rolls a die until either a 1 is rolled
 or the player decides to "hold":
