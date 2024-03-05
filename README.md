@@ -216,7 +216,7 @@ make test
 You can open a web browser to inspect the code coverage as a generated HTML report.
 
 ```
-googlecrome htmlcov/index.html
+google-chrome htmlcov/index.html
 ```
 
 Read more on:
