@@ -54,7 +54,7 @@ class Histogram:
 
             plt.xticks(rotation=45)
             ax.yaxis.set_major_locator(MaxNLocator(integer=True))
-            ax.set_ylim(0, max(combined_values) * 1.1)
+            ax.set_ylim(0, max(values) * 1.1)
 
             plt.tight_layout()
             plt.show()
