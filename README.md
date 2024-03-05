@@ -10,7 +10,7 @@ Pig, is a fun and simple dice game perfect for playing with family and friends. 
 
 **Rules:**
 
-1. The player/computer rolls the  dice.
+1. The player / computer rolls the  dice.
 2. If the player rolls a one on the dice, they lose all points collected during the round and it is the next player's turn.
 3. If the player does not roll a one, the sum of the dice is added to their score for the round.
 4. The player can choose to either roll the dice again to increase their score for the round, or stay and add the score to their total score for the game.
