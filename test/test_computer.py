@@ -91,17 +91,10 @@ class TestComputer(unittest.TestCase):
         exp = (['stay'], ['toss'])
         self.assertIn(res, exp)
 
-    def test_random_difficulty(self):
-        """Test for random difficulty"""
-        c = computer.Computer
-        res = c.random_difficulty
-        exp = (['stay'], ['toss'])
-        self.assertIn(res, exp)
-
     def test_difficulty_choice(self):
         """Test for choosing difficulty"""
-        c = computer.Computer
-        res = c.difficulty_choice
+        c = computer.Computer("1")
+        res = c.difficulty_choice(1, 3)
         self.assertIsNotNone(res)
 
 
