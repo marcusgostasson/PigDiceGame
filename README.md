@@ -95,13 +95,13 @@ src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/publi
 ------------------------------------------------------------------------------------------------------------------------------------------
 Here is a guide how to install the Python virtual environment [Create the virtual environment](https://www.youtube.com/watch?v=UsmNyNxndv4)
 
-Create a .venv on Linux/ Mac 🍏
-```
-python3 -m venv .venv
-```
 Create a .venv on 🪟
 ```
 python -m venv .venv
+```
+Create a .venv on Linux/ Mac 🍏
+```
+python3 -m venv .venv
 ```
 
 Open the .venv
