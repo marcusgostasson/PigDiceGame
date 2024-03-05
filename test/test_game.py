@@ -3,7 +3,8 @@ import sys
 import os
 from io import StringIO
 from unittest.mock import patch
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from PigDiceGame import game, player, computer, highscore
 
 
@@ -25,12 +26,12 @@ class TestGame(unittest.TestCase):
         self.assertEqual(exp, res)
 
     def test_check_winner_player(self):
-        """Checks if the player wins if he has 100 points and 
+        """Checks if the player wins if he has 100 points and
         checks if the player is still playing if he has 50 points."""
         high = highscore.Highscore()
         g = game.Game(high)
         p = player.Player("Bob")
-        with patch('PigDiceGame.highscore.Highscore.add_winner') as mock_add_winner:
+        with patch("PigDiceGame.highscore.Highscore.add_winner") as mock_add_winner:
             exp = g.check_if_winner(100, p)
             res = False
             self.assertEqual(exp, res)
@@ -45,11 +46,13 @@ class TestGame(unittest.TestCase):
         high = highscore.Highscore()
         g = game.Game(high)
         c = computer.Computer("1")
-        with patch("builtins.print") as mock_print, \
-             patch("PigDiceGame.highscore.Highscore.add_winner") as mock_add_winner:
+        with patch("builtins.print") as mock_print, patch(
+            "PigDiceGame.highscore.Highscore.add_winner"
+        ) as mock_add_winner:
             g.check_if_winner(100, c)
-            mock_print.assert_any_call(game.GREEN + "Computer won in 0"
-                                       + " throws!" + game.END)
+            mock_print.assert_any_call(
+                game.GREEN + "Computer won in 0" + " throws!" + game.END
+            )
         name, points = g.players.popitem()
         self.assertEqual(name, "Computer")
         self.assertEqual(points, 100)
@@ -67,7 +70,9 @@ class TestGame(unittest.TestCase):
             g.player_playing(p)
             mock_print.assert_any_call(game.RED + "That's not an option" + game.END)
 
-    @patch("PigDiceGame.dice.Dice.get_random_number", return_value=2)  # Die always roll 2
+    @patch(
+        "PigDiceGame.dice.Dice.get_random_number", return_value=2
+    )  # Die always roll 2
     @patch("builtins.input", side_effect=["1", "Bob", "raz", "1", "2", "4", "5"])
     def test_start_game_with_choice_one_then_stay(self, mock_input, mock_choices):
         """Tests to start the game and let player1 roll
@@ -107,7 +112,17 @@ class TestGame(unittest.TestCase):
         g = game.Game(high)
         with patch("builtins.print") as mock_print:
             g.player_vs_player()
-            mock_print.assert_called_with(game.RED + "Bob" + " surrendered" + game.END + " and " + game.GREEN + "Raz" + " won" + game.END)
+            mock_print.assert_called_with(
+                game.RED
+                + "Bob"
+                + " surrendered"
+                + game.END
+                + " and "
+                + game.GREEN
+                + "Raz"
+                + " won"
+                + game.END
+            )
 
     @patch("builtins.input", side_effect=["bob", "raz", "2", "4", "4", "4"])
     def test_player_vs_player_p2_surrenders(self, mock_input):
@@ -116,7 +131,17 @@ class TestGame(unittest.TestCase):
         g = game.Game(high)
         with patch("builtins.print") as mock_print:
             g.player_vs_player()
-            mock_print.assert_called_with(game.RED + "Raz" + " surrendered" + game.END + " and " + game.GREEN + "Bob" + " won" + game.END)
+            mock_print.assert_called_with(
+                game.RED
+                + "Raz"
+                + " surrendered"
+                + game.END
+                + " and "
+                + game.GREEN
+                + "Bob"
+                + " won"
+                + game.END
+            )
 
     def test_handle_choice_invalid(self):
         """Tests if an invalid option for handle_choice prints right output."""
@@ -136,7 +161,9 @@ class TestGame(unittest.TestCase):
 
         with patch("builtins.print") as mock_print:
             g.player_playing(p)
-            mock_print.assert_called_with("Oh you got a " + "1" + " better luck next time\n")
+            mock_print.assert_called_with(
+                "Oh you got a " + "1" + " better luck next time\n"
+            )
 
     @patch("builtins.input", side_effect=["3", "Sven", "4", "3", "Sven", "4", "4"])
     def test_user_press_3_change_name_prints_correct(self, mock_input):
@@ -163,7 +190,7 @@ class TestGame(unittest.TestCase):
         g = game.Game(high)
         p = player.Player("Bob")
         g.players["Bob"] = 0
-        with patch('PigDiceGame.highscore.Highscore.add_winner') as mock_add_winner:
+        with patch("PigDiceGame.highscore.Highscore.add_winner") as mock_add_winner:
             g.player_playing(p)
 
         max_points = g.get_player_score("Bob")
@@ -205,8 +232,7 @@ class TestGame(unittest.TestCase):
         c = computer.Computer("1")
         with patch("builtins.print") as mock_print:
             g.computer_playing(c)
-            mock_print.assert_any_call("Oh you got a 1"
-                                       + " better luck next time\n")
+            mock_print.assert_any_call("Oh you got a 1" + " better luck next time\n")
 
 
 if __name__ == "__main__":

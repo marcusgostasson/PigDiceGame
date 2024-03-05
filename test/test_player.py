@@ -1,10 +1,12 @@
 """Testclass for Player."""
+
 import unittest
 import sys
 import os
 from PigDiceGame.player import Player
 from PigDiceGame.dice import Dice
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 
 class TestPlayer(unittest.TestCase):
@@ -78,4 +80,4 @@ class TestPlayer(unittest.TestCase):
 
 
 # if __name__ == "__main__":
-    # unittest.main()
+# unittest.main()

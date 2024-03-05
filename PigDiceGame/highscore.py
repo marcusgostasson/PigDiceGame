@@ -32,21 +32,22 @@ class Highscore:
 
     def add_highscore_to_file(self, highscores):
         """Class method to add highscores to file."""
-        with open("highscore_list.txt", 'w', encoding='utf-8') as file:
+        with open("highscore_list.txt", "w", encoding="utf-8") as file:
             for name, score in highscores.items():
                 file.write(f"{name} : {score}\n")
 
     def retreive_highscore_file(self):
         """Class method to retreive highscore file."""
         self.highscores = {}
-        with open("highscore_list.txt", 'r', encoding='utf-8') as file:
+        with open("highscore_list.txt", "r", encoding="utf-8") as file:
             for line in file:
-                name, score = line.strip().split(':')
+                name, score = line.strip().split(":")
                 self.highscores[name] = int(score)
         return self.highscores
 
     def sorted_list(self):
         """Class method to sort highscores."""
-        sorted_highscores = sorted(self.highscores.items(), key=lambda x: x[1],
-                                   reverse=True)
+        sorted_highscores = sorted(
+            self.highscores.items(), key=lambda x: x[1], reverse=True
+        )
         return sorted_highscores

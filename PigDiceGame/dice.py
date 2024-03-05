@@ -1,4 +1,5 @@
 """Dice class."""
+
 import random
 
 

@@ -1,4 +1,5 @@
 """Computer intelligence."""
+
 import random
 
 
