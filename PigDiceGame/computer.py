@@ -4,9 +4,8 @@ import random
 
 class Computer:
     """Class for computer."""
-
     def __init__(self, difficulty):
-        """Instanciate for computer's sum."""
+        """Instanciate computer class."""
         self.tossed_amount = 0
         self.sum = 0
         self.difficulty = difficulty
