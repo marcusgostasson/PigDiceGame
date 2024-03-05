@@ -108,7 +108,7 @@ Create a .venv on Linux / Mac 🍏
 ```
 python3 -m venv .venv
 ```
-### open
+### Open
 Open the .venv
 ```
 make venv
