@@ -44,7 +44,7 @@ class TestHighscore(unittest.TestCase):
 
             with open(tmp_file.name, 'r', encoding='utf-8') as file:
                 actual_content = file.read()
-                
+
         exp = ""
         self.assertEqual(actual_content, exp)
 
@@ -54,10 +54,9 @@ class TestHighscore(unittest.TestCase):
             self.highscore.file_path = tmp_file.name
 
             retreived_score = self.highscore.retreive_highscore_file()
-                
+
         exp = {}
         self.assertEqual(retreived_score, exp)
-    
 
     def test_get_name_and_highscore(self):
         """Class method to test get name and highscore."""
