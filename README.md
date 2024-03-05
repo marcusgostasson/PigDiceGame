@@ -123,7 +123,7 @@ Activate on Linux / Mac 🍏
 ```
 . .venv/bin/activate
 ```
-
+### Deactivate
 When you are done you can leave the venv using the command 🙅🏼
 ```
 deactivate
