@@ -36,7 +36,7 @@ Click on the link to get to the section!
 
 - [Get started](#clone-repositorie)
 
-  - [Clone repositorie](#clone-repositorie) 🖨️
+  - [Clone Repositorie](#clone-repositorie) 🖨️
  
   - [Check Python version](#check-python-version) <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" alt="Python" width="15" height="15" />
 
