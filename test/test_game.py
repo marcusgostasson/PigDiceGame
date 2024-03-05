@@ -87,7 +87,7 @@ class TestGame(unittest.TestCase):
         bob = g.change_name(p)
         exp_new_name = g.change_name(p)
 
-        self.assertEqual(exp_new_name, "sven")
+        self.assertEqual(exp_new_name, "Sven")
 
     @patch("builtins.input", side_effect=["bob"])
     def test_setup_player(self, mock_input):

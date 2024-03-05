@@ -205,6 +205,7 @@ Choice: """) # noqa: 122 ignores line missing indentation
             decision = pc.difficulty_choice(toss_counter, score_this_round)
             choice = decision[0]
             if choice == "toss":
+                os.system('cls')
                 toss_counter += 1
                 die_value = pc.throw_dice(die)
                 print("Computer got a " + str(die_value))
@@ -222,6 +223,7 @@ Choice: """) # noqa: 122 ignores line missing indentation
             if choice == "stay":
                 pc.set_total_score(score)
                 current_points = pc.get_total_score()
+                os.system('cls')
                 print("Computer stayed and now have " + str(current_points)
                       + " point(s)\n")
                 game_is_being_played = False
