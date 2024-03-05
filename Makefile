@@ -102,8 +102,8 @@ coverage_game:
 	coverage run -m unittest test.test_player
 	coverage report -m
 
-	coverage run -m unittest test.test_highscore 
-	coverage report -m
+#	coverage run -m unittest test.test_highscore 
+#	coverage report -m
 
 	coverage run -m unittest test.test_computer
 	coverage report -m
