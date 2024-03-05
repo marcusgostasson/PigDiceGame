@@ -274,6 +274,10 @@ On windows 🪟
 ```
 start doc/pyreverse/classes.png && start doc/pyreverse/packages.png
 ```
+on Mac (add xdg-, before if you have linux)
+```
+open doc/pyreverse/classes.png && open doc/pyreverse/packages.png
+```
 
 
 <a name="remove-generated-files"></a> Remove generated files 🗑️
@@ -289,9 +293,3 @@ Do also remove all you have installed
 ```
 make clean-all
 ```
-
-on Mac (add xdg-, before if you have linux)
-```
-open doc/pyreverse/classes.png && open doc/pyreverse/packages.png
-```
-
