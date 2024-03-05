@@ -1,6 +1,7 @@
 """Game class."""
 import time
 import os
+import platform
 from PigDiceGame import player
 from PigDiceGame import computer
 from PigDiceGame import dice
@@ -41,29 +42,37 @@ Press 5 if you want to quit
         choice = input(prompting)
         return choice
 
+    def clear_screen(self):
+        """Makes sure that it clears screen for both Windows
+        and Mac users"""
+        if platform.system() == "Windows":
+            os.system('cls')
+        else:
+            os.system('Clear')
+
     def player_vs_player(self):
         """Logic when the user picks play vs another player."""
         player1 = self.setup_player()
         player2 = self.setup_player()
-        os.system('cls')
+        self.clear_screen()
         playing = True
         while playing:
             playing = self.player_playing(player1)
             if (playing is False and player1.get_total_score() < 100):
-                os.system('cls')
+                self.clear_screen()
                 print(RED + player1.get_name() + " surrendered" + END +
                       " and " + GREEN + player2.get_name() + " won" + END)
             elif playing is True:
                 playing = self.player_playing(player2)
                 if (playing is False and player2.get_total_score() < 100):
-                    os.system('cls')
+                    self.clear_screen()
                     print(RED + player2.get_name() + " surrendered" + END +
                           " and " + GREEN + player1.get_name() + " won" + END)
 
     def player_vs_computer(self):
         """Logic when the user picks play vs the computer."""
         player1 = self.setup_player()
-        os.system('cls')
+        self.clear_screen()
         while True:
             difficulty = self.get_choice_from_user(
 """
@@ -74,10 +83,10 @@ What difficulty do you want?
             if difficulty in ["1", "2", "3", "Pelle"]:
                 break
             print("Invalid option")
-            os.system('cls')
+            self.clear_screen()
 
         if difficulty == "Pelle":
-            os.system('cls')
+            self.clear_screen()
             ascii_pictures.Ascii().pelle()
         intelligence = computer.Computer(difficulty)
         self.players["Computer"] = intelligence.get_total_score()
@@ -85,7 +94,7 @@ What difficulty do you want?
         while playing:
             playing = self.player_playing(player1)
             if (playing is False and player1.get_total_score() < 100):
-                os.system('cls')
+                self.clear_screen()
                 print(RED + player1.get_name() + " surrendered" + END +
                       " and " + GREEN + "Computer won" + END)
             elif playing is True:
@@ -99,16 +108,16 @@ What difficulty do you want?
     def handle_choice(self, choice):
         """Goes into a function depending what the user types in."""
         if choice == "1":
-            os.system('cls')
+            self.clear_screen()
             self.player_vs_player()
         elif choice == "2":
-            os.system('cls')
+            self.clear_screen()
             self.player_vs_computer()
         elif choice == "3":
-            os.system('cls')
+            self.clear_screen()
             self.game_rules()
         elif choice == "4":
-            os.system('cls')
+            self.clear_screen()
             chart = histogram.Histogram()
             chart.plot_chart(post_winner)
         elif choice == "5":
@@ -143,7 +152,7 @@ Press 4 to surrender
 Choice: """) # noqa: 122 ignores line missing indentation
 
             if choice == "1":
-                os.system('cls')
+                self.clear_screen()
                 die_value = current_player.throw_dice(die)
                 print(current_player.get_name() + " rolled a " + str(die_value))
                 if die_value != 1:
@@ -152,7 +161,7 @@ Choice: """) # noqa: 122 ignores line missing indentation
                                                                 current_player)
                     continue
 
-                os.system('cls')
+                self.clear_screen()
                 print("Oh you got a " + str(die_value) +
                       " better luck next time\n")
                 game_is_being_played = False
@@ -164,20 +173,20 @@ Choice: """) # noqa: 122 ignores line missing indentation
                 self.players[name] = current_player.get_total_score()
 
                 current_points = current_player.get_total_score()
-                os.system('cls')
+                self.clear_screen()
                 print(current_player.get_name() + " stayed and now have "
                       + str(current_points) + " point(s)\n")
                 game_is_being_played = False
                 return True
 
             if choice == "3":
-                os.system('cls')
+                self.clear_screen()
                 old_name = current_player.get_name()
                 value = self.players.pop(old_name)
                 new_name = self.change_name(current_player)
                 new_key = new_name
                 self.players[new_key] = value
-                os.system('cls')
+                self.clear_screen()
                 print("Your new name is now " + new_name)
                 continue
 
@@ -205,7 +214,7 @@ Choice: """) # noqa: 122 ignores line missing indentation
             decision = pc.difficulty_choice(toss_counter, score_this_round)
             choice = decision[0]
             if choice == "toss":
-                os.system('cls')
+                self.clear_screen()
                 toss_counter += 1
                 die_value = pc.throw_dice(die)
                 print("Computer got a " + str(die_value))
@@ -223,7 +232,7 @@ Choice: """) # noqa: 122 ignores line missing indentation
             if choice == "stay":
                 pc.set_total_score(score)
                 current_points = pc.get_total_score()
-                os.system('cls')
+                self.clear_screen()
                 print("Computer stayed and now have " + str(current_points)
                       + " point(s)\n")
                 game_is_being_played = False
