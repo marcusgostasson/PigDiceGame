@@ -11,7 +11,7 @@ from PigDiceGame import game, highscore
 
 def main():
     """Execute the main program."""
-   # highscore.Highscore().retreive_highscore_file()
+    highscore.Highscore().retreive_highscore_file()
     game.Game().start_game()
 
 

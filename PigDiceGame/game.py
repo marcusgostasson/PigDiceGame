@@ -82,9 +82,9 @@ What difficulty do you want?
 3. Completly random no logic\nChoice: """) # noqa: 122 ignores line missing indentation
             if difficulty in ["1", "2", "3", "Pelle"]:
                 break
-            print("Invalid option")
             self.clear_screen()
-
+            print(RED + "Invalid option" + END)
+        self.clear_screen()
         if difficulty == "Pelle":
             self.clear_screen()
             ascii_pictures.Ascii().pelle()
@@ -123,6 +123,7 @@ What difficulty do you want?
         elif choice == "5":
             self.quit()
         else:
+            self.clear_screen()
             print(RED + "Invalid option" + END)
 
     def start_game(self):
@@ -194,6 +195,7 @@ Choice: """) # noqa: 122 ignores line missing indentation
                 return False
 
             if choice == "ezwin":
+                self.clear_screen()
                 current_player.set_total_score(100)
                 game_is_being_played = self.check_if_winner(
                     100, current_player)

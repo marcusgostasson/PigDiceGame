@@ -104,7 +104,7 @@ Create a .venv on 🪟
 ```
 python -m venv .venv
 ```
-Create a .venv on Linux/ Mac 🍏
+Create a .venv on Linux / Mac 🍏
 ```
 python3 -m venv .venv
 ```
@@ -225,7 +225,7 @@ On windows 🪟
 ```
 start htmlcov/index.html
 ```
-On linux/ Mac 🍏
+On linux / Mac 🍏
 ```
 open htmlcov/index.html
 ```
@@ -283,6 +283,15 @@ to generate class and package diagrams from the code base.
 ```
 make pyreverse
 ```
+Open with:
 
+On windows 🪟
+```
+start doc/pyreverse/classes.png && start doc/pyreverse/packages.png
+```
 
+on Mac (add xdg-, before if you have linux)
+```
+open doc/pyreverse/classes.png && open doc/pyreverse/packages.png
+```
 
