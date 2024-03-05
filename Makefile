@@ -143,23 +143,23 @@ doc: pdoc pyreverse #pydoc sphinx
 #
 radon-cc:
 	@$(call MESSAGE,$@)
-	radon cc --show-complexity --average guess
+	radon cc --show-complexity --average PigDiceGame
 
 radon-mi:
 	@$(call MESSAGE,$@)
-	radon mi --show guess
+	radon mi --show PigDiceGame
 
 radon-raw:
 	@$(call MESSAGE,$@)
-	radon raw guess
+	radon raw PigDiceGame
 
 radon-hal:
 	@$(call MESSAGE,$@)
-	radon hal guess
+	radon hal PigDiceGame
 
 cohesion:
 	@$(call MESSAGE,$@)
-	cohesion --directory guess
+	cohesion --directory PigDiceGame
 
 metrics: radon-cc radon-mi radon-raw radon-hal cohesion
 
@@ -170,4 +170,4 @@ metrics: radon-cc radon-mi radon-raw radon-hal cohesion
 #
 bandit:
 	@$(call MESSAGE,$@)
-	bandit --recursive guess
+	bandit --recursive PigDiceGame
