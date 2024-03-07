@@ -167,6 +167,7 @@ Choice: """
                 current_player.set_total_score(100)
                 game_is_being_played = self.check_if_winner(100, current_player)
             else:
+                self.clear_screen()
                 print(RED + "That's not an option" + END)
         return False
 
