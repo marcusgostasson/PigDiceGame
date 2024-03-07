@@ -75,7 +75,7 @@ SSH
 ```
 git clone git@github.com:Brantin10/Assignment2.git
 ```
-Then go inside with
+Then go inside the Assignment2 map with
 ```
 cd Assignment2
 ```
