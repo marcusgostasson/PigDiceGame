@@ -234,6 +234,20 @@ class TestGame(unittest.TestCase):
             g.computer_playing(c)
             mock_print.assert_any_call("Oh you got a 1" + " better luck next time\n")
 
+    @patch("builtins.input", side_effect=["5", "2", "4"])
+    def test_player_playing_computer(self, mock_input):
+        """Tests if player_playing works when a computer exist to change difficulty."""
+        high = highscore.Highscore()
+        g = game.Game(high)
+        p = player.Player("Sven")
+        intelligence = computer.Computer("1")
+
+        self.assertEqual(intelligence.get_difficulty(), "1")
+
+        g.player_playing(p, computer_on=True, computer_instance=intelligence)
+
+        self.assertEqual(intelligence.get_difficulty(), "2")
+
 
 if __name__ == "__main__":
     unittest.main()

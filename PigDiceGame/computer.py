@@ -13,6 +13,14 @@ class Computer:
         self.difficulty = difficulty
         self.options = ["toss", "stay"]
 
+    def set_difficulty(self, diff):
+        """Setting the difficulty for the computer."""
+        self.difficulty = diff
+
+    def get_difficulty(self):
+        """Returning the difficulty of the computer."""
+        return self.difficulty
+
     def difficulty_choice(self, toss_counter, score):
         """Class method for choosing difficulty."""
         if self.difficulty == "1":

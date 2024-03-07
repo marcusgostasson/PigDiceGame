@@ -95,7 +95,7 @@ class Game:
                         + END
                     )
 
-    def player_playing(self, current_player):
+    def player_playing(self, current_player, computer_on=False, computer_instance=None):
         """Logic for when the player is playing."""
         die = dice.Dice()
         score = current_player.get_total_score()
@@ -115,7 +115,9 @@ Press 1 to toss
 Press 2 to stay
 Press 3 to change name
 Press 4 to surrender
-Choice: """
+"""
+                + ("Press 5 to change difficulty\n" if computer_on else "")
+                + "Choice: "
             )  # noqa: 122 ignores line missing indentation
 
             if choice == "1":
@@ -166,36 +168,46 @@ Choice: """
                 self.clear_screen()
                 current_player.set_total_score(100)
                 game_is_being_played = self.check_if_winner(100, current_player)
+
+            if computer_on and choice == "5":
+                self.clear_screen()
+                diff = self.computer_difficulty()
+                computer_instance.set_difficulty(diff)
+
             else:
                 self.clear_screen()
                 print(RED + "That's not an option" + END)
         return False
 
-    def player_vs_computer(self):
-        """Logic when the user picks play vs the computer."""
-        player1 = self.setup_player()
-        self.clear_screen()
+    def computer_difficulty(self):
+        """When chaning the difficulty for the computer."""
         while True:
             difficulty = self.get_choice_from_user(
-                """
-What difficulty do you want?
+                """What difficulty do you want?
 1. Playing against a new born baby
 2. Playing against a grown up
 3. Completly random no logic\nChoice: """
             )  # noqa: 122 ignores line missing indentation
+            self.clear_screen()
+
             if difficulty in ["1", "2", "3", "Pelle"]:
+                if difficulty == "Pelle":
+                    output.Output().pelle()
                 break
             self.clear_screen()
             print(RED + "Invalid option" + END)
+        return difficulty
+
+    def player_vs_computer(self):
+        """Logic when the user picks play vs the computer."""
+        player1 = self.setup_player()
         self.clear_screen()
-        if difficulty == "Pelle":
-            self.clear_screen()
-            output.Output().pelle()
+        difficulty = self.computer_difficulty()
         intelligence = computer.Computer(difficulty)
         self.players["Computer"] = intelligence.get_total_score()
         playing = True
         while playing:
-            playing = self.player_playing(player1)
+            playing = self.player_playing(player1, computer_on=True, computer_instance=intelligence)
             if playing is False and player1.get_total_score() < 100:
                 self.clear_screen()
                 print(

@@ -97,6 +97,18 @@ class TestComputer(unittest.TestCase):
         res = c.difficulty_choice(1, 3)
         self.assertIsNotNone(res)
 
+    def test_get_and_set_difficulty(self):
+        """Test if setter and getter works."""
+        c = computer.Computer("1")
+        res = c.get_difficulty()
+        exp = "1"
+        self.assertEqual(res, exp)
+
+        c.set_difficulty("2")
+        res = c.get_difficulty()
+        exp = "2"
+        self.assertEqual(res, exp)
+
 
 if __name__ == "__main__":
     unittest.main()
