@@ -23,17 +23,40 @@ class Game:
         self.playing = True
         self.players = {}
 
+    def start_game(self):
+        """Beginning of the program."""
+        self.high.retreive_highscore_file()
+        while self.playing:
+            output.Output().display()
+
+            choice = self.get_choice_from_user("Choice: ")
+            self.handle_choice(choice)
+
     def get_choice_from_user(self, prompting):
         """Prompting the user for an input."""
         choice = input(prompting)
         return choice
 
-    def clear_screen(self):
-        """Clear screen for both Windows and Mac users."""
-        if platform.system() == "Windows":
-            os.system("cls")
+    def handle_choice(self, choice):
+        """Goes into a function depending what the user types in."""
+        if choice == "1":
+            self.clear_screen()
+            self.player_vs_player()
+        elif choice == "2":
+            self.clear_screen()
+            self.player_vs_computer()
+        elif choice == "3":
+            self.clear_screen()
+            output.Output().game_rules()
+        elif choice == "4":
+            self.clear_screen()
+            chart = histogram.Histogram()
+            chart.plot_chart(self.high)
+        elif choice == "5":
+            self.quit()
         else:
-            os.system("clear")
+            self.clear_screen()
+            print(RED + "Invalid option" + END)
 
     def player_vs_player(self):
         """Logic when the user picks play vs another player."""
@@ -71,81 +94,6 @@ class Game:
                         + " won"
                         + END
                     )
-
-    def player_vs_computer(self):
-        """Logic when the user picks play vs the computer."""
-        player1 = self.setup_player()
-        self.clear_screen()
-        while True:
-            difficulty = self.get_choice_from_user(
-                """
-What difficulty do you want?
-1. Playing against a new born baby
-2. Playing against a grown up
-3. Completly random no logic\nChoice: """
-            )  # noqa: 122 ignores line missing indentation
-            if difficulty in ["1", "2", "3", "Pelle"]:
-                break
-            self.clear_screen()
-            print(RED + "Invalid option" + END)
-        self.clear_screen()
-        if difficulty == "Pelle":
-            self.clear_screen()
-            output.Output().pelle()
-        intelligence = computer.Computer(difficulty)
-        self.players["Computer"] = intelligence.get_total_score()
-        playing = True
-        while playing:
-            playing = self.player_playing(player1)
-            if playing is False and player1.get_total_score() < 100:
-                self.clear_screen()
-                print(
-                    RED
-                    + player1.get_name()
-                    + " surrendered"
-                    + END
-                    + " and "
-                    + GREEN
-                    + "Computer won"
-                    + END
-                )
-            elif playing is True:
-                playing = self.computer_playing(intelligence)
-
-    def quit(self):
-        """Stop the program."""
-        print("Quit out of the game")
-        self.playing = False
-
-    def handle_choice(self, choice):
-        """Goes into a function depending what the user types in."""
-        if choice == "1":
-            self.clear_screen()
-            self.player_vs_player()
-        elif choice == "2":
-            self.clear_screen()
-            self.player_vs_computer()
-        elif choice == "3":
-            self.clear_screen()
-            output.Output().game_rules()
-        elif choice == "4":
-            self.clear_screen()
-            chart = histogram.Histogram()
-            chart.plot_chart(self.high)
-        elif choice == "5":
-            self.quit()
-        else:
-            self.clear_screen()
-            print(RED + "Invalid option" + END)
-
-    def start_game(self):
-        """Beginning of the program."""
-        self.high.retreive_highscore_file()
-        while self.playing:
-            output.Output().display()
-
-            choice = self.get_choice_from_user("Choice: ")
-            self.handle_choice(choice)
 
     def player_playing(self, current_player):
         """Logic for when the player is playing."""
@@ -221,6 +169,46 @@ Choice: """
             else:
                 print(RED + "That's not an option" + END)
         return False
+
+    def player_vs_computer(self):
+        """Logic when the user picks play vs the computer."""
+        player1 = self.setup_player()
+        self.clear_screen()
+        while True:
+            difficulty = self.get_choice_from_user(
+                """
+What difficulty do you want?
+1. Playing against a new born baby
+2. Playing against a grown up
+3. Completly random no logic\nChoice: """
+            )  # noqa: 122 ignores line missing indentation
+            if difficulty in ["1", "2", "3", "Pelle"]:
+                break
+            self.clear_screen()
+            print(RED + "Invalid option" + END)
+        self.clear_screen()
+        if difficulty == "Pelle":
+            self.clear_screen()
+            output.Output().pelle()
+        intelligence = computer.Computer(difficulty)
+        self.players["Computer"] = intelligence.get_total_score()
+        playing = True
+        while playing:
+            playing = self.player_playing(player1)
+            if playing is False and player1.get_total_score() < 100:
+                self.clear_screen()
+                print(
+                    RED
+                    + player1.get_name()
+                    + " surrendered"
+                    + END
+                    + " and "
+                    + GREEN
+                    + "Computer won"
+                    + END
+                )
+            elif playing is True:
+                playing = self.computer_playing(intelligence)
 
     def computer_playing(self, pc):
         """Logic for when the computer is playing."""
@@ -321,3 +309,15 @@ Choice: """
         self.players[player_name] = new_player.get_total_score()
 
         return new_player
+
+    def clear_screen(self):
+        """Clear screen for both Windows and Mac users."""
+        if platform.system() == "Windows":
+            os.system("cls")
+        else:
+            os.system("clear")
+
+    def quit(self):
+        """Stop the program."""
+        print("Quit out of the game")
+        self.playing = False
