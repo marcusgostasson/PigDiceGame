@@ -1,1 +1,7 @@
-Raz : 1
+Kalle: 12
+Anna: 7
+Muhammed: 13
+Klara: 5
+Ali: 4
+Johanna: 11
+Minou: 8
