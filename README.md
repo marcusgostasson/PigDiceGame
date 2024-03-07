@@ -75,6 +75,10 @@ SSH
 ```
 git clone git@github.com:Brantin10/Assignment2.git
 ```
+Then go inside with
+```
+cd Assignment2
+```
 
 <a name = "check-python-version"></a> Check Python version <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" alt="Python" width="20" height="20" />
 -----------------------------------------------------------------------------------------------------------------------------
