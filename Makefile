@@ -92,7 +92,8 @@ coverage:
 	@$(call MESSAGE,$@)
 	coverage run -m unittest discover
 	coverage html
-	coverage report -m
+	coverage xml
+	coverage report -m -xml
 	
 test: lint coverage
 
